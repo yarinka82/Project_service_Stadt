@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:18.4-alpine
+    container_name: postgres_db
+    restart: on-failure
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DATABASE}
+    ports:
+      - ${PG_PORT}:${PG_PORT}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER} -d ${PG_DATABASE}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    container_name: express_backend
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      db:
+        condition: service_healthy
+
+    volumes:
+      - ./src:/app/src

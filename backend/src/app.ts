@@ -1,8 +1,9 @@
-import express, { type NextFunction, type Request, type Response } from "express";
+import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { logger } from "./config/logger.js";
-import type { IErrorHandler } from "./utils/interfaces.js";
+import { pageNotFoundHandler, serverErrorHandler } from "./controllers/index.js";
+import { ROUTES } from "./utils/constants.js";
 import {
   staticRouter,
   citiesRouter,
@@ -11,7 +12,6 @@ import {
   apiRouter,
   reviewsRouter,
 } from "./routes/index.js";
-import { MESSAGES, ROUTES } from "./utils/constants.js";
 
 const app = express();
 
@@ -27,18 +27,7 @@ app.use(`/${ROUTES.COMPANIES}`, companiesRouter);
 app.use(`/${ROUTES.CATEGORIES}`, categoriesRouter);
 app.use(`/${ROUTES.REVIEWS}`, reviewsRouter);
 
-app.use((req: Request, res: Response) => {
-  res.status(404).json({ message: MESSAGES.NOT_FOUND });
-});
-
-app.use((err: IErrorHandler, req: Request, res: Response, next: NextFunction) => {
-  const { status = 500, message = MESSAGES.SERVER_ERROR } = err;
-
-  res.status(status).json({
-    status: "error",
-    code: status,
-    message,
-  });
-});
+app.use(pageNotFoundHandler);
+app.use(serverErrorHandler);
 
 export default app;

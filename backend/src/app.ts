@@ -9,6 +9,7 @@ import {
   companiesRouter,
   categoriesRouter,
   apiRouter,
+  reviewsRouter,
 } from "./routes/index.js";
 import { MESSAGES, ROUTES } from "./utils/constants.js";
 
@@ -24,6 +25,7 @@ app.use(`/${ROUTES.ICONS}`, staticRouter);
 app.use(`/${ROUTES.CITIES}`, citiesRouter);
 app.use(`/${ROUTES.COMPANIES}`, companiesRouter);
 app.use(`/${ROUTES.CATEGORIES}`, categoriesRouter);
+app.use(`/${ROUTES.REVIEWS}`, reviewsRouter);
 
 app.use((req: Request, res: Response) => {
   res.status(404).json({ message: MESSAGES.NOT_FOUND });

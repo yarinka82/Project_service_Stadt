@@ -3,5 +3,6 @@ import companiesRouter from "./companiesRouter.js";
 import citiesRouter from "./citiesRouter.js";
 import categoriesRouter from "./categoriesRouter.js";
 import apiRouter from "./apiRouter.js";
+import reviewsRouter from "./reviewsRouter.js";
 
-export { staticRouter, citiesRouter, companiesRouter, categoriesRouter, apiRouter };
+export { staticRouter, citiesRouter, companiesRouter, categoriesRouter, apiRouter, reviewsRouter };

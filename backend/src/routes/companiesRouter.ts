@@ -1,25 +1,21 @@
 import express from "express";
+import { controllerWrapper as wrapper } from "../middlewares/index.js";
+import {
+  getCompanies,
+  addCompany,
+  getCompany,
+  updateCompany,
+  removeCompany,
+  updateCompanyRating,
+} from "../controllers/index.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Got a GET request at /companies");
-});
-
-router.get("/:companyId", (req, res) => {
-  res.send("Got a GET request at /companies/:companyId");
-});
-
-router.post("/", (req, res) => {
-  res.send("Got a POST request at /companies");
-});
-
-router.put("/", (req, res) => {
-  res.send("Got a PUT request at /companies");
-});
-
-router.delete("/", (req, res) => {
-  res.send("Got a DELETE request at /companies");
-});
+router.get("/", wrapper(getCompanies));
+router.post("/", wrapper(addCompany));
+router.get("/:companyId", wrapper(getCompany));
+router.put("/:companyId", wrapper(updateCompany));
+router.delete("/:companyId", wrapper(removeCompany));
+router.patch("/:companyId", wrapper(updateCompanyRating));
 
 export default router;

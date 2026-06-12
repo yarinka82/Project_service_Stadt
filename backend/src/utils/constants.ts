@@ -16,6 +16,7 @@ export const ROUTES = {
   COMPANIES: "companies",
   CATEGORIES: "categories",
   API_DOCS: "api-docs",
+  REVIEWS: "reviews",
 };
 
 export const MESSAGES = {

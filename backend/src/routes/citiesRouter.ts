@@ -1,21 +1,13 @@
 import express from "express";
+import { controllerWrapper as wrapper } from "../middlewares/index.js";
+import { getCities, getCity, addCity, updateCity, removeCity } from "../controllers/index.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Got a GET request at /cities");
-});
-
-router.post("/", (req, res) => {
-  res.send("Got a POST request at /cities");
-});
-
-router.put("/", (req, res) => {
-  res.send("Got a PUT request at /cities");
-});
-
-router.delete("/", (req, res) => {
-  res.send("Got a DELETE request at /cities");
-});
+router.get("/", wrapper(getCities));
+router.post("/", wrapper(addCity));
+router.get("/:cityId", wrapper(getCity));
+router.put("/:cityId", wrapper(updateCity));
+router.delete("/:cityId", wrapper(removeCity));
 
 export default router;

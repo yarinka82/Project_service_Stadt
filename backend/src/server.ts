@@ -7,6 +7,8 @@ const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log(MESSAGES.DB_CONNECTION_SUCCESS);
+    await sequelize.sync({ alter: true });
+    console.log("Alle models were synchroniziert");
 
     app.listen(env.port, () => {
       console.log(`${MESSAGES.SERVER_START} ${env.port}`);

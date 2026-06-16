@@ -6,6 +6,7 @@ import { Zip } from "./zip.js";
 import { City } from "./city.js";
 import { State } from "./state.js";
 import { Company_Category } from "./company_category.js";
+import { sequelize } from "../sequelize.js";
 
 const options = {
   onDelete: "CASCADE",
@@ -22,7 +23,7 @@ State.hasMany(Company, { foreignKey: "stateId", ...options });
 Company.belongsTo(State, { foreignKey: "stateId" });
 
 Company.hasMany(Review, { foreignKey: "companyId", ...options });
-Review.belongsTo(Company, { foreignKey: "company" });
+Review.belongsTo(Company, { foreignKey: "companyId" });
 
 Company.hasMany(Company_Category, { foreignKey: "companyId", ...options });
 Company_Category.belongsTo(Company, { foreignKey: "companyId" });
@@ -30,4 +31,4 @@ Company_Category.belongsTo(Company, { foreignKey: "companyId" });
 Category.hasMany(Company_Category, { foreignKey: "categoryId", ...options });
 Company_Category.belongsTo(Category, { foreignKey: "categoryId" });
 
-export { User, Company, Review, Category, Zip, City, State, Company_Category };
+export { User, Company, Review, Category, Zip, City, State, Company_Category, sequelize };

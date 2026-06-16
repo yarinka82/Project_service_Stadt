@@ -6,11 +6,10 @@ class Company extends Model {}
 Company.init(
   {
     cmpId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUIDV4,
       primaryKey: true,
       unique: true,
       allowNull: false,
-      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -46,6 +45,7 @@ Company.init(
   {
     sequelize,
     modelName: "Company",
+    tableName: "companies",
   }
 );
 

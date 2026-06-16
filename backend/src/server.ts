@@ -1,12 +1,13 @@
 import { env } from "./config/env.js";
-import { sequelize } from "./db/sequelize.js";
 import app from "./app.js";
 import { MESSAGES } from "./utils/constants.js";
+import { sequelize } from "./db/models/index.js";
 
 const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log(MESSAGES.DB_CONNECTION_SUCCESS);
+
     await sequelize.sync({ alter: true });
     console.log("Alle models were synchroniziert");
 

@@ -6,7 +6,7 @@ class Company_Category extends Model {}
 Company_Category.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       allowNull: false,
       unique: true,
@@ -20,6 +20,7 @@ Company_Category.init(
   {
     sequelize,
     modelName: "Company_Category",
+    tableName: "compannies_categories",
   }
 );
 

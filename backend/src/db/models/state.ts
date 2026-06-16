@@ -21,6 +21,7 @@ State.init(
   {
     sequelize,
     modelName: "State",
+    tableName: "states",
   }
 );
 

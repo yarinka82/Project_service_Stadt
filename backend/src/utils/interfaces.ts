@@ -4,3 +4,7 @@ export interface IErrorHandler extends ErrorRequestHandler {
   message?: string;
   status?: number;
 }
+
+export interface SeedFunction {
+  (): Promise<void>;
+}

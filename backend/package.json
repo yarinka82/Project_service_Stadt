@@ -20,6 +20,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "fast-csv": "^5.0.7",
     "fs-extra": "^11.3.5",
     "helmet": "^8.2.0",
     "http-errors": "^2.0.1",

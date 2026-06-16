@@ -20,7 +20,7 @@ Company_Category.init(
   {
     sequelize,
     modelName: "Company_Category",
-    tableName: "compannies_categories",
+    tableName: "companies_categories",
   }
 );
 

@@ -2,14 +2,26 @@ import { env } from "./config/env.js";
 import app from "./app.js";
 import { MESSAGES } from "./utils/constants.js";
 import { sequelize } from "./db/models/index.js";
+import { runSeeders } from "./helpers/runSeeders.js";
+import {
+  seedCitiesFromCsv,
+  seedStatesFromCsv,
+  seedZipsFromCsv,
+  seedCategoriesFromCsv,
+} from "./db/seeders/index.js";
 
 const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log(MESSAGES.DB_CONNECTION_SUCCESS);
 
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ force: true });
     console.log("Alle models were synchroniziert");
+
+    await runSeeders(seedCitiesFromCsv);
+    await runSeeders(seedStatesFromCsv);
+    await runSeeders(seedZipsFromCsv);
+    await runSeeders(seedCategoriesFromCsv);
 
     app.listen(env.port, () => {
       console.log(`${MESSAGES.SERVER_START} ${env.port}`);

@@ -29,4 +29,7 @@ export const MESSAGES = {
   NOT_FOUND: "Not Found",
   BAD_REQUEST: "Bad Request",
   MISSING_FIELDS: "Missing fields",
+  SEEDER_START: "[Seeder] Starting validation and population of reference data...",
+  SEEDEE_SUCCESS: "[Seeder] All reference data has been validated.",
+  SEEDER_ERROR: "[Seeder]  Critical error while populating the database:",
 };

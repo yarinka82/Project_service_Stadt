@@ -6,10 +6,11 @@ class Company extends Model {}
 Company.init(
   {
     cmpId: {
-      type: DataTypes.UUIDV4,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       unique: true,
       allowNull: false,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,

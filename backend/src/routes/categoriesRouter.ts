@@ -1,21 +1,19 @@
 import express from "express";
+import { controllerWrapper as wrapper } from "../middlewares/index.js";
+import {
+  getCategories,
+  addCategory,
+  getCategory,
+  updateCategory,
+  removeCategory,
+} from "../controllers/index.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Got a GET request at /categories");
-});
-
-router.post("/", (req, res) => {
-  res.send("Got a POST request at /categories");
-});
-
-router.put("/", (req, res) => {
-  res.send("Got a PUT request at /categories");
-});
-
-router.delete("/", (req, res) => {
-  res.send("Got a DELETE request at /categories");
-});
+router.get("/", wrapper(getCategories));
+router.post("/", wrapper(addCategory));
+router.get("/:categoryId", wrapper(getCategory));
+router.put("/:categoryId", wrapper(updateCategory));
+router.delete("/:categoryId", wrapper(removeCategory));
 
 export default router;

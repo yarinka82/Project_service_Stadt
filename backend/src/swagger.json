@@ -20,6 +20,44 @@
             "description": "Successful response"
           }
         }
+      },
+      "post": {
+        "tags": ["Companies"],
+        "summary": "Create a new company",
+        "responses": {
+          "201": {
+            "description": "Company created successfully"
+          }
+        }
+      }
+    },
+    "/companies/{id}": {
+      "get": {
+        "tags": ["Companies"],
+        "summary": "Get a specific company",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Companies"],
+        "summary": "Update a specific company",
+        "responses": {
+          "200": {
+            "description": "Company updated successfully"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Companies"],
+        "summary": "Delete a specific company",
+        "responses": {
+          "204": {
+            "description": "Company deleted successfully"
+          }
+        }
       }
     },
     "/cities": {
@@ -31,6 +69,44 @@
             "description": "Successful response"
           }
         }
+      },
+      "post": {
+        "tags": ["Cities"],
+        "summary": "Create a new city",
+        "responses": {
+          "201": {
+            "description": "City created successfully"
+          }
+        }
+      }
+    },
+    "/cities/{id}": {
+      "get": {
+        "tags": ["Cities"],
+        "summary": "Get a specific city",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Cities"],
+        "summary": "Update a specific city",
+        "responses": {
+          "200": {
+            "description": "City updated successfully"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Cities"],
+        "summary": "Delete a specific city",
+        "responses": {
+          "204": {
+            "description": "City deleted successfully"
+          }
+        }
       }
     },
     "/categories": {
@@ -40,6 +116,93 @@
         "responses": {
           "200": {
             "description": "Successful response"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Categories"],
+        "summary": "Create a new category",
+        "responses": {
+          "201": {
+            "description": "Category created successfully"
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "tags": ["Categories"],
+        "summary": "Get a specific category",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Categories"],
+        "summary": "Update a specific category",
+        "responses": {
+          "200": {
+            "description": "Category updated successfully"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Categories"],
+        "summary": "Delete a specific category",
+        "responses": {
+          "204": {
+            "description": "Category deleted successfully"
+          }
+        }
+      }
+    },
+    "/reviews": {
+      "get": {
+        "tags": ["Reviews"],
+        "summary": "Get a list of reviews",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Reviews"],
+        "summary": "Create a new review",
+        "responses": {
+          "201": {
+            "description": "Review created successfully"
+          }
+        }
+      }
+    },
+    "/reviews/{id}": {
+      "get": {
+        "tags": ["Reviews"],
+        "summary": "Get a specific review",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Reviews"],
+        "summary": "Update a specific review",
+        "responses": {
+          "200": {
+            "description": "Review updated successfully"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Reviews"],
+        "summary": "Delete a specific review",
+        "responses": {
+          "204": {
+            "description": "Review deleted successfully"
           }
         }
       }

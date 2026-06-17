@@ -16,7 +16,7 @@ const startServer = async () => {
     console.log(MESSAGES.DB_CONNECTION_SUCCESS);
 
     await sequelize.sync({ force: true });
-    console.log("Alle models were synchroniziert");
+    console.log(MESSAGES.MODELS_SYN_SUCCESS);
 
     await runSeeders(seedCitiesFromCsv);
     await runSeeders(seedStatesFromCsv);

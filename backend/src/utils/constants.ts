@@ -31,5 +31,10 @@ export const MESSAGES = {
   MISSING_FIELDS: "Missing fields",
   SEEDER_START: "[Seeder] Starting validation and population of reference data...",
   SEEDEE_SUCCESS: "[Seeder] All reference data has been validated.",
-  SEEDER_ERROR: "[Seeder]  Critical error while populating the database:",
+  SEEDER_ERROR: "[Seeder] Critical error while populating the database:",
+  SEEDER_ERROR_IN: "[Seeder] Error during insertion into",
+  SEEDER_SUCCESS_IN: "[Seeder] Successfully imported records into model",
+  SEEDER_SKIPPING: "[Seeder] Table already contains data. Skipping for model:",
+  SEEDER_FILE_NOTFOUNF: "[Seeder] File not found:",
+  MODELS_SYN_SUCCESS: "Alle models were synchroniziert",
 };

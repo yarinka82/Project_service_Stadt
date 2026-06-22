@@ -6,6 +6,9 @@ import { Zip } from "./zip.js";
 import { City } from "./city.js";
 import { State } from "./state.js";
 import { Company_Category } from "./company_category.js";
+import { Phone } from "./phone.js";
+import { Email } from "./email.js";
+import { Website } from "./website.js";
 import { sequelize } from "../sequelize.js";
 
 const options = {
@@ -31,4 +34,26 @@ Company_Category.belongsTo(Company, { foreignKey: "companyId" });
 Category.hasMany(Company_Category, { foreignKey: "categoryId", ...options });
 Company_Category.belongsTo(Category, { foreignKey: "categoryId" });
 
-export { User, Company, Review, Category, Zip, City, State, Company_Category, sequelize };
+Phone.hasMany(Company, { foreignKey: "phoneId", ...options });
+Company.belongsTo(Phone, { foreignKey: "phoneId" });
+
+Email.hasMany(Company, { foreignKey: "emailId", ...options });
+Company.belongsTo(Email, { foreignKey: "emailId" });
+
+Website.hasMany(Company, { foreignKey: "websiteId", ...options });
+Company.belongsTo(Phone, { foreignKey: "websiteId" });
+
+export {
+  User,
+  Company,
+  Review,
+  Category,
+  Zip,
+  City,
+  State,
+  Company_Category,
+  Phone,
+  Email,
+  Website,
+  sequelize,
+};

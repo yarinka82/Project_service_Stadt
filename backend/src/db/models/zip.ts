@@ -5,7 +5,7 @@ class Zip extends Model {}
 
 Zip.init(
   {
-    zipId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       unique: true,
@@ -13,7 +13,7 @@ Zip.init(
       autoIncrement: true,
     },
     code: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },

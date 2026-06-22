@@ -5,7 +5,7 @@ class Company extends Model {}
 
 Company.init(
   {
-    cmpId: {
+    id: {
       type: DataTypes.BIGINT,
       primaryKey: true,
       unique: true,
@@ -17,14 +17,6 @@ Company.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    phone: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    website: {
       type: DataTypes.STRING,
       allowNull: false,
     },

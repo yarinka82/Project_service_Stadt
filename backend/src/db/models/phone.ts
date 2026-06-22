@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class State extends Model {}
+class Phone extends Model {}
 
-State.init(
+Phone.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,17 +12,20 @@ State.init(
       allowNull: false,
       autoIncrement: true,
     },
-    name: {
+    number: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
     sequelize,
-    modelName: "State",
-    tableName: "states",
+    modelName: "Phone",
+    tableName: "phones",
   }
 );
 
-export { State };
+export { Phone };

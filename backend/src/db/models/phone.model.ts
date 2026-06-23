@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class Review extends Model {}
+class Phone extends Model {}
 
-Review.init(
+Phone.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,7 +12,7 @@ Review.init(
       allowNull: false,
       autoIncrement: true,
     },
-    user_name: {
+    number: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -20,21 +20,15 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    rating: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     companyId: {
       type: DataTypes.INTEGER,
-
-      allowNull: false,
     },
   },
   {
     sequelize,
-    modelName: "Review",
-    tableName: "reviews",
+    modelName: "Phone",
+    tableName: "phones",
   }
 );
 
-export { Review };
+export { Phone };

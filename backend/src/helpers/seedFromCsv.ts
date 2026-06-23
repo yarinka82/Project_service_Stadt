@@ -26,7 +26,7 @@ export async function seedFromCsv(model: any, fileName: string): Promise<void> {
 
   return new Promise((resolve, reject) => {
     fs.createReadStream(filePath)
-      .pipe(fastcsv.parse({ headers: true }))
+      .pipe(fastcsv.parse({ headers: true, delimiter: ";" }))
       .on("data", (row) => {
         rows.push(row);
       })

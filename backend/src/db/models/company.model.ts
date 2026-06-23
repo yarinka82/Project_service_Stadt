@@ -20,6 +20,9 @@ Company.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    logo: {
+      type: DataTypes.STRING,
+    },
     street: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,6 +30,12 @@ Company.init(
     houseNumer: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    officeNumber: {
+      type: DataTypes.STRING,
+    },
+    addressId: {
+      type: DataTypes.INTEGER,
     },
     locationLatitude: {
       type: DataTypes.FLOAT,

@@ -20,6 +20,9 @@ Website.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    companyId: {
+      type: DataTypes.INTEGER,
+    },
   },
   {
     sequelize,

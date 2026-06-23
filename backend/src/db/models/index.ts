@@ -10,7 +10,7 @@ import { Phone } from "./phone.model.js";
 import { Email } from "./email.model.js";
 import { Website } from "./website.model.js";
 import { GlobalAddress } from "./global-address.model.js";
-import { Company_GlobalAddress } from "./company_gladdress.model.js";
+import { Company_GlobalAddress } from "./company_address.model.js";
 import { sequelize } from "../sequelize.js";
 
 const options = {

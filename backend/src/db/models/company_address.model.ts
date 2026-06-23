@@ -22,7 +22,7 @@ Company_GlobalAddress.init(
   {
     sequelize,
     modelName: "Company_GlobalAddress",
-    tableName: "companies_gladdresses",
+    tableName: "companies_addresses",
   }
 );
 

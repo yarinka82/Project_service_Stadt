@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class Company_Category extends Model {}
+class GlobalAddress extends Model {}
 
-Company_Category.init(
+GlobalAddress.init(
   {
     id: {
       type: DataTypes.BIGINT,
@@ -12,6 +12,15 @@ Company_Category.init(
       unique: true,
       autoIncrement: true,
     },
+    zipId: {
+      type: DataTypes.INTEGER,
+    },
+    cityId: {
+      type: DataTypes.INTEGER,
+    },
+    stateId: {
+      type: DataTypes.INTEGER,
+    },
     assignedAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
@@ -19,9 +28,9 @@ Company_Category.init(
   },
   {
     sequelize,
-    modelName: "Company_Category",
-    tableName: "companies_categories",
+    modelName: "GlobalAddress",
+    tableName: "global_address",
   }
 );
 
-export { Company_Category };
+export { GlobalAddress };

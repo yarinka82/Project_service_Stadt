@@ -1,31 +1,28 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class Category extends Model {}
+class Zip extends Model {}
 
-Category.init(
+Zip.init(
   {
-    catId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       unique: true,
       allowNull: false,
       autoIncrement: true,
     },
-    name: {
+    code: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
   },
   {
     sequelize,
-    modelName: "Category",
-    tableName: "categories",
+    modelName: "Zip",
+    tableName: "zips",
   }
 );
 
-export { Category };
+export { Zip };

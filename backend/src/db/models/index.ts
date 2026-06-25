@@ -1,11 +1,16 @@
-import { User } from "./user.js";
-import { Company } from "./company.js";
-import { Review } from "./review.js";
-import { Category } from "./category.js";
-import { Zip } from "./zip.js";
-import { City } from "./city.js";
-import { State } from "./state.js";
-import { Company_Category } from "./company_category.js";
+import { User } from "./user.model.js";
+import { Company } from "./company.model.js";
+import { Review } from "./review.model.js";
+import { Category } from "./category.model.js";
+import { Zip } from "./zip.model.js";
+import { City } from "./city.model.js";
+import { State } from "./state.model.js";
+import { Company_Category } from "./company_category.model.js";
+import { Phone } from "./phone.model.js";
+import { Email } from "./email.model.js";
+import { Website } from "./website.model.js";
+import { GlobalAddress } from "./global-address.model.js";
+import { Company_GlobalAddress } from "./company_address.model.js";
 import { sequelize } from "../sequelize.js";
 
 const options = {
@@ -13,22 +18,68 @@ const options = {
   onUpdate: "CASCADE",
 };
 
-City.hasMany(Company, { foreignKey: "cityId", ...options });
-Company.belongsTo(City, { foreignKey: "cityId" });
-
-Zip.hasMany(Company, { foreignKey: "zipId", ...options });
-Company.belongsTo(Zip, { foreignKey: "zipId" });
-
-State.hasMany(Company, { foreignKey: "stateId", ...options });
-Company.belongsTo(State, { foreignKey: "stateId" });
-
 Company.hasMany(Review, { foreignKey: "companyId", ...options });
 Review.belongsTo(Company, { foreignKey: "companyId" });
 
-Company.hasMany(Company_Category, { foreignKey: "companyId", ...options });
-Company_Category.belongsTo(Company, { foreignKey: "companyId" });
+Company.hasMany(Phone, { foreignKey: "companyId", ...options });
+Phone.belongsTo(Company, { foreignKey: "companyId" });
 
-Category.hasMany(Company_Category, { foreignKey: "categoryId", ...options });
-Company_Category.belongsTo(Category, { foreignKey: "categoryId" });
+Company.hasMany(Email, { foreignKey: "companyId", ...options });
+Email.belongsTo(Company, { foreignKey: "companyId" });
 
-export { User, Company, Review, Category, Zip, City, State, Company_Category, sequelize };
+Company.hasMany(Website, { foreignKey: "companyId", ...options });
+Website.belongsTo(Company, { foreignKey: "companyId" });
+
+Zip.hasMany(GlobalAddress, { foreignKey: "zipId", ...options });
+GlobalAddress.belongsTo(Zip, { foreignKey: "zipId" });
+
+City.hasMany(GlobalAddress, { foreignKey: "cityId", ...options });
+GlobalAddress.belongsTo(City, { foreignKey: "cityId" });
+
+State.hasMany(GlobalAddress, { foreignKey: "stateId", ...options });
+GlobalAddress.belongsTo(State, { foreignKey: "stateId" });
+
+Company.belongsToMany(GlobalAddress, {
+  through: Company_GlobalAddress,
+  foreignKey: "companyId",
+  otherKey: "addressId",
+  ...options,
+});
+
+GlobalAddress.belongsToMany(Company, {
+  through: Company_GlobalAddress,
+  foreignKey: "addressId",
+  otherKey: "companyId",
+  ...options,
+});
+
+Company.belongsToMany(Category, {
+  through: Company_Category,
+  foreignKey: "companyId",
+  otherKey: "categoryId",
+  ...options,
+});
+
+Category.belongsToMany(Company, {
+  through: Company_Category,
+  foreignKey: "categoryId",
+  otherKey: "companyId",
+  ...options,
+});
+
+export {
+  User,
+  Company,
+  Review,
+  Category,
+  Zip,
+  City,
+  State,
+  Company_Category,
+  Phone,
+  Email,
+  Website,
+  GlobalAddress,
+  Company_GlobalAddress,
+  sequelize,
+};

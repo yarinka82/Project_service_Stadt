@@ -5,14 +5,14 @@ class Review extends Model {}
 
 Review.init(
   {
-    rwId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       unique: true,
       allowNull: false,
       autoIncrement: true,
     },
-    user_name: {
+    author: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -26,7 +26,6 @@ Review.init(
     },
     companyId: {
       type: DataTypes.INTEGER,
-
       allowNull: false,
     },
   },

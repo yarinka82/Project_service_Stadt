@@ -1,36 +1,34 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class User extends Model {}
+class Email extends Model {}
 
-User.init(
+Email.init(
   {
-    userId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       unique: true,
       allowNull: false,
       autoIncrement: true,
     },
-    firstName: {
+    email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    lastName: {
+    description: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    login: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
+    companyId: {
+      type: DataTypes.INTEGER,
     },
   },
   {
     sequelize,
-    modelName: "User",
-    tableName: "users",
+    modelName: "Email",
+    tableName: "emails",
   }
 );
 
-export { User };
+export { Email };

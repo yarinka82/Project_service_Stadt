@@ -1,53 +1,43 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class Company extends Model {}
+class User extends Model {}
 
-Company.init(
+User.init(
   {
-    cmpId: {
-      type: DataTypes.BIGINT,
+    id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
       unique: true,
       allowNull: false,
       autoIncrement: true,
     },
-    name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    phone: {
+    login: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    website: {
+    token: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    street: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    houseNumer: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    locationLatitude: {
-      type: DataTypes.FLOAT,
-    },
-    locationLongitude: {
-      type: DataTypes.FLOAT,
     },
   },
   {
     sequelize,
-    modelName: "Company",
-    tableName: "companies",
+    modelName: "User",
+    tableName: "users",
   }
 );
 
-export { Company };
+export { User };

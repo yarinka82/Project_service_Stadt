@@ -1,28 +1,34 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class City extends Model {}
+class Phone extends Model {}
 
-City.init(
+Phone.init(
   {
-    cityId: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       unique: true,
       allowNull: false,
       autoIncrement: true,
     },
-    name: {
+    number: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    companyId: {
+      type: DataTypes.INTEGER,
     },
   },
   {
     sequelize,
-    modelName: "City",
-    tableName: "cities",
+    modelName: "Phone",
+    tableName: "phones",
   }
 );
 
-export { City };
+export { Phone };

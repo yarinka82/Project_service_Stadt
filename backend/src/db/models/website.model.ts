@@ -12,9 +12,9 @@ Website.init(
       allowNull: false,
       autoIncrement: true,
     },
-    address: {
+    website: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     description: {
       type: DataTypes.STRING,

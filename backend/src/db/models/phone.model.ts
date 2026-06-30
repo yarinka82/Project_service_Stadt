@@ -12,7 +12,7 @@ Phone.init(
       allowNull: false,
       autoIncrement: true,
     },
-    number: {
+    phone: {
       type: DataTypes.STRING,
       allowNull: false,
     },

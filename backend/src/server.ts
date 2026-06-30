@@ -10,6 +10,11 @@ import {
   seedCategoriesFromCsv,
   seedGlobalAddressFromCsv,
   seedAglomerationsFromCsv,
+  seedCompaniesFromCsv,
+  seedCompanyCategoriesFromCsv,
+  seedEmailsFromCsv,
+  seedPhonesFromCsv,
+  seedWebsitesFromCsv,
 } from "./db/seeders/index.js";
 
 const startServer = async () => {
@@ -26,6 +31,11 @@ const startServer = async () => {
     await runSeeders(seedCategoriesFromCsv);
     await runSeeders(seedAglomerationsFromCsv);
     await runSeeders(seedGlobalAddressFromCsv);
+    await runSeeders(seedCompaniesFromCsv);
+    await runSeeders(seedCompanyCategoriesFromCsv);
+    //await runSeeders(seedEmailsFromCsv);
+    await runSeeders(seedPhonesFromCsv);
+    await runSeeders(seedWebsitesFromCsv);
 
     app.listen(env.port, () => {
       console.log(`${MESSAGES.SERVER_START} ${env.port}`);

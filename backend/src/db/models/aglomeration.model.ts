@@ -22,7 +22,7 @@ Aglomeration.init(
   {
     sequelize,
     modelName: "Aglomeration",
-    tableName: "aglomeration",
+    tableName: "aglomerations",
   }
 );
 

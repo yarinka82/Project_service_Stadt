@@ -49,6 +49,15 @@ Aglomeration.belongsTo(State, { foreignKey: "stateId" });
 Aglomeration.hasMany(GlobalAddress, { foreignKey: "aglomerationId", ...options });
 GlobalAddress.belongsTo(Aglomeration, { foreignKey: "aglomerationId" });
 
+Company.hasMany(Email, { foreignKey: "companyId", ...options });
+Email.belongsTo(Company, { foreignKey: "companyId" });
+
+Company.hasMany(Phone, { foreignKey: "companyId", ...options });
+Phone.belongsTo(Company, { foreignKey: "companyId" });
+
+Company.hasMany(Website, { foreignKey: "companyId", ...options });
+Website.belongsTo(Company, { foreignKey: "companyId" });
+
 Company.belongsToMany(GlobalAddress, {
   through: Company_GlobalAddress,
   foreignKey: "companyId",

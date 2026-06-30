@@ -9,6 +9,7 @@ import {
   seedZipsFromCsv,
   seedCategoriesFromCsv,
   seedGlobalAddressFromCsv,
+  seedAglomerationsFromCsv,
 } from "./db/seeders/index.js";
 
 const startServer = async () => {
@@ -23,6 +24,7 @@ const startServer = async () => {
     await runSeeders(seedStatesFromCsv);
     await runSeeders(seedZipsFromCsv);
     await runSeeders(seedCategoriesFromCsv);
+    await runSeeders(seedAglomerationsFromCsv);
     await runSeeders(seedGlobalAddressFromCsv);
 
     app.listen(env.port, () => {

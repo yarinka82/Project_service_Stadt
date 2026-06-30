@@ -23,18 +23,11 @@ Company.init(
     logo: {
       type: DataTypes.STRING,
     },
-    street: {
+    localAddress: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    houseNumer: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    officeNumber: {
-      type: DataTypes.STRING,
-    },
-    addressId: {
+    globalAddressId: {
       type: DataTypes.INTEGER,
     },
     locationLatitude: {

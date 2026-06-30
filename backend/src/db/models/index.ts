@@ -11,6 +11,7 @@ import { Email } from "./email.model.js";
 import { Website } from "./website.model.js";
 import { GlobalAddress } from "./global-address.model.js";
 import { Company_GlobalAddress } from "./company_address.model.js";
+import { Aglomeration } from "./aglomeration.model.js";
 import { sequelize } from "../sequelize.js";
 
 const options = {
@@ -38,6 +39,15 @@ GlobalAddress.belongsTo(City, { foreignKey: "cityId" });
 
 State.hasMany(GlobalAddress, { foreignKey: "stateId", ...options });
 GlobalAddress.belongsTo(State, { foreignKey: "stateId" });
+
+City.hasMany(Aglomeration, { foreignKey: "cityId", ...options });
+Aglomeration.belongsTo(City, { foreignKey: "cityId" });
+
+State.hasMany(Aglomeration, { foreignKey: "stateId", ...options });
+Aglomeration.belongsTo(State, { foreignKey: "stateId" });
+
+Aglomeration.hasMany(GlobalAddress, { foreignKey: "aglomerationId", ...options });
+GlobalAddress.belongsTo(Aglomeration, { foreignKey: "aglomerationId" });
 
 Company.belongsToMany(GlobalAddress, {
   through: Company_GlobalAddress,
@@ -81,5 +91,6 @@ export {
   Website,
   GlobalAddress,
   Company_GlobalAddress,
+  Aglomeration,
   sequelize,
 };

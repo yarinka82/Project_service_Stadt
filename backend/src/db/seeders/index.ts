@@ -3,6 +3,7 @@ import { seedStatesFromCsv } from "./states.seeder.js";
 import { seedZipsFromCsv } from "./zips.seeder.js";
 import { seedCategoriesFromCsv } from "./categories.seeder.js";
 import { seedGlobalAddressFromCsv } from "./global-address.seeder.js";
+import { seedAglomerationsFromCsv } from "./aglomerations.seeder.js";
 
 export {
   seedCitiesFromCsv,
@@ -10,4 +11,5 @@ export {
   seedZipsFromCsv,
   seedCategoriesFromCsv,
   seedGlobalAddressFromCsv,
+  seedAglomerationsFromCsv,
 };

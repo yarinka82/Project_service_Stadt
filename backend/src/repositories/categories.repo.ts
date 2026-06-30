@@ -1,7 +1,7 @@
 import { Category } from "../db/models/index.js";
 
 export const getCategoriesRepo = async () => {
-  const data = await Category.findAll({
+  const data: any = await Category.findAll({
     attributes: ["id", "name", "description"],
   });
 

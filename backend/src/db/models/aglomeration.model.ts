@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class GlobalAddress extends Model {}
+class Aglomeration extends Model {}
 
-GlobalAddress.init(
+Aglomeration.init(
   {
     id: {
       type: DataTypes.BIGINT,
@@ -12,28 +12,18 @@ GlobalAddress.init(
       unique: true,
       autoIncrement: true,
     },
-    zipId: {
-      type: DataTypes.INTEGER,
-    },
     cityId: {
       type: DataTypes.INTEGER,
     },
     stateId: {
       type: DataTypes.INTEGER,
     },
-    aglomerationId: {
-      type: DataTypes.INTEGER,
-    },
-    assignedAt: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
   },
   {
     sequelize,
-    modelName: "GlobalAddress",
-    tableName: "global_addresses",
+    modelName: "Aglomeration",
+    tableName: "aglomeration",
   }
 );
 
-export { GlobalAddress };
+export { Aglomeration };

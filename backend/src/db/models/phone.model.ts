@@ -12,16 +12,16 @@ Phone.init(
       allowNull: false,
       autoIncrement: true,
     },
-    number: {
+    phone: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    companyId: {
+      type: DataTypes.INTEGER,
     },
     description: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    companyId: {
-      type: DataTypes.INTEGER,
     },
   },
   {

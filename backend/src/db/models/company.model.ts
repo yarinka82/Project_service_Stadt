@@ -23,26 +23,19 @@ Company.init(
     logo: {
       type: DataTypes.STRING,
     },
-    street: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    houseNumer: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    officeNumber: {
-      type: DataTypes.STRING,
-    },
-    addressId: {
-      type: DataTypes.INTEGER,
-    },
-    locationLatitude: {
-      type: DataTypes.FLOAT,
-    },
-    locationLongitude: {
-      type: DataTypes.FLOAT,
-    },
+    // localAddress: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // globalAddressId: {
+    //   type: DataTypes.INTEGER,
+    // },
+    // locationLatitude: {
+    //   type: DataTypes.FLOAT,
+    // },
+    // locationLongitude: {
+    //   type: DataTypes.FLOAT,
+    // },
   },
   {
     sequelize,

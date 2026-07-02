@@ -1,6 +1,6 @@
-name;description
-Autowerkstatt;"Kfz-Reparatur, Inspektion,  Reifenservice, Fahrzeugdiagnose"
-Fahrradwerkstatt;"Fahrradservice, Reparatur und Wartung – Fahrradladen mit Werkstatt"
-Schneiderei/Textilservice;"Änderungsschneiderei – Anpassung, Maßanfertigung und Reparatur von Kleidung, Textilreinigung – chemische Reinigung und professionelle Textilpflege"
-Friseure;"Haarschnitt, Styling und Haarpflege"
-Laptop- & Handyreparatur;" Reparatur von Laptops, PCs und Smartphones sowie professionelle Einrichtung und Konfiguration"
+id;name;description
+1;Autowerkstatt;Kfz-Reparatur, Inspektion,  Reifenservice, Fahrzeugdiagnose
+2;Fahrradwerkstatt;Fahrradservice, Reparatur und Wartung – Fahrradladen mit Werkstatt
+3;Laptop- & Handy-Reparatur; Reparatur von Laptops, PCs und Smartphones sowie professionelle Einrichtung und Konfiguration
+4;Schneiderei / Textilservice;Änderungsschneiderei – Anpassung, Maßanfertigung und Reparatur von Kleidung, Textilreinigung – chemische Reinigung und professionelle Textilpflege
+5;Friseure;Haarschnitt, Styling und Haarpflege

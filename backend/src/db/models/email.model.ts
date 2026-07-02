@@ -16,12 +16,12 @@ Email.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    companyId: {
+      type: DataTypes.INTEGER,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    companyId: {
-      type: DataTypes.INTEGER,
     },
   },
   {

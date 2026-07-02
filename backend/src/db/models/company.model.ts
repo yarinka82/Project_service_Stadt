@@ -23,19 +23,19 @@ Company.init(
     logo: {
       type: DataTypes.STRING,
     },
-    localAddress: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    globalAddressId: {
-      type: DataTypes.INTEGER,
-    },
-    locationLatitude: {
-      type: DataTypes.FLOAT,
-    },
-    locationLongitude: {
-      type: DataTypes.FLOAT,
-    },
+    // localAddress: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // globalAddressId: {
+    //   type: DataTypes.INTEGER,
+    // },
+    // locationLatitude: {
+    //   type: DataTypes.FLOAT,
+    // },
+    // locationLongitude: {
+    //   type: DataTypes.FLOAT,
+    // },
   },
   {
     sequelize,

@@ -21,7 +21,7 @@ Zip.init(
   {
     sequelize,
     modelName: "Zip",
-    tableName: "zip_codes",
+    tableName: "zips",
   }
 );
 

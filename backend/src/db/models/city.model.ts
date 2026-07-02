@@ -21,7 +21,7 @@ City.init(
   {
     sequelize,
     modelName: "City",
-    tableName: "city_unique_names",
+    tableName: "cities",
   }
 );
 

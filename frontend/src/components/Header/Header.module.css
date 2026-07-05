@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 58px;
+  padding: 16px 24px 14px 24px; /* 1rem 1.5rem 0.875rem 1.5rem */
+
+  background-color: #02213c;
+  border-bottom: 2px solid #e06c00;
+}
+
+.logoWordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 0.625rem */
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; /* 1.75rem */
+  height: 28px; /* 1.75rem */
+  border-radius: 8px;
+  background: #e06c00;
+}
+
+.wordmark {
+  font-weight: 300;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px; /* 1.25rem  */
+}
+
+.wordmarkService {
+  font-weight: 700;
+}
+
+.buttonTheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  min-width: 44px; /* for tap targets */
+  min-height: 44px; /* for tap targets   */
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+/* @media (min-width: 768px) {
+  .header { min-height: 72px; }  
+} */

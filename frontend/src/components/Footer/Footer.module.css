@@ -1,0 +1,87 @@
+.footer {
+    position: relative;
+    height: 80px;
+    width: 393px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: var(----font-size-footer);
+    font-family: var(--heading);
+}
+
+/* белая плашка сверху */
+.whiteLine {
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 1px;
+    
+    background: var(--border-f);
+    position: absolute;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 30px;
+}
+
+/* LOGO */
+
+.logoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoBox img {
+    width: 55px;
+    height: 55px;
+}
+
+
+/* RIGHT SIDE */
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.follow {
+    margin: 10px 0 10px;
+
+    font-size: var(--font-size-footer);
+    color: var(--text);
+    font-weight: 300;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 10px;
+}
+
+.socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials img {
+    width: 28px;
+    height: 28px;
+}
+
+.copy {
+    margin: 0;
+
+    font-size: var(--font-size-footer);
+    color: var(--text);
+    font-weight: 300;
+}

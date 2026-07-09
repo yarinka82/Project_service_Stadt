@@ -1,0 +1,45 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 24px 16px;
+  width: 100%;
+  gap: 24px; /* Gap between main sections  */
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Gap between h1 and p */
+}
+
+.title {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0;
+  color: #fff;
+}
+
+.titleHighlight {
+  color: #81a4cd; /* var(--light-blue) */
+}
+
+.subtitle {
+  font-size: 14px; /* var(--p-size) */
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.promoSection {
+  width: 100%;
+}
+
+.promoImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* var(--radius-lg) */
+  display: block; /* Prevents bottom empty space / Прибирає системний відступ під картинкою */
+  object-fit: cover;
+}
+
+/* ADAPTIVITY  */

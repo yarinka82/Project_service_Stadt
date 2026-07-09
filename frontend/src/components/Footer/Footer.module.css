@@ -1,7 +1,7 @@
 .footer {
     position: relative;
-    height: 80px;
-    width: 393px;
+    width: 100%;
+    min-height: 80px;
     background: var(--bg);
     color: var(--text);
     font-size: var(----font-size-footer);

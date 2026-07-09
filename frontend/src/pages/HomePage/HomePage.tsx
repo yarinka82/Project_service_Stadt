@@ -1,5 +1,6 @@
 import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 import { useState } from "react";
+import SideMenu from "../../components/SideMenu/SideMenu";
 
 export default function HomePage() {
 
@@ -9,7 +10,10 @@ export default function HomePage() {
     <div>
       <BurgerMenu onClick={() => setIsMenuOpen(true)} />
 
-        <p>Меню открыто: {isMenuOpen ? "Да" : "Нет"}</p>
+     <SideMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+      />
 
       <h1>home</h1>
     </div>

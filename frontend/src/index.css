@@ -20,10 +20,13 @@
   --font-size-header: 20px;
   --font-size-footer: 8px;
 
-  --p--size: 14px;
+  --p-size: 14px;
+
+
 
 
   --font-size-modal-window: 12px;
+  --color-burger-button: rgba(129, 164, 205, 1);
 
 
 }

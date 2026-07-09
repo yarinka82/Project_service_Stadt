@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './HomePage.module.css';
 import bannerImage from '../../assets/ban_container.jpg';
-// import SearchForm from '../../components/SearchForm/SearchForm'; // Search form
+import SearchForm from '../../components/SearchForm/SearchForm'; // Search form
 // import MetaStrip from '../../components/MetaStrip/MetaStrip'; ()// provisional title
 
 function HomePage() {
@@ -9,6 +9,9 @@ function HomePage() {
     <main className={css.homeContainer}>
       {/* A place for burgers and counters
       <MetaStrip /> */}
+      <div className={css.metaStripPlaceholder}>
+        <p>Hier wird das MetaStrip (Menü) erscheinen</p>
+      </div>
 
       <section className={css.heroSection}>
         <h1 className={css.title}>
@@ -22,7 +25,7 @@ function HomePage() {
         </p>
       </section>
 
-      {/* <SearchForm /> */}
+      <SearchForm />
 
       <section className={css.promoSection}>
         <img src={bannerImage} alt="Werbung" className={css.promoImage} />

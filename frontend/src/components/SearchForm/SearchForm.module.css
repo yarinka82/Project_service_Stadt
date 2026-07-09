@@ -1,0 +1,31 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+/* Тимчасові локальні змінні на основі макета */ 
+
+.searchFormContainer {
+    --local-bg-white: #ffffff;
+  --local-text-gray: rgba(0, 0, 0, 0.6);
+  --local-dark-blue: #02213c;
+  --local-btn-blue: #81a4cd;
+  --local-radius: 8px; /* Приклад скруглення */
+
+  /* Стилі самого самого контейнера форми */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.inputField {
+  background-color: var(--local-bg-white);
+  color: var(--local-dark-blue);
+  border-radius: var(--local-radius);
+  padding: 16px;
+  border: none;
+  font-family: "Inter", sans-serif; /*  замінити на var(--font-primary) */
+}
+
+.inputField::placeholder {
+  color: var(--local-text-gray);
+}

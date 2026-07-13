@@ -37,4 +37,6 @@ export const MESSAGES = {
   SEEDER_SKIPPING: "[Seeder] Table already contains data. Skipping for model:",
   SEEDER_FILE_NOTFOUNF: "[Seeder] File not found:",
   MODELS_SYN_SUCCESS: "Alle models were synchroniziert",
+  FILTER_CITY_ID_TAIL: "Filter by cityId. City ID must be a positive integer.",
+  FILTER_CATEGORY_ID_TAIL: "Filter by categoryId. Category ID must be a positive integer.",
 };

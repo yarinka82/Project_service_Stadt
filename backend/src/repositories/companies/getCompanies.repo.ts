@@ -1,31 +1,28 @@
-import Sequelize from "sequelize";
-import {
-  Company,
-  Address,
-  Zip,
-  City,
-  State,
-  Company_Category,
-  Category,
-} from "../../db/models/index.js";
+import { Company, Address, Zip, City, State, Category } from "../../db/models/index.js";
 
-export const getCompaniesRepo = async ({
-  page,
-  limit,
-  filters,
-}: {
+interface Filters {
+  cityId?: number | null;
+  categoryId?: number | null;
+}
+interface Props {
   page: number;
   limit: number;
-  filters: any;
-}) => {
-  const offset = (page - 1) * limit;
-  const whereConditions: any = {};
+  filters: Filters;
+}
 
-  if (filters.cityId) {
+interface WhereConditions {
+  [key: string]: any;
+}
+
+export const getCompaniesRepo = async ({ page, limit, filters }: Props) => {
+  const offset = (page - 1) * limit;
+  const whereConditions: WhereConditions = {};
+
+  if (filters.cityId !== null) {
     whereConditions["$Addresses.aglomerationId$"] = filters.cityId;
   }
 
-  if (filters.categoryId) {
+  if (filters.categoryId !== null) {
     whereConditions["$Categories.id$"] = filters.categoryId;
   }
 
@@ -38,7 +35,7 @@ export const getCompaniesRepo = async ({
       {
         model: Category,
         attributes: ["id", "name", "description"],
-        through: { attributes: [] }, // Exclude junction table attributes
+        through: { attributes: [] },
       },
       {
         model: Address,

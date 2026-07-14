@@ -37,9 +37,21 @@ export const getCompanyByIdRepo = async (id: number) => {
     ],
   });
 
-  const plainData = data ? data.get({ plain: true }) : null;
-  const company = Object.entries(plainData).map(([key, value]) => {
-    return { key, value };
+  if (data === null) {
+    return null;
+  }
+
+  const plainData = data.get({ plain: true });
+  const company = JSON.parse(JSON.stringify(plainData).toLocaleLowerCase());
+
+  company.addresses = company.addresses.map((address: any) => {
+    address.zip = address.zip.code;
+    address.city = address.city.name;
+    address.state = address.state.name;
+    delete address.zipId;
+    delete address.cityId;
+    delete address.stateId;
+    return address;
   });
 
   return company;

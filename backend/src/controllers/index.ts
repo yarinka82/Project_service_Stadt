@@ -19,6 +19,7 @@ import { getReview } from "./reviews/getReview.js";
 import { addReview } from "./reviews/addReview.js";
 import { updateReview } from "./reviews/updateReview.js";
 import { removeReview } from "./reviews/removeReview.js";
+import { getAglomerations } from "./aglomerations/getAglomerations.js";
 import { pageNotFoundHandler } from "./errors/pageNotFound.js";
 import { serverErrorHandler } from "./errors/serverError.js";
 
@@ -46,4 +47,5 @@ export {
   removeReview,
   pageNotFoundHandler,
   serverErrorHandler,
+  getAglomerations,
 };

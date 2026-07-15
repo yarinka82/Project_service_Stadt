@@ -11,6 +11,7 @@ import {
   categoriesRouter,
   apiRouter,
   reviewsRouter,
+  aglomerationsRouter,
 } from "./routes/index.js";
 
 const app = express();
@@ -26,7 +27,7 @@ app.use(`/${ROUTES.CITIES}`, citiesRouter);
 app.use(`/${ROUTES.COMPANIES}`, companiesRouter);
 app.use(`/${ROUTES.CATEGORIES}`, categoriesRouter);
 app.use(`/${ROUTES.REVIEWS}`, reviewsRouter);
-
+app.use(`/${ROUTES.AGLOMERATIONS}`, aglomerationsRouter);
 app.use(pageNotFoundHandler);
 app.use(serverErrorHandler);
 

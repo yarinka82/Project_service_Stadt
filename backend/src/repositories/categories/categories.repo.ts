@@ -1,4 +1,4 @@
-import { Category } from "../db/models/index.js";
+import { Category } from "../../db/models/index.js";
 
 export const getCategoriesRepo = async () => {
   const data: any = await Category.findAll({

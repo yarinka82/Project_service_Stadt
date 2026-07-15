@@ -17,6 +17,7 @@ export const ROUTES = {
   CATEGORIES: "categories",
   API_DOCS: "api-docs",
   REVIEWS: "reviews",
+  AGLOMERATIONS: "aglomerations",
 };
 
 export const MESSAGES = {

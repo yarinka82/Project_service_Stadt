@@ -4,5 +4,14 @@ import citiesRouter from "./citiesRouter.js";
 import categoriesRouter from "./categoriesRouter.js";
 import apiRouter from "./apiRouter.js";
 import reviewsRouter from "./reviewsRouter.js";
+import aglomerationsRouter from "./aglomerationsRouter.js";
 
-export { staticRouter, citiesRouter, companiesRouter, categoriesRouter, apiRouter, reviewsRouter };
+export {
+  staticRouter,
+  citiesRouter,
+  companiesRouter,
+  categoriesRouter,
+  apiRouter,
+  reviewsRouter,
+  aglomerationsRouter,
+};

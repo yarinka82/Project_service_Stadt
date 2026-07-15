@@ -1,5 +1,5 @@
 import { type Request, type Response } from "express";
-import { getCategoriesRepo } from "../../repositories/categories.repo.js";
+import { getCategoriesRepo } from "../../repositories/categories/categories.repo.js";
 
 export const getCategories = async (req: Request, res: Response) => {
   const categoriesList = await getCategoriesRepo();

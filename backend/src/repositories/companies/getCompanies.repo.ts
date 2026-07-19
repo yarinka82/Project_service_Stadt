@@ -1,7 +1,7 @@
-import { Company, Address, Zip, City, State, Category } from "../../db/models/index.js";
+import { Company, Address, Zip, City, State, Category, Location } from "../../db/models/index.js";
 
 interface Filters {
-  cityId?: number | null;
+  aglomerationId?: number | null;
   categoryId?: number | null;
 }
 interface Props {
@@ -16,16 +16,20 @@ interface WhereConditions {
 
 export const getCompaniesRepo = async ({ page, limit, filters }: Props) => {
   const offset = (page - 1) * limit;
+  const hasLocationFilter = filters.aglomerationId !== null;
+  const hasCategoryFilter = filters.categoryId !== null;
   const whereConditions: WhereConditions = {};
+  const locationWhereConditions: WhereConditions = {};
 
-  if (filters.cityId !== null) {
-    whereConditions["$Addresses.aglomerationId$"] = filters.cityId;
-  }
-
-  if (filters.categoryId !== null) {
+  if (hasCategoryFilter) {
     whereConditions["$Categories.id$"] = filters.categoryId;
   }
 
+  if (hasLocationFilter) {
+    locationWhereConditions.aglomerationId = filters.aglomerationId;
+  }
+  console.log(locationWhereConditions);
+  console.log(typeof locationWhereConditions.aglomerationId);
   const data = await Company.findAndCountAll({
     attributes: {
       include: ["id", "name", "description", "logo"],
@@ -40,10 +44,22 @@ export const getCompaniesRepo = async ({ page, limit, filters }: Props) => {
       {
         model: Address,
         attributes: ["street", "houseNr", "additionalAdrsInfo", "latitude", "longitude"],
+        required: hasLocationFilter,
         include: [
-          { model: Zip, attributes: ["code"] },
-          { model: City, attributes: ["name"] },
-          { model: State, attributes: ["name"] },
+          {
+            model: Location,
+            attributes: {
+              include: ["id", "aglomerationId"],
+              exclude: ["zipId", "cityId", "stateId", "createdAt", "updatedAt"],
+            },
+            where: locationWhereConditions,
+            required: hasLocationFilter,
+            include: [
+              { model: Zip, attributes: ["code"] },
+              { model: City, attributes: ["name"] },
+              { model: State, attributes: ["name"] },
+            ],
+          },
         ],
       },
     ],
@@ -64,9 +80,10 @@ export const getCompaniesRepo = async ({ page, limit, filters }: Props) => {
         street: address.street,
         houseNr: address.houseNr,
         additionalAdrsInfo: address.additionalAdrsInfo,
-        zip: address.Zip.code,
-        city: address.City.name,
-        state: address.State.name,
+        aglomerationId: address.Location.aglomerationId,
+        zip: address.Location.Zip.code,
+        city: address.Location.City.name,
+        state: address.Location.State.name,
         coordinates: { latitude: address.latitude, longitude: address.longitude },
       };
     });

@@ -12,31 +12,33 @@ export const getCompanies = async (req: Request, res: Response) => {
 
   limit = Math.min(limit, 100);
 
-  const rawCityId: number | null = req.query.cityId ? parseInt(String(req.query.cityId), 10) : null;
+  const rawAglomerationId: number | null = req.query.aglomerationId
+    ? parseInt(String(req.query.aglomerationId), 10)
+    : null;
 
   const rawCategoryId: number | null = req.query.categoryId
     ? parseInt(String(req.query.categoryId), 10)
     : null;
 
-  if (rawCityId !== null) {
-    if (isNaN(rawCityId) || rawCityId < 1) {
-      throw createError(400, MESSAGES.FILTER_CITY_ID_TAIL);
+  if (rawAglomerationId !== null) {
+    if (isNaN(rawAglomerationId) || rawAglomerationId < 1) {
+      throw createError(400, MESSAGES.FILTER_AGLOMERATIOM_ID_FAIL);
     }
   }
 
   if (rawCategoryId !== null) {
     if (isNaN(rawCategoryId) || rawCategoryId < 1) {
-      throw createError(400, MESSAGES.FILTER_CATEGORY_ID_TAIL);
+      throw createError(400, MESSAGES.FILTER_CATEGORY_ID_FAIL);
     }
   }
 
-  const cityId = rawCityId;
+  const aglomerationId = rawAglomerationId;
   const categoryId = rawCategoryId;
 
   const { companies, total } = await getCompaniesRepo({
     page,
     limit,
-    filters: { cityId, categoryId },
+    filters: { aglomerationId, categoryId },
   });
 
   res.status(200).json({

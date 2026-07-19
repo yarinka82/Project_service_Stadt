@@ -16,26 +16,14 @@ Company.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     logo: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
-    // localAddress: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
-    // globalAddressId: {
-    //   type: DataTypes.INTEGER,
-    // },
-    // locationLatitude: {
-    //   type: DataTypes.FLOAT,
-    // },
-    // locationLongitude: {
-    //   type: DataTypes.FLOAT,
-    // },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     sequelize,

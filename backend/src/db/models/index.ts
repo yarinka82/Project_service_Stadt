@@ -6,11 +6,13 @@ import { Zip } from "./zip.model.js";
 import { City } from "./city.model.js";
 import { State } from "./state.model.js";
 import { Company_Category } from "./company_category.model.js";
-import { Phone } from "./phone.model.js";
+import { PhoneNumber } from "./phone-number.model.js";
+import { PhoneType } from "./phone-type.model.js";
 import { Email } from "./email.model.js";
 import { Website } from "./website.model.js";
 import { Aglomeration } from "./aglomeration.model.js";
 import { Address } from "./address.model.js";
+import { Location } from "./location.model.js";
 import { sequelize } from "../sequelize.js";
 
 const options = {
@@ -21,8 +23,8 @@ const options = {
 Company.hasMany(Review, { foreignKey: "companyId", ...options });
 Review.belongsTo(Company, { foreignKey: "companyId" });
 
-Company.hasMany(Phone, { foreignKey: "companyId", ...options });
-Phone.belongsTo(Company, { foreignKey: "companyId" });
+Company.hasMany(PhoneNumber, { foreignKey: "companyId", ...options });
+PhoneNumber.belongsTo(Company, { foreignKey: "companyId" });
 
 Company.hasMany(Email, { foreignKey: "companyId", ...options });
 Email.belongsTo(Company, { foreignKey: "companyId" });
@@ -30,35 +32,32 @@ Email.belongsTo(Company, { foreignKey: "companyId" });
 Company.hasMany(Website, { foreignKey: "companyId", ...options });
 Website.belongsTo(Company, { foreignKey: "companyId" });
 
-City.hasMany(Aglomeration, { foreignKey: "cityId", ...options });
-Aglomeration.belongsTo(City, { foreignKey: "cityId" });
-
-State.hasMany(Aglomeration, { foreignKey: "stateId", ...options });
-Aglomeration.belongsTo(State, { foreignKey: "stateId" });
-
 Company.hasMany(Email, { foreignKey: "companyId", ...options });
 Email.belongsTo(Company, { foreignKey: "companyId" });
 
-Company.hasMany(Phone, { foreignKey: "companyId", ...options });
-Phone.belongsTo(Company, { foreignKey: "companyId" });
-
-Company.hasMany(Website, { foreignKey: "companyId", ...options });
-Website.belongsTo(Company, { foreignKey: "companyId" });
+Company.hasMany(PhoneNumber, { foreignKey: "companyId", ...options });
+PhoneNumber.belongsTo(Company, { foreignKey: "companyId" });
 
 Company.hasMany(Address, { foreignKey: "companyId", ...options });
 Address.belongsTo(Company, { foreignKey: "companyId" });
 
-Zip.hasMany(Address, { foreignKey: "zipId", ...options });
-Address.belongsTo(Zip, { foreignKey: "zipId" });
+PhoneType.hasMany(PhoneNumber, { foreignKey: "typeId", ...options });
+PhoneNumber.belongsTo(PhoneType, { foreignKey: "typeId" });
 
-City.hasMany(Address, { foreignKey: "cityId", ...options });
-Address.belongsTo(City, { foreignKey: "cityId" });
+Aglomeration.hasMany(Location, { foreignKey: "aglomerationId", ...options });
+Location.belongsTo(Aglomeration, { foreignKey: "aglomerationId" });
 
-State.hasMany(Address, { foreignKey: "stateId", ...options });
-Address.belongsTo(State, { foreignKey: "stateId" });
+Zip.hasMany(Location, { foreignKey: "zipId", ...options });
+Location.belongsTo(Zip, { foreignKey: "zipId" });
 
-Aglomeration.hasMany(Address, { foreignKey: "aglomerationId", ...options });
-Address.belongsTo(Aglomeration, { foreignKey: "aglomerationId" });
+City.hasMany(Location, { foreignKey: "cityId", ...options });
+Location.belongsTo(City, { foreignKey: "cityId" });
+
+State.hasMany(Location, { foreignKey: "stateId", ...options });
+Location.belongsTo(State, { foreignKey: "stateId" });
+
+Location.hasMany(Address, { foreignKey: "locationId", ...options });
+Address.belongsTo(Location, { foreignKey: "locationId" });
 
 Company.belongsToMany(Category, {
   through: Company_Category,
@@ -83,10 +82,12 @@ export {
   City,
   State,
   Company_Category,
-  Phone,
+  PhoneNumber,
+  PhoneType,
   Email,
   Website,
   Aglomeration,
   Address,
+  Location,
   sequelize,
 };

@@ -13,11 +13,7 @@ Company_Category.init(
       autoIncrement: true,
     },
     companyId: { type: DataTypes.BIGINT },
-    categoryId: { type: DataTypes.BIGINT },
-    assignedAt: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
+    categoryId: { type: DataTypes.INTEGER },
   },
   {
     sequelize,

@@ -1,9 +1,9 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize.js";
 
-class Website extends Model {}
+class PhoneNumber extends Model {}
 
-Website.init(
+PhoneNumber.init(
   {
     id: {
       type: DataTypes.BIGINT,
@@ -12,13 +12,22 @@ Website.init(
       allowNull: false,
       autoIncrement: true,
     },
-    url: {
+    number: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
       allowNull: true,
+    },
+    isPrimary: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    typeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     companyId: {
       type: DataTypes.BIGINT,
@@ -27,9 +36,9 @@ Website.init(
   },
   {
     sequelize,
-    modelName: "Website",
-    tableName: "websites",
+    modelName: "PhoneNumber",
+    tableName: "phone_numbers",
   }
 );
 
-export { Website };
+export { PhoneNumber };

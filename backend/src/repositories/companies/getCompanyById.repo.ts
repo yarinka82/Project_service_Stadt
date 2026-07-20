@@ -27,7 +27,7 @@ export const getCompanyByIdRepo = async (id: number) => {
       },
       {
         model: Address,
-        attributes: ["street", "houseNr", "additionalAdrsInfo", "latitude", "longitude"],
+        attributes: ["id", "street", "houseNr", "additionalAdrsInfo", "latitude", "longitude"],
         include: [
           {
             model: Location,
@@ -44,11 +44,11 @@ export const getCompanyByIdRepo = async (id: number) => {
           },
         ],
       },
-      { model: Email, attributes: ["email", "description"] },
-      { model: Website, attributes: ["url", "description"] },
+      { model: Email, attributes: ["id", "email", "description"] },
+      { model: Website, attributes: ["id", "url", "description"] },
       {
         model: PhoneNumber,
-        attributes: ["number", "description"],
+        attributes: ["id", "number", "description"],
         include: [{ model: PhoneType, attributes: ["type"] }],
       },
     ],
@@ -59,7 +59,46 @@ export const getCompanyByIdRepo = async (id: number) => {
   }
 
   const plainData = data.get({ plain: true });
-  const company = plainData;
+  const company = {
+    id: plainData.id,
+    name: plainData.name,
+    description: plainData.description,
+    logo: plainData.logo,
+    categories: plainData.Categories.map((category: any) => ({
+      id: category.id,
+      name: category.name,
+      description: category.description,
+    })),
+    addresses: plainData.Addresses.map((address: any) => ({
+      id: address.id,
+      street: address.street,
+      houseNr: address.houseNr,
+      additionalAdrsInfo: address.additionalAdrsInfo,
+      zip: address.Location.Zip.code,
+      city: address.Location.City.name,
+      state: address.Location.State.name,
+      latitude: address.latitude,
+      longitude: address.longitude,
+      aglomerationId: address.Location.Aglomeration.id,
+      aglomerationName: address.Location.Aglomeration.name,
+    })),
+    emails: plainData.Emails.map((email: any) => ({
+      id: email.id,
+      email: email.email,
+      description: email.description,
+    })),
+    websites: plainData.Websites.map((website: any) => ({
+      id: website.id,
+      url: website.url,
+      description: website.description,
+    })),
+    phoneNumbers: plainData.PhoneNumbers.map((phoneNumber: any) => ({
+      id: phoneNumber.id,
+      number: phoneNumber.number,
+      description: phoneNumber.description,
+      type: phoneNumber.PhoneType.type,
+    })),
+  };
 
   return company;
 };

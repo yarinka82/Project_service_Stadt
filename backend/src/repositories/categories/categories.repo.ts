@@ -5,11 +5,7 @@ export const getCategoriesRepo = async () => {
     attributes: ["id", "name", "description"],
   });
 
-  const categories = data.map((el: any) => ({
-    id: el.id,
-    name: el.name,
-    description: el.description,
-  }));
+  const PlainData = data.map((el: any) => el.get({ plain: true }));
 
-  return categories;
+  return PlainData;
 };

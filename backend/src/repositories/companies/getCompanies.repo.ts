@@ -28,8 +28,7 @@ export const getCompaniesRepo = async ({ page, limit, filters }: Props) => {
   if (hasLocationFilter) {
     locationWhereConditions.aglomerationId = filters.aglomerationId;
   }
-  console.log(locationWhereConditions);
-  console.log(typeof locationWhereConditions.aglomerationId);
+
   const data = await Company.findAndCountAll({
     attributes: {
       include: ["id", "name", "description", "logo"],

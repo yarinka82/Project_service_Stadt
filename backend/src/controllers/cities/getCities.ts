@@ -9,7 +9,6 @@ export const getCities = async (req: Request, res: Response) => {
     code: 200,
     data: {
       cities: citiesList,
-      total: citiesList.length,
     },
   });
 };

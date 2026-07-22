@@ -19,6 +19,10 @@ export const getCompany = async (req: Request, res: Response) => {
 
   const id = parseInt(rawId, 10);
 
+  if (isNaN(id)) {
+    throw new Error("Invalid company ID");
+  }
+
   const company = await getCompanyByIdRepo(id);
 
   const code = company ? 200 : 404;

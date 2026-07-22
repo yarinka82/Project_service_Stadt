@@ -18,6 +18,7 @@ export const ROUTES = {
   API_DOCS: "api-docs",
   REVIEWS: "reviews",
   AGLOMERATIONS: "aglomerations",
+  UNIQUE_CITY_NAMES: "unique-city-names",
 };
 
 export const MESSAGES = {

@@ -1,7 +1,7 @@
 import { type Request, type Response } from "express";
 import { getCitiesRepo } from "../../repositories/index.js";
 
-export const getCities = async (req: Request, res: Response) => {
+export const getCityNamesList = async (req: Request, res: Response) => {
   const citiesList = await getCitiesRepo();
 
   res.status(200).json({
@@ -9,7 +9,6 @@ export const getCities = async (req: Request, res: Response) => {
     code: 200,
     data: {
       cities: citiesList,
-      total: citiesList.length,
     },
   });
 };

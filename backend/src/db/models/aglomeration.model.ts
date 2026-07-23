@@ -6,17 +6,16 @@ class Aglomeration extends Model {}
 Aglomeration.init(
   {
     id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
       unique: true,
+      allowNull: false,
       autoIncrement: true,
     },
-    cityId: {
-      type: DataTypes.INTEGER,
-    },
-    stateId: {
-      type: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
     },
   },
   {

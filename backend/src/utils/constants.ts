@@ -17,6 +17,8 @@ export const ROUTES = {
   CATEGORIES: "categories",
   API_DOCS: "api-docs",
   REVIEWS: "reviews",
+  AGLOMERATIONS: "aglomerations",
+  UNIQUE_CITY_NAMES: "unique-city-names",
 };
 
 export const MESSAGES = {
@@ -37,4 +39,7 @@ export const MESSAGES = {
   SEEDER_SKIPPING: "[Seeder] Table already contains data. Skipping for model:",
   SEEDER_FILE_NOTFOUNF: "[Seeder] File not found:",
   MODELS_SYN_SUCCESS: "Alle models were synchroniziert",
+  FILTER_AGLOMERATIOM_ID_FAIL:
+    "Filter by aglomerationId. Aglomeration ID must be a positive integer.",
+  FILTER_CATEGORY_ID_FAIL: "Filter by categoryId. Category ID must be a positive integer.",
 };

@@ -6,6 +6,18 @@ import { MESSAGES } from "../utils/constants.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Функция, которая заменяет все пустые строки в объекте на null
+const transformRow = (row: any) => {
+  const cleanedRow: any = {};
+  for (const key in row) {
+    if (Object.prototype.hasOwnProperty.call(row, key)) {
+      // Если значение — пустая строка, превращаем в null, иначе оставляем как есть
+      cleanedRow[key] = row[key] === "" ? null : row[key];
+    }
+  }
+  return cleanedRow;
+};
+
 // Универсальная функция для чтения CSV и импорта в модель
 export async function seedFromCsv(model: any, fileName: string): Promise<void> {
   // 1. Проверяем, есть ли уже данные в таблице
@@ -27,6 +39,7 @@ export async function seedFromCsv(model: any, fileName: string): Promise<void> {
   return new Promise((resolve, reject) => {
     fs.createReadStream(filePath)
       .pipe(fastcsv.parse({ headers: true, delimiter: ";" }))
+      .transform(transformRow)
       .on("data", (row) => {
         rows.push(row);
       })

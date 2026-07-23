@@ -6,11 +6,12 @@ import { pageNotFoundHandler, serverErrorHandler } from "./controllers/index.js"
 import { ROUTES } from "./utils/constants.js";
 import {
   staticRouter,
-  citiesRouter,
+  cityNamesListRouter,
   companiesRouter,
   categoriesRouter,
   apiRouter,
   reviewsRouter,
+  aglomerationsRouter,
 } from "./routes/index.js";
 
 const app = express();
@@ -22,11 +23,11 @@ app.use(express.json());
 
 app.use(`/${ROUTES.API_DOCS}`, apiRouter);
 app.use(`/${ROUTES.ICONS}`, staticRouter);
-app.use(`/${ROUTES.CITIES}`, citiesRouter);
+app.use(`/${ROUTES.CITIES}`, cityNamesListRouter);
 app.use(`/${ROUTES.COMPANIES}`, companiesRouter);
 app.use(`/${ROUTES.CATEGORIES}`, categoriesRouter);
 app.use(`/${ROUTES.REVIEWS}`, reviewsRouter);
-
+app.use(`/${ROUTES.AGLOMERATIONS}`, aglomerationsRouter);
 app.use(pageNotFoundHandler);
 app.use(serverErrorHandler);
 

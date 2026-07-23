@@ -2,20 +2,7 @@ import { env } from "./config/env.js";
 import app from "./app.js";
 import { MESSAGES } from "./utils/constants.js";
 import { sequelize } from "./db/models/index.js";
-import { runSeeders } from "./helpers/runSeeders.js";
-import {
-  seedCitiesFromCsv,
-  seedStatesFromCsv,
-  seedZipsFromCsv,
-  seedCategoriesFromCsv,
-  seedAglomerationsFromCsv,
-  seedCompaniesFromCsv,
-  seedCompanyCategoriesFromCsv,
-  seedEmailsFromCsv,
-  seedPhonesFromCsv,
-  seedWebsitesFromCsv,
-  seedAddressesFromCsv,
-} from "./db/seeders/index.js";
+import { seedTmpData } from "./db/seeders/index.js";
 
 const startServer = async () => {
   try {
@@ -25,17 +12,7 @@ const startServer = async () => {
     await sequelize.sync({ force: true });
     console.log(MESSAGES.MODELS_SYN_SUCCESS);
 
-    await runSeeders(seedCitiesFromCsv);
-    await runSeeders(seedStatesFromCsv);
-    await runSeeders(seedZipsFromCsv);
-    await runSeeders(seedCategoriesFromCsv);
-    await runSeeders(seedAglomerationsFromCsv);
-    await runSeeders(seedCompaniesFromCsv);
-    await runSeeders(seedCompanyCategoriesFromCsv);
-    //await runSeeders(seedEmailsFromCsv);
-    await runSeeders(seedPhonesFromCsv);
-    await runSeeders(seedWebsitesFromCsv);
-    await runSeeders(seedAddressesFromCsv);
+    await seedTmpData();
 
     app.listen(env.port, () => {
       console.log(`${MESSAGES.SERVER_START} ${env.port}`);

@@ -6,20 +6,25 @@ import { seedAglomerationsFromCsv } from "./aglomerations.seeder.js";
 import { seedCompaniesFromCsv } from "./companies.seeder.js";
 import { seedCompanyCategoriesFromCsv } from "./companies-categories.seeder.js";
 import { seedEmailsFromCsv } from "./emails.seeder.js";
-import { seedPhonesFromCsv } from "./phones.seeder.js";
+import { seedPhoneNumbersFromCsv } from "./phone-numbers.seeder.js";
+import { seedPhoneTypesFromCsv } from "./phone-types.seeder.js";
 import { seedWebsitesFromCsv } from "./websites.seeder.js";
-import { seedAddressesFromCsv } from "./address.seeder.js";
+import { seedLocationsFromCsv } from "./locations.seeder.js";
+import { seedAddressesFromCsv } from "./addresses.seeder.js";
+import { runSeeders } from "../../helpers/runSeeders.js";
 
-export {
-  seedCitiesFromCsv,
-  seedStatesFromCsv,
-  seedZipsFromCsv,
-  seedCategoriesFromCsv,
-  seedAglomerationsFromCsv,
-  seedCompaniesFromCsv,
-  seedCompanyCategoriesFromCsv,
-  seedEmailsFromCsv,
-  seedPhonesFromCsv,
-  seedWebsitesFromCsv,
-  seedAddressesFromCsv,
+export const seedTmpData = async () => {
+  await runSeeders(seedCompaniesFromCsv);
+  await runSeeders(seedCitiesFromCsv);
+  await runSeeders(seedStatesFromCsv);
+  await runSeeders(seedZipsFromCsv);
+  await runSeeders(seedAglomerationsFromCsv);
+  await runSeeders(seedCategoriesFromCsv);
+  await runSeeders(seedPhoneTypesFromCsv);
+  await runSeeders(seedCompanyCategoriesFromCsv);
+  await runSeeders(seedEmailsFromCsv);
+  await runSeeders(seedPhoneNumbersFromCsv);
+  await runSeeders(seedWebsitesFromCsv);
+  await runSeeders(seedLocationsFromCsv);
+  await runSeeders(seedAddressesFromCsv);
 };

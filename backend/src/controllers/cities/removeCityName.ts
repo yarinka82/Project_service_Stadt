@@ -1,6 +1,6 @@
 import { type Request, type Response } from "express";
 
-export const updateCity = (req: Request, res: Response) => {
+export const removeCityName = (req: Request, res: Response) => {
   res.status(200).json({
     status: "success",
     code: 200,

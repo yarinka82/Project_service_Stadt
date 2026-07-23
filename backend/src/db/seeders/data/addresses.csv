@@ -1,151 +1,151 @@
-id;street;houseNr;additionalAdrsInfo;zipId;cityId;stateId;aglomerationId;companyId
-1;Unterer Kirchbergweg;51;;7920;15653;1;16739;1
-2;Edith-Stein-Straße;8;;7920;15653;1;16739;2
-3;Nürnberger Str.;34;;7916;15653;1;16739;3
-4;Südliche Hafenstraße;5;;7918;15653;1;16739;4
-5;Frankfurter Str.;83;;7919;15653;1;16739;5
-6;Alfred-Nobel-Straße;5;;7918;15653;1;16739;6
-7;Gattingerstraße;11;;7916;15653;1;16739;7
-8;Nürnberger Str.;1;;7916;15653;1;16739;8
-9;Mainaustraße;46;;7919;15653;1;16739;9
-10;Matthias-Thoma-Straße;11;;7916;15653;1;16739;10
-11;Robert-Bunsen-Straße;4;;7916;15653;1;16739;11
-12;Bronnbachergasse;3;;7913;15653;1;16739;12
-13;Matterstockstraße;27;;7918;15653;1;16739;13
-14;Sanderstraße;27;;7913;15653;1;16739;14
-15;Max-Mengeringhausen-Straße;8;;7920;15653;1;16739;15
-16;Sanderstraße;14/16;;7913;15653;1;16739;16
-17;Bahnhofpl.;2;;7913;15653;1;16739;17
-18;Ulrichstraße;8;;7915;15653;1;16739;18
-19;Raiffeisenstraße;3;;7918;15653;1;16739;19
-20;Mainfrankenhöhe;10;;7917;15653;1;16739;20
-21;Am Schloß;1;;7920;15653;1;16739;21
-22;Leitengraben;3;;7920;15653;1;16739;22
-23;Zweierweg;21;;7915;15653;1;16739;23
-24;John-Skilton-Straße;1;;7915;15653;1;16739;24
-25;Alfred-Nobel-Straße;5;;7918;15653;1;16739;25
-26;Max-Planck-Straße;7a;;7919;15653;1;16739;26
-27;Bukarester Straße;12;;7920;15653;1;16739;27
-28;Josefpl.;6;;7918;15653;1;16739;28
-29;Antonie-Werr-Straße;7;;7919;15653;1;16739;29
-30;Friedrich-Bergius-Ring;52;;7916;15653;1;16739;30
-31;Klingenstraße;12;;7920;15653;1;16739;31
-32;Erthalstraße;5A;;7915;15653;1;16739;32
-33;Johanniterpl.;3;;7913;15653;1;16739;33
-34;Textorstraße;15;;7913;15653;1;16739;34
-35;Semmelstraße;32;;7913;15653;1;16739;35
-36;Frankfurter Str.;25;;7919;15653;1;16739;36
-37;Karmelitenstraße;33;;7913;15653;1;16739;37
-38;Sanderstraße;11;;7913;15653;1;16739;38
-39;Neubaustraße;26;;7913;15653;1;16739;39
-40;Zeller Str.;8;;7919;15653;1;16739;40
-41;Augustinerstraße;6;;7913;15653;1;16739;41
-42;Juliuspromenade;11;;7913;15653;1;16739;42
-43;Ludwigstraße;1a;;7913;15653;1;16739;43
-44;Sanderstraße;13;;7913;15653;1;16739;44
-45;Augustinerstraße;1;;7913;15653;1;16739;45
-46;Karmelitenstraße;17;;7913;15653;1;16739;46
-47;Seinsheimstraße;11;;7915;15653;1;16739;47
-48;Petrinistraße;49;;7918;15653;1;16739;48
-49;Textorstraße;15;;7913;15653;1;16739;49
-50;Theaterplatz;4;;7913;15653;1;16739;50
-51;Müllerstr.;50;;5939;9388;1;9997;51
-52;Adlzreiterstraße;19;;5937;9388;1;9997;52
-53;Schwarzenbacher Str.;24;;5990;9388;1;9997;53
-54;Putzbrunner Straße;89;;6000;9388;1;9997;54
-55;Stuttgarter Straße;10;;5959;9388;1;9997;55
-56;Grünwalder Str.;31;;5989;9388;1;9997;56
-57;Brunecker Straße;8;;5977;9388;1;9997;57
-58;Frankfurter Ring;218;;5959;9388;1;9997;58
-59;Frankfurter Ring;230;;5959;9388;1;9997;59
-60;Schleißheimer Straße;38;;5934;9388;1;9997;60
-61;Speicherstraße;10;;5938;9388;1;9997;61
-62;Fraunhoferstr.;24;;5939;9388;1;9997;62
-63;Reisingerstr.;5;;5937;9388;1;9997;63
-64;Bothestr.;9;;5995;9388;1;9997;64
-65;Breisacher Str.;15;;5991;9388;1;9997;65
-66;Ingolstädter Str.;107;;5964;9388;1;9997;66
-67;Lindwurmstr.;203;;5937;9388;1;9997;67
-68;Schyrenstr.;16;;5987;9388;1;9997;68
-69;St.-Anna-Str.;18;;5940;9388;1;9997;69
-70;Sauerbruchstr.;8;;5979;9388;1;9997;70
-71;Sparkassenstraße;15;;5933;9388;1;9997;71
-72;St.-Anna-Straße;13;;5940;9388;1;9997;72
-73;Graf Arco Palais, Finkenstraße;5;;5934;9388;1;9997;73
-74;Kardinal-Döpfner-Straße;4;;5941;9388;1;9997;74
-75;Herzogspitalstraße;9;;5933;9388;1;9997;75
-76;Eggmühler Straße;21;;5966;9388;1;9997;76
-77;Brienner Str.;59;;5934;9388;1;9997;77
-78;Westermühlstraße;10;;5939;9388;1;9997;78
-79;Hesseloherstraße;1;;5955;9388;1;9997;79
-80;Hartmannstraße;1;;5934;9388;1;9997;80
-81;Drygalski-Allee;118;;5983;9388;1;9997;81
-82;Occamstraße;13;;5955;9388;1;9997;82
-83;Leonrodstr.;23;;5942;9388;1;9997;83
-84;Aidenbachstraße;114;;5980;9388;1;9997;84
-85;Jean-Paul-Richter-Str.;3;;5975;9388;1;9997;85
-86;Galeria Kaufhof, Pelkovenstraße;155;1. OG;5965;9388;1;9997;86
-87;Baaderstr.;60;;5939;9388;1;9997;87
-88;Kapuzinerstr.;9;;5937;9388;1;9997;88
-89;Residenzstr.;16;;5934;9388;1;9997;89
-90;Forstenrieder Allee;160;;5982;9388;1;9997;90
-91;Nymphenburger Str.;32;;5935;9388;1;9997;91
-92;Weiglstr.;12;;5943;9388;1;9997;92
-93;Erzgießereistr.;40;;5935;9388;1;9997;93
-94;Hansastr.;77;;5977;9388;1;9997;94
-95;Helene-Weber-Allee;17;;5944;9388;1;9997;95
-96;Landwehrstraße;72;;5936;9388;1;9997;96
-97;Grillparzerstr.;40;;5995;9388;1;9997;97
-98;Sendlinger Straße;56;;5933;9388;1;9997;98
-99;Müllerstr.;33;;5939;9388;1;9997;99
-100;Arnulfstr.;20;;5935;9388;1;9997;100
-101;Hahnstraße;4;;4288;3723;6;3976;101
-102;Mainzer Landstraße;349;;4271;3723;6;3976;102
-103;Speckweg;3;;4294;3723;6;3976;103
-104;Frankenallee;105;;4271;3723;6;3976;104
-105;Intzestraße;17;;4264;3723;6;3976;105
-106;Ginnheimer Landstraße;5;;4285;3723;6;3976;106
-107;Erntestraße;10;;4272;3723;6;3976;107
-108;Hanauer Landstraße;565;;4275;3723;6;3976;108
-109;Orber Str.;44;;4275;3723;6;3976;109
-110;Schmidtstraße;49;;4271;3723;6;3976;110
-111;Westerbachstraße;273;;4585;3723;6;3976;111
-112;Gutzkowstraße;47;;4291;3723;6;3976;112
-113;Adalbertstraße;5;;4284;3723;6;3976;113
-114;Hanauer Landstraße;11-13;;4264;3723;6;3976;114
-115;Löherstraße;2;;4291;3723;6;3976;115
-116;Mercatorstraße;27;;4265;3723;6;3976;116
-117;Strahlenberger Weg;16;;4294;3723;6;3976;117
-118;Bornwiesenweg;67;;4268;3723;6;3976;118
-119;Oppenheimer Landstraße;77;;4292;3723;6;3976;119
-120;Mainzer Landstraße;234;;4271;3723;6;3976;120
-121;Braubachstraße;25B;;4262;3723;6;3976;121
-122;B-Ebene Nr.;56;;4263;3723;6;3976;122
-123;Kirchnerstraße;2;;4262;3723;6;3976;123
-124;Karlstraße;12;;4273;3723;6;3976;124
-125;Eschersheimer Landstraße;84;;4268;3723;6;3976;125
-126;Liebigstraße;23;;4269;3723;6;3976;126
-127;Eschersheimer Landstraße;81;;4268;3723;6;3976;127
-128;Europa-Allee;6;;4272;3723;6;3976;128
-129;Baumweg;20;;4265;3723;6;3976;129
-130;Borsigallee, Am Hessen-Center;26;;4276;3723;6;3976;130
-131;Im Trierischen Hof;17;;4262;3723;6;3976;131
-132;Textorstraße;55;;4291;3723;6;3976;132
-133;Europa-Allee;6;1. Stock;4272;3723;6;3976;133
-134;Pfingstbrunnenstraße;35;;4284;3723;6;3976;134
-135;Frankenallee;163;;4271;3723;6;3976;135
-136;Ben-Gurion-Ring;54;;4281;3723;6;3976;136
-137;Grempstraße;30;;4285;3723;6;3976;137
-138;Weckmarkt;8;;4262;3723;6;3976;138
-139;Südring;11;;4334;9365;6;3976;139
-140;Theobald-Christ-Straße;2-4;;4265;3723;6;3976;140
-141;Robert-Bosch-Straße;66;;4300;6757;6;3976;141
-142;Utrilloweg;31;;4282;3723;6;3976;142
-143;Ahornstraße;75;;4583;3723;6;3976;143
-144;In d. Römerstadt;259;;4286;3723;6;3976;144
-145;Annabergstraße;22;;4582;3723;6;3976;145
-146;Bornheimer Landstraße;49;;4265;3723;6;3976;146
-147;Vilbeler Straße;27;;4263;3723;6;3976;147
-148;Adalbertstraße;3A;;4284;3723;6;3976;148
-149;Fahrgasse;109;;4262;3723;6;3976;149
-150;Brückenstraße;50;;4291;3723;6;3976;150
+﻿id;street;houseNr;additionalAdrsInfo;locationId;latitude;longitude;companyId
+1;Unterer Kirchbergweg;51;;19216;;;1
+2;Edith-Stein-Straße;8;;19216;;;2
+3;Nürnberger Str.;34;;19212;;;3
+4;Südliche Hafenstraße;5;;19214;;;4
+5;Frankfurter Str.;83;;19215;;;5
+6;Alfred-Nobel-Straße;5;;19214;;;6
+7;Gattingerstraße;11;;19212;;;7
+8;Nürnberger Str.;1;;19212;;;8
+9;Mainaustraße;46;;19215;;;9
+10;Matthias-Thoma-Straße;11;;19212;;;10
+11;Robert-Bunsen-Straße;4;;19212;;;11
+12;Bronnbachergasse;3;;19209;;;12
+13;Matterstockstraße;27;;19214;;;13
+14;Sanderstraße;27;;19209;;;14
+15;Max-Mengeringhausen-Straße;8;;19216;;;15
+16;Sanderstraße;14/16;;19209;;;16
+17;Bahnhofpl.;2;;19209;;;17
+18;Ulrichstraße;8;;19211;;;18
+19;Raiffeisenstraße;3;;19214;;;19
+20;Mainfrankenhöhe;10;;19213;;;20
+21;Am Schloß;1;;19216;;;21
+22;Leitengraben;3;;19216;;;22
+23;Zweierweg;21;;19211;;;23
+24;John-Skilton-Straße;1;;19211;;;24
+25;Alfred-Nobel-Straße;5;;19214;;;25
+26;Max-Planck-Straße;7a;;19215;;;26
+27;Bukarester Straße;12;;19216;;;27
+28;Josefpl.;6;;19214;;;28
+29;Antonie-Werr-Straße;7;;19215;;;29
+30;Friedrich-Bergius-Ring;52;;19212;;;30
+31;Klingenstraße;12;;19216;;;31
+32;Erthalstraße;5A;;19211;;;32
+33;Johanniterpl.;3;;19209;;;33
+34;Textorstraße;15;;19209;;;34
+35;Semmelstraße;32;;19209;;;35
+36;Frankfurter Str.;25;;19215;;;36
+37;Karmelitenstraße;33;;19209;;;37
+38;Sanderstraße;11;;19209;;;38
+39;Neubaustraße;26;;19209;;;39
+40;Zeller Str.;8;;19215;;;40
+41;Augustinerstraße;6;;19209;;;41
+42;Juliuspromenade;11;;19209;;;42
+43;Ludwigstraße;1a;;19209;;;43
+44;Sanderstraße;13;;19209;;;44
+45;Augustinerstraße;1;;19209;;;45
+46;Karmelitenstraße;17;;19209;;;46
+47;Seinsheimstraße;11;;19211;;;47
+48;Petrinistraße;49;;19214;;;48
+49;Textorstraße;15;;19209;;;49
+50;Theaterplatz;4;;19209;;;50
+51;Müllerstr.;50;;11673;;;51
+52;Adlzreiterstraße;19;;11671;;;52
+53;Schwarzenbacher Str.;24;;11724;;;53
+54;Putzbrunner Straße;89;;11734;;;54
+55;Stuttgarter Straße;10;;11693;;;55
+56;Grünwalder Str.;31;;11723;;;56
+57;Brunecker Straße;8;;11711;;;57
+58;Frankfurter Ring;218;;11693;;;58
+59;Frankfurter Ring;230;;11693;;;59
+60;Schleißheimer Straße;38;;11668;;;60
+61;Speicherstraße;10;;11672;;;61
+62;Fraunhoferstr.;24;;11673;;;62
+63;Reisingerstr.;5;;11671;;;63
+64;Bothestr.;9;;11729;;;64
+65;Breisacher Str.;15;;11725;;;65
+66;Ingolstädter Str.;107;;11698;;;66
+67;Lindwurmstr.;203;;11671;;;67
+68;Schyrenstr.;16;;11721;;;68
+69;St.-Anna-Str.;18;;11674;;;69
+70;Sauerbruchstr.;8;;11713;;;70
+71;Sparkassenstraße;15;;11667;;;71
+72;St.-Anna-Straße;13;;11674;;;72
+73;Graf Arco Palais, Finkenstraße;5;;11668;;;73
+74;Kardinal-Döpfner-Straße;4;;11675;;;74
+75;Herzogspitalstraße;9;;11667;;;75
+76;Eggmühler Straße;21;;11700;;;76
+77;Brienner Str.;59;;11668;;;77
+78;Westermühlstraße;10;;11673;;;78
+79;Hesseloherstraße;1;;11689;;;79
+80;Hartmannstraße;1;;11668;;;80
+81;Drygalski-Allee;118;;11717;;;81
+82;Occamstraße;13;;11689;;;82
+83;Leonrodstr.;23;;11676;;;83
+84;Aidenbachstraße;114;;11714;;;84
+85;Jean-Paul-Richter-Str.;3;;11709;;;85
+86;Galeria Kaufhof, Pelkovenstraße;155;1. OG;11699;;;86
+87;Baaderstr.;60;;11673;;;87
+88;Kapuzinerstr.;9;;11671;;;88
+89;Residenzstr.;16;;11668;;;89
+90;Forstenrieder Allee;160;;11716;;;90
+91;Nymphenburger Str.;32;;11669;;;91
+92;Weiglstr.;12;;11677;;;92
+93;Erzgießereistr.;40;;11669;;;93
+94;Hansastr.;77;;11711;;;94
+95;Helene-Weber-Allee;17;;11678;;;95
+96;Landwehrstraße;72;;11670;;;96
+97;Grillparzerstr.;40;;11729;;;97
+98;Sendlinger Straße;56;;11667;;;98
+99;Müllerstr.;33;;11673;;;99
+100;Arnulfstr.;20;;11669;;;100
+101;Hahnstraße;4;;4818;;;101
+102;Mainzer Landstraße;349;;4801;;;102
+103;Speckweg;3;;4824;;;103
+104;Frankenallee;105;;4801;;;104
+105;Intzestraße;17;;4794;;;105
+106;Ginnheimer Landstraße;5;;4815;;;106
+107;Erntestraße;10;;4802;;;107
+108;Hanauer Landstraße;565;;4805;;;108
+109;Orber Str.;44;;4805;;;109
+110;Schmidtstraße;49;;4801;;;110
+111;Westerbachstraße;273;;4829;;;111
+112;Gutzkowstraße;47;;4821;;;112
+113;Adalbertstraße;5;;4814;;;113
+114;Hanauer Landstraße;11-13;;4794;;;114
+115;Löherstraße;2;;4821;;;115
+116;Mercatorstraße;27;;4795;;;116
+117;Strahlenberger Weg;16;;4824;;;117
+118;Bornwiesenweg;67;;4798;;;118
+119;Oppenheimer Landstraße;77;;4822;;;119
+120;Mainzer Landstraße;234;;4801;;;120
+121;Braubachstraße;25B;;4792;;;121
+122;B-Ebene Nr.;56;;4793;;;122
+123;Kirchnerstraße;2;;4792;;;123
+124;Karlstraße;12;;4803;;;124
+125;Eschersheimer Landstraße;84;;4798;;;125
+126;Liebigstraße;23;;4799;;;126
+127;Eschersheimer Landstraße;81;;4798;;;127
+128;Europa-Allee;6;;4802;;;128
+129;Baumweg;20;;4795;;;129
+130;Borsigallee, Am Hessen-Center;26;;4806;;;130
+131;Im Trierischen Hof;17;;4792;;;131
+132;Textorstraße;55;;4821;;;132
+133;Europa-Allee;6;1. Stock;4802;;;133
+134;Pfingstbrunnenstraße;35;;4814;;;134
+135;Frankenallee;163;;4801;;;135
+136;Ben-Gurion-Ring;54;;4811;;;136
+137;Grempstraße;30;;4815;;;137
+138;Weckmarkt;8;;4792;;;138
+139;Südring;11;;11627;;;139
+140;Theobald-Christ-Straße;2-4;;4795;;;140
+141;Robert-Bosch-Straße;66;;8524;;;141
+142;Utrilloweg;31;;4812;;;142
+143;Ahornstraße;75;;4827;;;143
+144;In d. Römerstadt;259;;4816;;;144
+145;Annabergstraße;22;;4826;;;145
+146;Bornheimer Landstraße;49;;4795;;;146
+147;Vilbeler Straße;27;;4793;;;147
+148;Adalbertstraße;3A;;4814;;;148
+149;Fahrgasse;109;;4792;;;149
+150;Brückenstraße;50;;4821;;;150

@@ -6,7 +6,7 @@ class Email extends Model {}
 Email.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       unique: true,
       allowNull: false,
@@ -14,14 +14,15 @@ Email.init(
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: true,
-    },
-    companyId: {
-      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
       allowNull: true,
+    },
+    companyId: {
+      type: DataTypes.BIGINT,
+      allowNull: false,
     },
   },
   {

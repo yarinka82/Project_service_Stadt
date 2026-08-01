@@ -4,6 +4,7 @@ import SearchPage from '../SearchPage/SearchPage';
 import './App.tsx';
 import Header from '../../components/Header/Header.tsx';
 import Footer from '../../components/Footer/Footer.tsx';
+import AglomerationsPage from '../AglomerationsPage/AglomerationsPage.tsx';
 
 function App() {
   return (
@@ -11,6 +12,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+          <Route
+        path="/aglomerations"
+        element={<AglomerationsPage />}
+        />
+      
         <Route path="/search" element={<SearchPage />} />
         <Route path="*" element="not found" />
       </Routes>

@@ -8,4 +8,13 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+
+   server: {
+    proxy: {
+      "/aglomerations": {
+        target: "http://localhost:5173",
+        changeOrigin: true,
+      },
+    },
+  },
 })

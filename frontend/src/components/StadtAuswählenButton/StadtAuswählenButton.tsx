@@ -3,8 +3,8 @@ import css from "./StadtAuswählenButton.module.css";
 
 function StadtAuswählenButton() {
   return (
-    <Link to="/aglomerations" className={css.StadtAuswählenButton}>
-      <span className={css.icon}>⌕</span>
+    <Link to="/aglomerations" className={css.button}>
+      <span className={css.icon}>🔍︎</span>
       Stadt auswählen
     </Link>
   );

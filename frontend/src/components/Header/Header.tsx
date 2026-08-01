@@ -6,7 +6,7 @@ import themeIcon from '../../assets/icons/moon.svg';
 function Header() {
   return (
     <header className={css.header}>
-      <Link to="/">
+      <Link to="/" className={css.logoLink}>
         <div className={css.logoWordmark}>
           <div className={css.logoBox}>
             <img src={pinIcon} alt="" />

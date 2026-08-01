@@ -6,7 +6,12 @@
   padding: 16px 24px 14px 24px; /* 1rem 1.5rem 0.875rem 1.5rem */
 
   background-color: #02213c;
-  border-bottom: 2px solid #e06c00;
+  border-bottom: 2px solid rgba(129, 164, 205, 1);
+}
+
+.logoLink {
+  text-decoration: none;
+  color: inherit;
 }
 
 .logoWordmark {
@@ -22,7 +27,7 @@
   width: 28px; /* 1.75rem */
   height: 28px; /* 1.75rem */
   border-radius: 8px;
-  background: #e06c00;
+  background: rgba(129, 164, 205, 1);
 }
 
 .wordmark {

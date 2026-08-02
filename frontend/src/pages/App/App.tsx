@@ -8,7 +8,7 @@ import AglomerationsPage from '../AglomerationsPage/AglomerationsPage.tsx';
 
 function App() {
   return (
-    <>
+    <div className='appWrapper'>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -21,7 +21,7 @@ function App() {
         <Route path="*" element="not found" />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,53 @@
+.page {
+  min-height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../../assets/png/aglomerationPage_bg_img.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  color: var(--text);
+  font-weight: 700;
+  font-size: var(--p-size);
+  padding: 15px 30px;
+}
+
+
+.cityList {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 150px;
+}
+
+
+.cityButton {
+  width: 280px;
+  padding: 16px 24px;
+  justify-content: center;
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  background-color: var(--color-btn-aglomeration);
+  color: var(--text-color-btn-aglomeration);
+  font-weight: 600;
+  font-size: var(--p-size);
+
+}
+
+.flag {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  object-fit: cover;
+}

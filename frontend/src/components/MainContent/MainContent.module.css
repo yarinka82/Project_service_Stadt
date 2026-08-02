@@ -1,7 +1,6 @@
 .content {
     width: 100%;
     max-width: 400px;
-    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -9,7 +8,6 @@
 
 
     padding: 32px;
-    box-sizing: border-box;
 
     gap: 20px;
 

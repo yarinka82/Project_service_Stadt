@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import css from "./AglomerationsPage.module.css";
+import flagFrankfurt from "../../assets/png/flagge_Frankfurt.png";
+import flagMunchen from "../../assets/png/flagge_Munchen.png";
+import flagWurzburg from "../../assets/png/flagge_Wurzburg.png";
+
 
 interface Aglomeration {
   id: number;
@@ -8,6 +13,7 @@ interface Aglomeration {
 function AglomerationsPage() {
   const [cities, setCities] = useState<Aglomeration[]>([]);
   const [loading, setLoading] = useState(true);
+  const flags = [flagFrankfurt, flagMunchen, flagWurzburg]
 
   useEffect(() => {
     async function fetchCities() {
@@ -32,16 +38,21 @@ function AglomerationsPage() {
   }
 
   return (
-    <main>
-      <h1>Stadt auswählen</h1>
+    <main className={css.page}>
+      <div>
+        <h1 className={css.title}>Stadt auswählen</h1>
 
-      <ul>
-        {cities.map((city) => (
-          <li key={city.id}>
-            {city.name}
-          </li>
-        ))}
-      </ul>
+        <ul className={css.cityList}>
+          {cities.map((city, index) => (
+            <li key={city.id}>
+              <button className={css.cityButton}>
+                <img src={flags[index]} alt="" className={css.flag}/>
+                {city.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </main>
   );
 }

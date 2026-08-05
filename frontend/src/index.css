@@ -26,6 +26,9 @@
   --bg-modal-window: rgba(129, 164, 205, 1);
   --color-burger-button: rgba(129, 164, 205, 1);
 
+  --color-btn-aglomeration: rgba(219, 228, 238, 1);
+  --text-color-btn-aglomeration: rgba(2, 33, 60, 1);
+
 
 }
 
@@ -38,6 +41,8 @@ body {
   font-family: var(--sans);
   background-color: var(--bg);
   color: var(--text);
+  min-width: 393px;
+  min-height: 850px;
 }
 
 h1,
@@ -66,4 +71,6 @@ p {
   font-size: var(--p-size);
   font-weight: 400;
 }
+
+
 

@@ -1,0 +1,38 @@
+.pageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Центрируем контент на широких экранах */
+}
+
+.content {
+  width: 100%;
+  /* Единое боковое поле 24px по замерам мобилки (от инпута) */
+  padding: 0 24px; 
+  
+  padding-bottom: 23px;
+}
+
+/* Mobile */
+.contextWrapper { margin-top: 16px; }
+.searchWrapper { margin-top: 17px; }
+.gridWrapper { margin-top: 25px; }
+.beliebteWrapper { margin-top: 32px; }
+
+/* Tablet  */
+@media (min-width: 768px) {
+  .content { padding: 0 28px; } 
+  .gridWrapper { margin-top: 28px; }
+  .beliebteWrapper { margin-top: 94px; }
+}
+
+/* Desktop  */
+@media (min-width: 1024px) {
+  .content { 
+    /* Если на десктопе есть ограничение ширины контента, ставим max-width */
+    /* max-width: 1200px; */ 
+  }
+  .contextWrapper { margin-top: 54px; }
+  .searchWrapper { margin-top: 37px; }
+  .gridWrapper { margin-top: 31px; }
+  .beliebteWrapper { margin-top: 61px; }
+}

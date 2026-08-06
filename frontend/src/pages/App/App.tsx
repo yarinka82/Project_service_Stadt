@@ -5,6 +5,7 @@ import './App.css';
 import Header from '../../components/Header/Header.tsx';
 import Footer from '../../components/Footer/Footer.tsx';
 import AglomerationsPage from '../AglomerationsPage/AglomerationsPage.tsx';
+import CategoriesPage from '../CategoriePage/CategoriePage.tsx'; 
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aglomerations" element={<AglomerationsPage />} />
-
+        <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="*" element="not found" />
       </Routes>

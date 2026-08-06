@@ -1,9 +1,9 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ContextRow } from '../../components/ContextRow/ContextRow';
-import { SearchField } from '../../components/SearchField/SearchField';
+// import { SearchField } from '../../components/SearchField/SearchField';
 import { CategoryGrid } from '../../components/CategoryGrid/CategoryGrid';
 import { BeliebteServices } from '../../components/BeliebteServices/BeliebteServices';
-import css from './CategoriePage.module.css';
+import css from './CategoriesPage.module.css';
 
 const CITIES_MAP: Record<string, string> = {
   '1': 'Frankfurt-am-Main',
@@ -11,10 +11,10 @@ const CITIES_MAP: Record<string, string> = {
   '3': 'Würzburg',
 };
 
-export default function CategoriePage() {
+export default function CategoriesPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  
+
   const aglomerationId = searchParams.get('aglomerationId') || '1';
   const cityName = CITIES_MAP[aglomerationId] || 'Frankfurt-am-Main';
 
@@ -23,12 +23,12 @@ export default function CategoriePage() {
   };
 
   const handleCategoryClick = (categoryId: number | null) => {
-     
-    // Имя роута согласовать 
     if (categoryId === null) {
       navigate(`/results?aglomerationId=${aglomerationId}`);
     } else {
-      navigate(`/results?aglomerationId=${aglomerationId}&categoryId=${categoryId}`);
+      navigate(
+        `/results?aglomerationId=${aglomerationId}&categoryId=${categoryId}`
+      );
     }
   };
 
@@ -38,15 +38,15 @@ export default function CategoriePage() {
         <div className={css.contextWrapper}>
           <ContextRow title={cityName} onBack={handleBack} />
         </div>
-        
-        <div className={css.searchWrapper}>
+
+        {/* <div className={css.searchWrapper}>
           <SearchField />
-        </div>
-        
+        </div> */}
+
         <div className={css.gridWrapper}>
           <CategoryGrid onCategoryClick={handleCategoryClick} />
         </div>
-        
+
         <div className={css.beliebteWrapper}>
           <BeliebteServices />
         </div>

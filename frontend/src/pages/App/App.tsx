@@ -5,7 +5,7 @@ import './App.css';
 import Header from '../../components/Header/Header.tsx';
 import Footer from '../../components/Footer/Footer.tsx';
 import AglomerationsPage from '../AglomerationsPage/AglomerationsPage.tsx';
-import CategoriesPage from '../CategoriePage/CategoriePage.tsx'; 
+import CategoriesPage from '../CategoriesPage/CategoriesPage.tsx'; 
 
 function App() {
   return (

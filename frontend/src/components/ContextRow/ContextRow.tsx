@@ -9,16 +9,21 @@ interface ContextRowProps {
 export const ContextRow = ({ title, onBack }: ContextRowProps) => {
   return (
     <div className={css.container}>
-      <button 
-        type="button" 
-        className={css.backButton} 
+      <button
+        type="button"
+        className={css.backButton}
         onClick={onBack}
         aria-label="Zurück"
       >
-        <img src={iconBackArrow} alt="" aria-hidden="true" className={css.icon} />
+        <img
+          src={iconBackArrow}
+          alt=""
+          aria-hidden="true"
+          className={css.icon}
+        />
       </button>
-      {/* Семантически верный H1 страницы */}
-      <h1 className={css.title}>{title}</h1> 
+
+      <h1 className={css.title}>{title}</h1>
     </div>
   );
 };

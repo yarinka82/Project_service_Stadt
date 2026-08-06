@@ -17,18 +17,20 @@
   justify-content: start; /* Mobile + Tablet: сетка строится от левого края */
 }
 
-/*Desktop-брейкпоинт*/
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .title {
-    /* На десктопе заголовок по центру */
     text-align: center;
   }
+  .grid {
+    justify-content: center;
+  }
+}
 
+@media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(
       6,
       90px
     ); /* На десктопе 6 колонок в один ряд */
-    justify-content: center; /* На десктопе сетка центрируется */
   }
 }

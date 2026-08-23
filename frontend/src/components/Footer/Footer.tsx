@@ -22,6 +22,9 @@ export default function Footer() {
         <div className={css.legalLinks}>
           <Link to="/impressum">Impressum</Link>
           <Link to="/datenschutz">Datenschutzerklärung</Link>
+          <p className={css.copy}>
+            © 2026 HUB IT. All rights reserved
+          </p>
         </div>
 
         {/* 3. RIGHT SIDE */}
@@ -38,9 +41,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <p className={css.copy}>
-            © 2026 HUB IT. All rights reserved
-          </p>
+          
         </div>
 
       </div>

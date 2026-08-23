@@ -1,7 +1,14 @@
+
+
 .appWrapper {
-  width: 100%;
-  min-width: 393px;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.appWrapper > :nth-child(2) {
+  flex: 1;
 }
 /* 
 .counter {

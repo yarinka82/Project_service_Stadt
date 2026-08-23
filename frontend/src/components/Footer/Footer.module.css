@@ -5,12 +5,15 @@
 
   background: var(--bg);
   color: var(--text);
-
   font-size: var(--font-size-footer);
   font-family: var(--heading);
+  font-weight: 300;
+
+  margin-top: auto;
 }
 
-/* белая линия сверху */
+/* White line on top */
+
 .whiteLine {
   position: absolute;
   top: 0;
@@ -23,38 +26,49 @@
 }
 
 .container {
+  width: 100%;
   min-height: 80px;
-  justify-content: space-between;
-  align-items: center;
 
-  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 24px;
+  box-sizing: border-box;
 }
 
 /* 1. LOGO */
 
 .logoBox {
-
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
+  flex: 1;
 }
 
 .logoBox img {
   width: 55px;
   height: 55px;
+  display: block;
 }
 
 /* 2. LEGAL LINKS */
 
 .legalLinks {
-
+  display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 6px;
+
+  flex: 1;
 }
 
 .legalLinks a {
   color: var(--text);
   text-decoration: none;
-  font-size: 16px;
+  font-size: var(--font-size-footer);
+  font-weight: 300;
 }
 
 .legalLinks a:hover {
@@ -64,8 +78,11 @@
 /* 3. RIGHT SIDE */
 
 .rightSide {
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  flex: 1;
 }
 
 .follow {
@@ -77,15 +94,15 @@
 }
 
 .socials {
-
+  display: flex;
   gap: 15px;
   margin-bottom: 10px;
 }
 
 .socials a {
-
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .socials img {
@@ -99,4 +116,22 @@
   font-size: var(--font-size-footer);
   color: var(--text);
   font-weight: 300;
+}
+
+
+/* Tablet — 768px */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 20px 32px;
+  }
+}
+
+
+/* Desktop — 1440px */
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 24px 48px;
+  }
 }

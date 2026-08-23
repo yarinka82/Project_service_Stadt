@@ -5,6 +5,8 @@ import './App.tsx';
 import Header from '../../components/Header/Header.tsx';
 import Footer from '../../components/Footer/Footer.tsx';
 import AglomerationsPage from '../AglomerationsPage/AglomerationsPage.tsx';
+import ImpressumPage from "../ImpressumPage/ImpressumPage.tsx";
+import DatenschutzPage from "../DatenschutzPage/DatenschutzPage.tsx";
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
       
         <Route path="/search" element={<SearchPage />} />
         <Route path="*" element="not found" />
+
+        <Route path="/impressum" element={<ImpressumPage />} />
+        <Route path="/datenschutz" element={<DatenschutzPage />} />
       </Routes>
       <Footer />
     </div>

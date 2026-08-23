@@ -1,68 +1,151 @@
 .page {
+  width: 100%;
   min-height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../../assets/png/aglomerationPage_bg_img.png");
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("../../assets/png/aglomerationPage_bg_img.png");
+
   background-size: cover;
   background-position: center;
+
+  box-sizing: border-box;
 }
 
-.title {
-  color: var(--text);
-  font-weight: 700;
-  font-size: var(--p-size);
+
+/* Title */
+
+.titleRow {
+  display: flex;
+  align-items: center;
+
   padding: 15px 30px;
 }
 
-.titleRow {
+.title {
+  margin: 0;
 
-  align-items: center;
+  color: var(--text);
+  font-weight: 700;
+  font-size: var(--p-size);
 }
 
 .backButton {
-  background: none;
-  border: none;
-  font-size: 32px;
-  cursor: pointer;
   padding: 0;
   margin-right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+
   color: var(--text);
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
 }
 
+
+/* Cities */
 
 .cityList {
-
+  display: flex;
   flex-direction: column;
   align-items: center;
+
   list-style: none;
-  padding: 0;
 
-  flex-direction: column;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0 0 150px;
+
   gap: 20px;
-  padding-bottom: 150px;
 }
-
 
 .cityButton {
   width: 280px;
-  padding: 16px 24px;
-  justify-content: center;
-  text-align: center;
+  min-height: 83px;
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 2px;
+
+  background: rgba(129, 164, 205, 0.35);
+  color: var(--text-color-btn-aglomeration);
+
+  font-size: var(--p-size);
+  font-weight: 600;
+  text-align: left;
 
   cursor: pointer;
 
-  font-size: 18px;
-  background-color: var(--color-btn-aglomeration);
-  color: var(--text-color-btn-aglomeration);
-  font-weight: 600;
-  font-size: var(--p-size);
-
+  backdrop-filter: blur(4px);
 }
+
+
+/* Selected city */
+
+.active {
+  background: rgba(220, 230, 240, 0.75);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Flag */
 
 .flag {
   width: 51px;
   height: 51px;
+
+  flex-shrink: 0;
+
   border-radius: 50%;
   object-fit: cover;
+}
+
+
+/* Tablet — 768px */
+
+@media (min-width: 768px) {
+  .titleRow {
+    padding: 20px 32px;
+  }
+
+  .cityList {
+    gap: 24px;
+  }
+
+  .cityButton {
+    width: 320px;
+    min-height: 87px;
+  }
+}
+
+
+/* Desktop — 1440px */
+
+@media (min-width: 1200px) {
+  .titleRow {
+    padding: 24px 48px;
+  }
+
+  .cityList {
+    gap: 28px;
+  }
+
+  .cityButton {
+    width: 360px;
+    min-height: 90px;
+  }
 }

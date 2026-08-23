@@ -7,10 +7,11 @@ import Footer from '../../components/Footer/Footer.tsx';
 import AglomerationsPage from '../AglomerationsPage/AglomerationsPage.tsx';
 import ImpressumPage from "../ImpressumPage/ImpressumPage.tsx";
 import DatenschutzPage from "../DatenschutzPage/DatenschutzPage.tsx";
+import css from "./App.module.css"
 
 function App() {
   return (
-    <div className='appWrapper'>
+    <div className={css.appWrapper}>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

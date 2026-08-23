@@ -12,14 +12,29 @@
   padding: 15px 30px;
 }
 
+.titleRow {
+
+  align-items: center;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 10px;
+  color: var(--text);
+}
+
 
 .cityList {
-    display: flex;
+
   flex-direction: column;
   align-items: center;
   list-style: none;
   padding: 0;
-  display: flex;
+
   flex-direction: column;
   gap: 20px;
   padding-bottom: 150px;

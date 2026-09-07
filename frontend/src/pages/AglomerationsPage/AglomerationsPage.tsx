@@ -43,26 +43,28 @@ function AglomerationsPage() {
     <main className={css.page}>
       <div>
         <div className={css.titleRow}>
-          <button
+         <button
             className={css.backButton}
             onClick={() => navigate(-1)}
-            aria-label="Zurück"
           >
-            &lt;
+            <span className={css.arrow}>&lt;</span>
+            <span>Zurück zur Startseite</span>
           </button>
-          <h1 className={css.title}>Stadt auswählen</h1>
         </div>
 
-        <ul className={css.cityList}>
-          {cities.map((city, index) => (
-            <li key={city.id}>
-              <button className={css.cityButton}>
-                <img src={flags[index]} alt="" className={css.flag}/>
-                {city.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+        <div className={css.citySelection}>
+          <h1 className={css.title}>Stadt auswählen</h1>
+          <ul className={css.cityList}>
+            {cities.map((city, index) => (
+              <li key={city.id}>
+                <button className={css.cityButton}>
+                  <img src={flags[index]} alt="" className={css.flag}/>
+                  {city.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </main>
   );

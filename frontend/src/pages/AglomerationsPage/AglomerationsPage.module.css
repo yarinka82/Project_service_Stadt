@@ -22,34 +22,47 @@
   padding: 15px 30px;
 }
 
-.title {
-  margin: 0;
 
-  color: var(--text);
-  font-weight: 700;
-  font-size: var(--p-size);
-}
 
 .backButton {
   padding: 0;
-  margin-right: 10px;
-
+  margin: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-
+  gap: 8px;
   background: none;
   border: none;
-
   color: var(--text);
-  font-size: 25px;
+  font-family: var(--heading);
+  font-size: var(--p-size);
+  font-weight: 700;
   line-height: 1;
-
   cursor: pointer;
 }
 
+.arrow {
+  font-family: var(--heading);
+  font-size: var(--p-size);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+
 
 /* Cities */
+.citySelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+  font-size: var(--h1-size);
+}
 
 .cityList {
   display: flex;

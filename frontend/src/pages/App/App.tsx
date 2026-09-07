@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer.tsx';
 import AglomerationsPage from '../AglomerationsPage/AglomerationsPage.tsx';
 import ImpressumPage from "../ImpressumPage/ImpressumPage.tsx";
 import DatenschutzPage from "../DatenschutzPage/DatenschutzPage.tsx";
+import NotFoundPage from "../NotFoundPage/NotFoundPage.tsx"
 import css from "./App.module.css"
 
 function App() {
@@ -20,10 +21,11 @@ function App() {
         />
       
         <Route path="/search" element={<SearchPage />} />
-        <Route path="*" element="not found" />
 
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/datenschutz" element={<DatenschutzPage />} />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </div>

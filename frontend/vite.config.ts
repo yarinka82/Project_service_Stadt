@@ -12,7 +12,7 @@ export default defineConfig({
    server: {
     proxy: {
       "/aglomerations": {
-        target: "http://localhost:5173",
+        target: "http://localhost:3001",
         changeOrigin: true,
       },
     },

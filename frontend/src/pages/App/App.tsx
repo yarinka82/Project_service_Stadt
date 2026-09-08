@@ -8,18 +8,17 @@ import ImpressumPage from "../ImpressumPage/ImpressumPage.tsx";
 import DatenschutzPage from "../DatenschutzPage/DatenschutzPage.tsx";
 import NotFoundPage from "../NotFoundPage/NotFoundPage.tsx"
 import css from "./App.module.css"
-
+import './App.css';
+import CategoriesPage from '../CategoriesPage/CategoriesPage.tsx';  
+        
 function App() {
   return (
     <div className={css.appWrapper}>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-          <Route
-        path="/aglomerations"
-        element={<AglomerationsPage />}
-        />
-      
+        <Route path="/aglomerations" element={<AglomerationsPage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/search" element={<SearchPage />} />
 
         <Route path="/impressum" element={<ImpressumPage />} />
@@ -27,6 +26,7 @@ function App() {
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+
       <Footer />
     </div>
   );

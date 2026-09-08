@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 17px 0;
+  font-size: 16px;
+  font-weight: 400; /* Перекрываем глобальный bold h2 */
+  color: var(--text); /* Перекрываем глобальный light-blue, если он есть */
+  text-align: left; /* Mobile + Tablet: выравнивание по левой линии */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 90px); /* Mobile + Tablet: 3 колонки */
+  gap: 33px;
+  justify-content: start; /* Mobile + Tablet: сетка строится от левого края */
+}
+
+@media (min-width: 768px) {
+  .title {
+    text-align: center;
+  }
+  .grid {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(
+      6,
+      90px
+    ); /* На десктопе 6 колонок в один ряд */
+  }
+}

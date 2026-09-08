@@ -1,0 +1,82 @@
+.section {
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 20px 0; /* Базовый mobile: 20px */
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+/* --- Временные стаб-стили карточки --- */
+.card {
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  color: #02213c;
+}
+
+.card:nth-child(2) {
+  display: none;
+}
+
+.imagePlaceholder {
+  height: 150px;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Обрезает фото по размеру блока 150px без искажения пропорций */
+  display: block; /* Убирает лишний отступ снизу у строчных картинок */
+}
+
+.chip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #02213c; /* Темный фон, чтобы читалось на заглушке */
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.cardBody {
+  padding: 12px;
+}
+.cardTitle {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.address {
+  margin: 0 0 8px;
+  font-size: 10px;
+  color: #3e7cb1;
+}
+.desc {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .title {
+    margin-bottom: 23px;
+  }
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card:nth-child(2) {
+    display: block; /* или grid-элемент по умолчанию — block ок для article */
+  }
+}

@@ -1,40 +1,66 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  min-width: 393px;
   min-height: 58px;
-  padding: 16px 24px 14px 24px; /* 1rem 1.5rem 0.875rem 1.5rem */
 
-  background-color: #02213c;
-  border-bottom: 2px solid rgba(129, 164, 205, 1);
+  padding: 16px 24px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  background-color: var(--bg);
+  border-bottom: 2px solid var(--border-h);
 }
 
 .logoLink {
+  display: flex;
+  align-items: center;
+
   text-decoration: none;
   color: inherit;
+  flex-shrink: 0;
 }
 
 .logoWordmark {
   display: flex;
   align-items: center;
-  gap: 10px; /* 0.625rem */
+  gap: 10px;
 }
 
 .logoBox {
+  width: 28px;
+  height: 28px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px; /* 1.75rem */
-  height: 28px; /* 1.75rem */
+
+  flex-shrink: 0;
+
   border-radius: 8px;
-  background: rgba(129, 164, 205, 1);
+  background: var(--text-lb);
+}
+
+.logoBox img {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: var(--font-size-header);
   font-weight: 300;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px; /* 1.25rem  */
+
+  white-space: nowrap;
 }
 
 .wordmarkService {
@@ -42,18 +68,50 @@
 }
 
 .buttonTheme {
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
+
   background: none;
   border: none;
-  min-width: 44px; /* for tap targets */
-  min-height: 44px; /* for tap targets   */
   cursor: pointer;
 }
 
-/* MEDIA QUERIES */
+.buttonTheme img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
 
-/* @media (min-width: 768px) {
-  .header { min-height: 72px; }  
-} */
+
+/* Tablet — 768px */
+@media (min-width: 768px) {
+  .header {
+    min-height: 64px;
+    padding: 16px 32px 14px;
+  }
+
+  .logoWordmark {
+    gap: 12px;
+  }
+}
+
+
+/* Desktop — 1440px */
+@media (min-width: 1200px) {
+  .header {
+    min-height: 72px;
+    padding: 16px 48px 14px;
+  }
+
+  .logoWordmark {
+    gap: 14px;
+  }
+}

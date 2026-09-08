@@ -1,87 +1,137 @@
 .footer {
-    position: relative;
-    width: 100%;
-    min-height: 80px;
-    background: var(--bg);
-    color: var(--text);
-    font-size: var(----font-size-footer);
-    font-family: var(--heading);
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--font-size-footer);
+  font-family: var(--heading);
+  font-weight: 300;
+
+  margin-top: auto;
 }
 
-/* белая плашка сверху */
+/* White line on top */
+
 .whiteLine {
-    top: 0;
-    left: 0;
-    
-    width: 100%;
-    height: 1px;
-    
-    background: var(--border-f);
-    position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--border-f);
 }
 
 .container {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  min-height: 80px;
 
-    padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 24px;
+  box-sizing: border-box;
 }
 
-/* LOGO */
+/* 1. LOGO */
 
 .logoBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex: 1;
 }
 
 .logoBox img {
-    width: 55px;
-    height: 55px;
+  width: 55px;
+  height: 55px;
+  display: block;
 }
 
+/* 2. LEGAL LINKS */
 
-/* RIGHT SIDE */
+.legalLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  flex: 1;
+}
+
+.legalLinks a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: var(--font-size-footer);
+  font-weight: 300;
+}
+
+.legalLinks a:hover {
+  text-decoration: underline;
+}
+
+/* 3. RIGHT SIDE */
 
 .rightSide {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  flex: 1;
 }
 
 .follow {
-    margin: 10px 0 10px;
+  margin: 10px 0;
 
-    font-size: var(--font-size-footer);
-    color: var(--text);
-    font-weight: 300;
+  font-size: var(--font-size-footer);
+  color: var(--text);
+  font-weight: 300;
 }
 
 .socials {
-    display: flex;
-    gap: 15px;
-
-    margin-bottom: 10px;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
 .socials a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .socials img {
-    width: 28px;
-    height: 28px;
+  width: 28px;
+  height: 28px;
 }
 
 .copy {
-    margin: 0;
+  margin: 0;
 
-    font-size: var(--font-size-footer);
-    color: var(--text);
-    font-weight: 300;
+  font-size: var(--font-size-footer);
+  color: var(--text);
+  font-weight: 300;
+}
+
+
+/* Tablet — 768px */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 20px 32px;
+  }
+}
+
+
+/* Desktop — 1440px */
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 24px 48px;
+  }
 }

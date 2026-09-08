@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import css from "./AglomerationsPage.module.css";
 import flagFrankfurt from "../../assets/png/flagge_Frankfurt.png";
 import flagMunchen from "../../assets/png/flagge_Munchen.png";
@@ -13,7 +14,8 @@ interface Aglomeration {
 function AglomerationsPage() {
   const [cities, setCities] = useState<Aglomeration[]>([]);
   const [loading, setLoading] = useState(true);
-  const flags = [flagFrankfurt, flagMunchen, flagWurzburg]
+  const flags = [flagFrankfurt, flagMunchen, flagWurzburg];
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchCities() {
@@ -40,18 +42,29 @@ function AglomerationsPage() {
   return (
     <main className={css.page}>
       <div>
-        <h1 className={css.title}>Stadt auswählen</h1>
+        <div className={css.titleRow}>
+         <button
+            className={css.backButton}
+            onClick={() => navigate(-1)}
+          >
+            <span className={css.arrow}>&lt;</span>
+            <span>Zurück zur Startseite</span>
+          </button>
+        </div>
 
-        <ul className={css.cityList}>
-          {cities.map((city, index) => (
-            <li key={city.id}>
-              <button className={css.cityButton}>
-                <img src={flags[index]} alt="" className={css.flag}/>
-                {city.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+        <div className={css.citySelection}>
+          <h1 className={css.title}>Stadt auswählen</h1>
+          <ul className={css.cityList}>
+            {cities.map((city, index) => (
+              <li key={city.id}>
+                <button className={css.cityButton}>
+                  <img src={flags[index]} alt="" className={css.flag}/>
+                  {city.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </main>
   );

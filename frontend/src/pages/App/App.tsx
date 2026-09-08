@@ -8,7 +8,7 @@ import ImpressumPage from "../ImpressumPage/ImpressumPage.tsx";
 import DatenschutzPage from "../DatenschutzPage/DatenschutzPage.tsx";
 import NotFoundPage from "../NotFoundPage/NotFoundPage.tsx"
 import css from "./App.module.css"
-import './App.css';
+// import './App.css';
 import CategoriesPage from '../CategoriesPage/CategoriesPage.tsx';  
         
 function App() {

@@ -9,7 +9,8 @@
   /* Единое боковое поле 24px по замерам мобилки (от инпута) */
   padding: 0 24px;
 
-  padding-bottom: 23px;
+  /* padding-bottom: 23px; */
+  padding-bottom: 32px;
 }
 
 /* Mobile */
@@ -30,6 +31,8 @@
 @media (min-width: 768px) {
   .content {
     padding: 0 28px;
+
+    padding-bottom: 80px; /* Увеличиваем нижний отступ, чтобы сетка не прилипала к футеру. Когда закоммитила последнюю секцию */
   }
   .gridWrapper {
     margin-top: 28px;
@@ -46,9 +49,9 @@
     /* max-width: 1200px; */
   }
   .contextWrapper {
-    margin-top: 54px;
+    /* margin-top: 54px; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
   }
   .searchWrapper {
     margin-top: 37px;

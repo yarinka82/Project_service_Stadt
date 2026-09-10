@@ -2,7 +2,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ContextRow } from '../../components/ContextRow/ContextRow';
 // import { SearchField } from '../../components/SearchField/SearchField';
 import { CategoryGrid } from '../../components/CategoryGrid/CategoryGrid';
-import { BeliebteServices } from '../../components/BeliebteServices/BeliebteServices';
+// import { BeliebteServices } from '../../components/BeliebteServices/BeliebteServices';
 import css from './CategoriesPage.module.css';
 
 const CITIES_MAP: Record<string, string> = {
@@ -47,9 +47,9 @@ export default function CategoriesPage() {
           <CategoryGrid onCategoryClick={handleCategoryClick} />
         </div>
 
-        <div className={css.beliebteWrapper}>
+        {/* <div className={css.beliebteWrapper}>
           <BeliebteServices />
-        </div>
+        </div> */}
       </div>
     </main>
   );

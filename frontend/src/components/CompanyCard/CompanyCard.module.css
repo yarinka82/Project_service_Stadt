@@ -1,0 +1,102 @@
+/* Базовые стили. TODO: Снять точные отступы/размеры шрифтов из Figma */
+.card {
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  color: #02213c;
+
+  /* ДОБАВЛЕНО: заставляем карточку сжиматься */
+  width: 100%;
+  min-width: 0; /* КРИТИЧЕСКИ ВАЖНО для Flexbox: снимает блокировку ширины контентом */
+  box-sizing: border-box;
+}
+
+.imageWrapper {
+  position: relative;
+  height: 150px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: #dbe4ee;
+}
+
+.chip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ffffff;
+  color: #02213c;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.cardBody {
+  padding: 12px;
+  width: 100%; /* ДОБАВЛЕНО */
+  box-sizing: border-box; /* ДОБАВЛЕНО */
+}
+
+.title {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.address {
+  margin: 0 0 8px 0;
+  font-size: 10px;
+  font-weight: 700;
+  /* Иконка пина локации подразумевается в макете, TODO: добавить SVG пина */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #3e7cb1;
+
+  /* ДОБАВЛЕНО: принудительный перенос длинных слов/строк */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #dbe4ee; /* Если линия есть в макете */
+  padding-top: 8px;
+}
+
+.rating {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #e4572e; /* Оранжевый фон для рейтинга, как на скрине */
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.meta {
+  font-size: 10px;
+  color: #e4572e; /* Оранжевый цвет текста для отзывов, как на скрине */
+  font-weight: 700;
+}

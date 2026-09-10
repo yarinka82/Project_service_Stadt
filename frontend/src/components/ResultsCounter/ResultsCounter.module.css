@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  color: var(--text); /* Белый цвет текста из глобальных переменных */
+  
+  /* Размеры как у заголовков секций. TODO: Сверить с макетом */
+  font-size: 16px; 
+  font-weight: 400;
+}
+
+.mapTogglePlaceholder {
+  /* Пока пустой. Flex-контейнер (.container) сдвинет его вправо благодаря justify-content: space-between */
+}

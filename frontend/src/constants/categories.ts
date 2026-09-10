@@ -1,4 +1,4 @@
-import type { Category } from '../types/type';
+import type { Category } from '../types/types';
 
 import iconScissors from '../assets/svg/page3/scissors-big.svg';
 import iconWrench from '../assets/svg/page3/wrench.svg';

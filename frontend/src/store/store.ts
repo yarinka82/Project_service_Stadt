@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { type BurgerModal } from '../types/type';
+import { type BurgerModal } from '../types/types';
 
 export const burgerModal = create<BurgerModal>((set) => ({
   isOpenBurgerMenu: false,

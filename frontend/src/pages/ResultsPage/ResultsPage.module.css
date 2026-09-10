@@ -1,0 +1,41 @@
+.pageContainer {
+  width: 100%;
+  
+  overflow-x: hidden;/* отрезаем всё справа */
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg, #02213c);
+  min-height: 100vh;
+}
+
+.content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24px;
+  padding-bottom: 24px;
+}
+
+/* Временные отступы (вертикальный ритм) */
+/* TODO: Замерить точные отступы из Figma для Страницы 4 */
+.headerWrapper {
+  margin-top: 16px;
+}
+
+.counterWrapper {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.listSection {
+  display: flex;
+  flex-direction: column; /* Карточки выстраиваются друг под другом */
+  gap: 22px; /* Расстояние между карточками */
+  width: 100%;
+}
+
+/* На планшете пока оставляем тот же список, но можем изменить padding */
+@media (min-width: 768px) {
+  .content {
+    padding: 0 28px;
+  }
+}

@@ -11,11 +11,21 @@
 
   min-width: 44px;
   min-height: 44px;
+  
+  /* чтобы выровнять на одной линии с иконкой в хедере */
+  min-width: 44px;
+  min-height: 44px;
+
   padding: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Иконка визуально начинается от края контейнера, но область нажатия остается 44x44px */
+  margin-left: -12px;
+  margin-right: -12px;
+
   outline-offset: -2px;
 }
 

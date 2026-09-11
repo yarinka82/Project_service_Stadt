@@ -6,10 +6,8 @@
 
 .content {
   width: 100%;
-  /* Единое боковое поле 24px по замерам мобилки (от инпута) */
-  padding: 0 24px;
-
-  padding-bottom: 23px;
+  padding: 0 24px; /* Единое боковое поле 24px по замерам мобилки (от инпута) */
+  padding-bottom: 32px;
 }
 
 /* Mobile */
@@ -19,6 +17,7 @@
 /* .searchWrapper {
   margin-top: 17px;
 } */
+
 .gridWrapper {
   margin-top: 25px;
 }
@@ -29,7 +28,8 @@
 /* Tablet  */
 @media (min-width: 768px) {
   .content {
-    padding: 0 28px;
+    padding: 0 32px;
+    padding-bottom: 80px; /* без последней секции, поэтому увеличен нижний отступ, чтобы сетка не прилипала к футеру*/
   }
   .gridWrapper {
     margin-top: 28px;
@@ -46,10 +46,9 @@
     /* max-width: 1200px; */
   }
   .contextWrapper {
-    margin-top: 54px;
     display: flex;
-    justify-content: center;
   }
+
   .searchWrapper {
     margin-top: 37px;
   }
@@ -58,5 +57,12 @@
   }
   .beliebteWrapper {
     margin-top: 61px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    padding-left: 48px;
+    padding-right: 48px;
   }
 }

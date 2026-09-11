@@ -7,7 +7,7 @@
   font-size: 16px;
   font-weight: 400; /* Перекрываем глобальный bold h2 */
   color: var(--text); /* Перекрываем глобальный light-blue, если он есть */
-  text-align: left; /* Mobile + Tablet: выравнивание по левой линии */
+  text-align: left; /* Mobile: выравнивание по левой линии */
 }
 
 .grid {

@@ -12,9 +12,19 @@ import ImpressumPage from '../../pages/ImpressumPage/ImpressumPage.tsx';
 import DatenschutzPage from '../../pages/DatenschutzPage/DatenschutzPage.tsx';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage.tsx';
 
+import { useEffect } from 'react';
+import { useAppDispatch } from '../../store/hooks.ts';
+import { fetchAglomerations } from '../../store/aglomerationsSlice.ts';
+
 import css from './App.module.css';
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAglomerations());
+  }, [dispatch]);
+
   return (
     <div className={css.appWrapper}>
       <Header />

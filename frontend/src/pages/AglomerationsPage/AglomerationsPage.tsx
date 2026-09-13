@@ -1,43 +1,30 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import css from "./AglomerationsPage.module.css";
 import flagFrankfurt from "../../assets/png/flagge_Frankfurt.png";
 import flagMunchen from "../../assets/png/flagge_Munchen.png";
 import flagWurzburg from "../../assets/png/flagge_Wurzburg.png";
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../store/store';
 
-
-interface Aglomeration {
-  id: number;
-  name: string;
-}
 
 function AglomerationsPage() {
-  const [cities, setCities] = useState<Aglomeration[]>([]);
-  const [loading, setLoading] = useState(true);
-  const flags = [flagFrankfurt, flagMunchen, flagWurzburg];
   const navigate = useNavigate();
 
-  useEffect(() => {
-    async function fetchCities() {
-      try {
-        const response = await fetch("/aglomerations");
+  const cities = useSelector(
+    (state: RootState) => state.aglomerations.items
+  );
 
-        const result = await response.json();
+  const loading = useSelector(
+    (state: RootState) => state.aglomerations.loading
+  );
 
-        setCities(result.data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchCities();
-  }, []);
+  const flags = [flagFrankfurt, flagMunchen, flagWurzburg];
 
   if (loading) {
     return <p>Loading...</p>;
   }
+
+
 
   return (
     <main className={css.page}>

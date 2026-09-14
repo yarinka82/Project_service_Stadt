@@ -12,6 +12,10 @@ export default defineConfig({
         target: "http://localhost:3001",
         changeOrigin: true,
       },
+       "/categories": {
+      target: "http://localhost:3001",
+      changeOrigin: true,
+    },
     },
   },
 });

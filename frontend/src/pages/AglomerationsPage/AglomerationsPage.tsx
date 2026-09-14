@@ -44,7 +44,10 @@ function AglomerationsPage() {
           <ul className={css.cityList}>
             {cities.map((city, index) => (
               <li key={city.id}>
-                <button className={css.cityButton}>
+                <button 
+                  className={css.cityButton}
+                  onClick={() => navigate(`/cities/${city.id}/categories`)}
+                >
                   <img src={flags[index]} alt="" className={css.flag}/>
                   {city.name}
                 </button>

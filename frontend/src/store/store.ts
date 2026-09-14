@@ -1,15 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import aglomerationsReducer from './aglomerationsSlice';
+import categoriesReducer from './categoriesSlice';
 
 export const store = configureStore({
     reducer: {
     aglomerations: aglomerationsReducer,
+    categories: categoriesReducer,
   },
-    // подключить редюсеры:
-    // burgerModal: burgerModalReducer,
-    // cities: citiesReducer,
-    // categories: categoriesReducer,
-    // firms: firmsReducer,
   
 });
 

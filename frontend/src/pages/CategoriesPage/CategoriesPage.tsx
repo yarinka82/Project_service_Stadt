@@ -1,9 +1,13 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
 import { ContextRow } from '../../components/ContextRow/ContextRow';
 // import { SearchField } from '../../components/SearchField/SearchField';
 import { CategoryGrid } from '../../components/CategoryGrid/CategoryGrid';
 // import { BeliebteServices } from '../../components/BeliebteServices/BeliebteServices';
 import css from './CategoriesPage.module.css';
+
+import { useSelector } from "react-redux";
+import type { RootState } from "../../store/store";
+
 
 const CITIES_MAP: Record<string, string> = {
   '1': 'Frankfurt-am-Main',
@@ -31,6 +35,36 @@ export default function CategoriesPage() {
       );
     }
   };
+
+  const { cityId } = useParams();
+
+  const categories = useSelector(
+  (state: RootState) => state.categories.items
+);
+
+// проверка
+function CategoriesPage() {
+  const { cityId } = useParams();
+
+  const categories = useSelector(
+    (state: RootState) => state.categories.items
+  );
+
+  console.log("CITY ID:", cityId);
+  console.log("CATEGORIES FROM REDUX:", categories);
+
+  return (
+    <div>
+      <h1>Categories</h1>
+
+      {categories.map(category => (
+        <button key={category.id}>
+          {category.name}
+        </button>
+      ))}
+    </div>
+  );
+}
 
   return (
     <main className={css.pageContainer}>

@@ -14,7 +14,9 @@ import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage.tsx';
 
 import { useEffect } from 'react';
 import { useAppDispatch } from '../../store/hooks.ts';
+
 import { fetchAglomerations } from '../../store/aglomerationsSlice.ts';
+import { fetchCategories } from '../../store/categoriesSlice.ts';
 
 import css from './App.module.css';
 
@@ -23,6 +25,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchAglomerations());
+    dispatch(fetchCategories());
   }, [dispatch]);
 
   return (
@@ -31,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aglomerations" element={<AglomerationsPage />} />
-        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/cities/:cityId/categories" element={<CategoriesPage />} />
         {/* <Route path="/search" element={<SearchPage />} /> */}
 
         <Route path="/impressum" element={<ImpressumPage />} />

@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useAppDispatch } from '../../store/hooks.ts';
+import { fetchCities } from '../../store/cities/citiesOperations.ts';
 
 import Header from '../Header/Header.tsx';
 import Footer from '../Footer/Footer.tsx';
@@ -15,6 +18,12 @@ import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage.tsx';
 import css from './App.module.css';
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCities());
+  }, [dispatch]);
+
   return (
     <div className={css.appWrapper}>
       <Header />

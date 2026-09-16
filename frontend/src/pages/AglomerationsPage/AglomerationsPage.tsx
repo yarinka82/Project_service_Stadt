@@ -1,8 +1,7 @@
-import { useEffect, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../store/hooks.ts';
 
-import { useAppSelector, useAppDispatch } from '../../store/hooks.ts';
-import { fetchCities } from '../../store/cities/citiesOperations.ts';
 import {
   getCities,
   getLoadingStatus,
@@ -23,18 +22,9 @@ const CITY_FLAGS: Record<number, string> = {
 
 function AglomerationsPage() {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-
   const loading = useAppSelector(getLoadingStatus);
   const error = useAppSelector(getError);
   const cities = useAppSelector(getCities);
-
-  useEffect(() => {
-    if (cities.length === 0) {
-      // чтобы не делать лишний запрос, если города уже есть в сторе
-      dispatch(fetchCities());
-    }
-  }, [dispatch, cities.length]);
 
   let content: ReactNode;
   if (loading) {

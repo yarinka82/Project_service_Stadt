@@ -20,8 +20,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/aglomerations" element={<AglomerationsPage />} />
-        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/cities" element={<AglomerationsPage />} />
+        <Route path="/cities/:cityId/categories" element={<CategoriesPage />} />
         {/* <Route path="/search" element={<SearchPage />} /> */}
 
         <Route path="/impressum" element={<ImpressumPage />} />

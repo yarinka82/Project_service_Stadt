@@ -1,11 +1,11 @@
+// Закомментировано для временного отключения меню
 // import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 // import { useState } from "react";
 // import SideMenu from "../../components/SideMenu/SideMenu";
-// закомичено все для бургер и сайд меню
-import MainContent from "../../components/MainContent/MainContent"
+
+import MainContent from '../../components/MainContent/MainContent';
 
 export default function HomePage() {
-
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -21,4 +21,3 @@ export default function HomePage() {
     </div>
   );
 }
-

@@ -1,21 +1,10 @@
-// import { create } from 'zustand';
-// import { type BurgerModal } from '../types/type';
-
-// export const burgerModal = create<BurgerModal>((set) => ({
-//   isOpenBurgerMenu: false,
-//   isOpen: () => set({ isOpenBurgerMenu: true }),
-//   isClose: () => set({ isOpenBurgerMenu: false }),
-//   toggleMenu: () =>
-//     set((state) => ({ isOpenBurgerMenu: !state.isOpenBurgerMenu })),
-// }));
-
 import { configureStore } from '@reduxjs/toolkit';
+import citiesReducer from './cities/citiesSlice';
 
 export const store = configureStore({
   reducer: {
-    // подключить редюсеры:
+    cities: citiesReducer,
     // burgerModal: burgerModalReducer,
-    // cities: citiesReducer,
     // categories: categoriesReducer,
     // firms: firmsReducer,
   },
@@ -23,3 +12,4 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+

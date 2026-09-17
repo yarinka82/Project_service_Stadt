@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import css from "./StadtAuswählenButton.module.css";
+import { Link } from 'react-router-dom';
+import css from './StadtAuswählenButton.module.css';
 
 function StadtAuswählenButton() {
   return (
-    <Link to="/aglomerations" className={css.button}>
+    <Link to="/cities" className={css.button}>
       <span className={css.icon}>🔍︎</span>
       Stadt auswählen
     </Link>

@@ -22,12 +22,6 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage.tsx';
 
 import css from './CategoriesPage.module.css';
 
-// const CITIES_MAP: Record<string, string> = {
-//   '1': 'Frankfurt-am-Main',
-//   '2': 'München',
-//   '3': 'Würzburg',
-// };
-
 export default function CategoriesPage() {
   const navigate = useNavigate();
 
@@ -107,8 +101,7 @@ export default function CategoriesPage() {
       <div className={css.content}>
         <div className={css.contextWrapper}>
           <ContextRow
-            // При прямом входе по URL город может ещё загружаться.
-            // После появления данных название обновится автоматически.
+            // При прямом входе по URL город может ещё загружаться. После появления данных название обновится автоматически.
             title={city?.name ?? ''}
             onBack={handleBack}
           />

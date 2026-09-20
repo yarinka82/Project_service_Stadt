@@ -9,11 +9,6 @@ import { CategoryTile } from '../CategoryTile/CategoryTile';
 
 import css from './CategoryGrid.module.css';
 
-// interface CategoryGridProps {
-// Обработчик сообщает "кликнули на такую-то категорию"
-//   onCategoryClick: (categoryId: number | null) => void;
-// }
-
 interface CategoryGridProps {
   categories: Category[];
 
@@ -31,17 +26,6 @@ export const CategoryGrid = ({
     <section className={css.container}>
       {/* h1 для города */}
       <h2 className={css.title}>Kategorie auswählen</h2>
-
-      {/* <div className={css.grid}>
-        {categories.map((cat) => (
-          <CategoryTile
-            key={cat.id ?? 'all'} // 'all' для категории без id
-            label={cat.label}
-            icon={cat.icon}
-            onClick={() => onCategoryClick(cat.id)}
-          />
-        ))}
-      </div> */}
 
       <div className={css.grid}>
         {categories.map((category) => (

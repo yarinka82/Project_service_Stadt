@@ -8,13 +8,9 @@ interface CategoryTileProps {
 
 export function CategoryTile({ label, icon, onClick }: CategoryTileProps) {
   return (
-    <button 
-      type="button" 
-      className={css.tile} 
-      onClick={onClick}
-    >
+    <button type="button" className={css.tile} onClick={onClick}>
       <img src={icon} alt="" className={css.icon} />
       <span className={css.label}>{label}</span>
     </button>
   );
-};
+}

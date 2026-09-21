@@ -1,43 +1,48 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCities } from './citiesOperations';
+import { fetchCategories } from './categoriesOperations';
 
-export interface City {
+export interface Category {
   id: number;
   name: string;
+  description: string;
 }
 
-export interface CitiesState {
-  items: City[];
+export interface CategoriesState {
+  items: Category[];
   isLoading: boolean;
   error: string | null;
 }
 
-// так как используется только внутри файла, то без export
-const initialState: CitiesState = {
+const initialState: CategoriesState = {
   items: [],
   isLoading: false,
   error: null,
 };
 
-const citiesSlice = createSlice({
-  name: 'cities',
+const categoriesSlice = createSlice({
+  name: 'categories',
+
   initialState,
+
   reducers: {},
+
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCities.pending, (state) => {
+      .addCase(fetchCategories.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchCities.fulfilled, (state, action) => {
+
+      .addCase(fetchCategories.fulfilled, (state, action) => {
         state.isLoading = false;
         state.items = [...action.payload];
       })
-      .addCase(fetchCities.rejected, (state, action) => {
+
+      .addCase(fetchCategories.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload ?? 'Something went wrong';
       });
   },
 });
 
-export default citiesSlice.reducer;
+export default categoriesSlice.reducer;

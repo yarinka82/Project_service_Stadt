@@ -8,12 +8,10 @@ export const fetchCities = createAsyncThunk<
   void,
   { rejectValue: string }
 >('cities/fetchCities', async (_, { rejectWithValue }) => {
+  // деструктуризация thunkAPI: { rejectWithValue } - без явного any
   try {
-    return await fetchCitiesApi();
+    return await fetchCitiesApi(); // т.к.fetch надо было переписать на аксиос, а он используется в api.ts, то интеинтерфейс ответа убран
   } catch {
     return rejectWithValue('Failed to fetch Cities');
   }
 });
-
-// 10- деструктуризация thunkAPI: { rejectWithValue } - без явного any
-// 12 - т.к.fetch надо было переписать на аксиос, а он используется в api.ts, то интеинтерфейс ответа убран

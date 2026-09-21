@@ -14,15 +14,41 @@
 .contextWrapper {
   margin-top: 16px;
 }
-/* .searchWrapper {
-  margin-top: 17px;
-} */
 
 .gridWrapper {
   margin-top: 25px;
 }
-.beliebteWrapper {
-  margin-top: 32px;
+
+.loaderWrapper {
+  width: 100%;
+  min-height: 250px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 52px;
+  height: 52px;
+
+  border: 4px solid var(--border-h);
+  border-top-color: var(--text);
+  border-radius: 50%;
+
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2.5s;
+  }
 }
 
 /* Tablet  */
@@ -33,9 +59,6 @@
   }
   .gridWrapper {
     margin-top: 28px;
-  }
-  .beliebteWrapper {
-    margin-top: 94px;
   }
 }
 
@@ -49,14 +72,8 @@
     display: flex;
   }
 
-  .searchWrapper {
-    margin-top: 37px;
-  }
   .gridWrapper {
     margin-top: 31px;
-  }
-  .beliebteWrapper {
-    margin-top: 61px;
   }
 }
 

@@ -1,27 +1,47 @@
-import { CATEGORIES } from '../../constants/categories'; 
-import { CategoryTile } from '../CategoryTile/CategoryTile'; 
+import type { Category } from '../../store/categories/categoriesSlice';
+
+import {
+  CATEGORY_ICONS,
+  ALL_CATEGORIES_ICON,
+} from '../../constants/categoryIcons';
+
+import { CategoryTile } from '../CategoryTile/CategoryTile';
+
 import css from './CategoryGrid.module.css';
 
 interface CategoryGridProps {
-  // Обработчик не делает роутинг, он просто сообщает "кликнули на такую-то категорию"
-  onCategoryClick: (categoryId: number | null) => void;
+  categories: Category[];
+
+  onCategoryClick: (categoryId: number) => void;
+
+  onAllCategoriesClick: () => void;
 }
 
-export const CategoryGrid = ({ onCategoryClick }: CategoryGridProps) => {
+export const CategoryGrid = ({
+  categories,
+  onCategoryClick,
+  onAllCategoriesClick,
+}: CategoryGridProps) => {
   return (
     <section className={css.container}>
       {/* h1 для города */}
       <h2 className={css.title}>Kategorie auswählen</h2>
-      
+
       <div className={css.grid}>
-        {CATEGORIES.map((cat) => (
+        {categories.map((category) => (
           <CategoryTile
-            key={cat.id ?? 'all'} // 'all' для категории без id
-            label={cat.label}
-            icon={cat.icon}
-            onClick={() => onCategoryClick(cat.id)}
+            key={category.id}
+            label={category.name}
+            icon={CATEGORY_ICONS[category.id]}
+            onClick={() => onCategoryClick(category.id)}
           />
         ))}
+
+        <CategoryTile
+          label="Alle Kategorien"
+          icon={ALL_CATEGORIES_ICON}
+          onClick={onAllCategoriesClick}
+        />
       </div>
     </section>
   );

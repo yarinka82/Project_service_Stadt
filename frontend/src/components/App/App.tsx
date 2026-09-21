@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useAppDispatch } from '../../store/hooks.ts';
 import { fetchCities } from '../../store/cities/citiesOperations.ts';
+import { fetchCategories } from '../../store/categories/categoriesOperations.ts';
 
 import Header from '../Header/Header.tsx';
 import Footer from '../Footer/Footer.tsx';
@@ -22,6 +23,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCities());
+    dispatch(fetchCategories());
   }, [dispatch]);
 
   return (

@@ -4,8 +4,8 @@ import { useAppSelector } from '../../store/hooks.ts';
 
 import {
   getCities,
-  getLoadingStatus,
-  getError,
+  getCitiesLoadingStatus,
+  getCitiesError,
 } from '../../store/cities/citiesSelectors.ts';
 
 import flagFrankfurt from '../../assets/png/flagge_Frankfurt.png';
@@ -22,9 +22,13 @@ const CITY_FLAGS: Record<number, string> = {
 
 function AglomerationsPage() {
   const navigate = useNavigate();
-  const loading = useAppSelector(getLoadingStatus);
-  const error = useAppSelector(getError);
+  const loading = useAppSelector(getCitiesLoadingStatus);
+  const error = useAppSelector(getCitiesError);
   const cities = useAppSelector(getCities);
+
+  const handleBack = () => {
+    navigate('/');
+  };
 
   let content: ReactNode;
   if (loading) {
@@ -53,7 +57,7 @@ function AglomerationsPage() {
     <main className={css.page}>
       <div>
         <div className={css.titleRow}>
-          <button className={css.backButton} onClick={() => navigate(-1)}>
+          <button className={css.backButton} onClick={handleBack}>
             <span className={css.arrow}>&lt;</span>
             <span>Zurück zur Startseite</span>
           </button>

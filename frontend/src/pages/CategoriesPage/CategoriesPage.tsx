@@ -8,8 +8,8 @@ import { useAppSelector } from '../../store/hooks.ts';
 
 import {
   getCities,
-  getLoadingStatus,
-  getError,
+  getCitiesLoadingStatus,
+  getCitiesError,
 } from '../../store/cities/citiesSelectors.ts';
 
 import {
@@ -29,8 +29,8 @@ export default function CategoriesPage() {
   const numericCityId = Number(cityId); // useParams возвращает строку, id города в store имеет тип number
 
   const cities = useAppSelector(getCities); // Данные городов загружаются в App
-  const citiesLoading = useAppSelector(getLoadingStatus);
-  const citiesError = useAppSelector(getError);
+  const citiesLoading = useAppSelector(getCitiesLoadingStatus);
+  const citiesError = useAppSelector(getCitiesError);
 
   const categories = useAppSelector(getCategories); // Категории загружаются в App
   const categoriesLoading = useAppSelector(getCategoriesLoadingStatus);

@@ -19,11 +19,6 @@ const initialState: CitiesState = {
   error: null,
 };
 
-// находится в api.ts, чтобы не дублировать интерфейс ответа
-// export interface CitiesResponse {
-//   data: City[];
-// }
-
 const citiesSlice = createSlice({
   name: 'cities',
   initialState,

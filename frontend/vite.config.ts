@@ -17,6 +17,12 @@ export default defineConfig({
         target: 'http://localhost:3001',
         changeOrigin: true,
       },
+
+      '/companies': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        // в swagger.json указан порт 3000
+      },
     },
   },
 });

@@ -3,59 +3,9 @@
 import axios from 'axios';
 import type { City } from '../store/cities/citiesSlice';
 import type { Category } from '../store/categories/categoriesSlice';
+import type { Company } from '../store/firms/firmsSlice';
 
 const api = axios.create();
-
-export interface CompanyCategory {
-  id: number;
-  name: string;
-  description: string;
-}
-
-export interface CompanyAddress {
-  id: string;
-  street: string;
-  houseNr: string;
-  additionalAdrsInfo: string | null;
-  zip: string;
-  city: string;
-  state: string;
-  latitude: number | null;
-  longitude: number | null;
-  aglomerationId: number;
-  aglomerationName: string;
-}
-
-export interface CompanyEmail {
-  id: string;
-  email: string;
-  description: string | null;
-}
-
-export interface CompanyWebsite {
-  id: string;
-  url: string;
-  description: string | null;
-}
-
-export interface CompanyPhoneNumber {
-  id: string;
-  number: string;
-  description: string | null;
-  type: string;
-}
-
-export interface Company {
-  id: string;
-  name: string;
-  description: string;
-  logo: string | null;
-  categories: CompanyCategory[];
-  addresses: CompanyAddress[];
-  emails: CompanyEmail[];
-  websites: CompanyWebsite[];
-  phoneNumbers: CompanyPhoneNumber[];
-}
 
 export interface CitiesResponse {
   status: string;
@@ -90,13 +40,8 @@ export const fetchCategoriesApi = async (): Promise<Category[]> => {
   return response.data.data.categories;
 };
 
-
-export const fetchFirmApi = async (
-  companyId: string,
-): Promise<Company> => {
-  const response = await api.get<CompanyResponse>(
-    `/companies/${companyId}`,
-  );
+export const fetchFirmApi = async (companyId: string): Promise<Company> => {
+  const response = await api.get<CompanyResponse>(`/companies/${companyId}`);
 
   return response.data.data;
 };

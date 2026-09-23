@@ -1,7 +1,57 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { fetchFirm } from './firmsOperations';
-import type { Company } from '../../api/api';
+
+export interface CompanyCategory {
+  id: number;
+  name: string;
+  description: string;
+}
+
+export interface CompanyAddress {
+  id: string;
+  street: string;
+  houseNr: string;
+  additionalAdrsInfo: string | null;
+  zip: string;
+  city: string;
+  state: string;
+  latitude: number | null;
+  longitude: number | null;
+  aglomerationId: number;
+  aglomerationName: string;
+}
+
+export interface CompanyEmail {
+  id: string;
+  email: string;
+  description: string | null;
+}
+
+export interface CompanyWebsite {
+  id: string;
+  url: string;
+  description: string | null;
+}
+
+export interface CompanyPhoneNumber {
+  id: string;
+  number: string;
+  description: string | null;
+  type: string;
+}
+
+export interface Company {
+  id: string;
+  name: string;
+  description: string;
+  logo: string | null;
+  categories: CompanyCategory[];
+  addresses: CompanyAddress[];
+  emails: CompanyEmail[];
+  websites: CompanyWebsite[];
+  phoneNumbers: CompanyPhoneNumber[];
+}
 
 export interface FirmsState {
   item: Company | null;

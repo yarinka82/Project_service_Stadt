@@ -107,16 +107,20 @@ export interface FirmsState {
   listError: string | null;
 }
 
+export const FIRMS_PAGE_LIMIT = 20;
+
+const initialPagination: FirmsPagination = {
+  page: 1,
+  limit: FIRMS_PAGE_LIMIT,
+  total: 0,
+  totalPages: 0,
+};
+
 const initialState: FirmsState = {
   item: null,
 
   items: [],
-  pagination: {
-    page: 1,
-    limit: 20,
-    total: 0,
-    totalPages: 0, //до ответа backend не знаем количество
-  },
+  pagination: { ...initialPagination },
 
   isLoading: false,
   error: null,
@@ -133,14 +137,8 @@ const firmsSlice = createSlice({
   reducers: {
     resetFirmsList: (state) => {
       state.items = [];
-
-      state.pagination = {
-        page: 1,
-        limit: 20,
-        total: 0,
-        totalPages: 0,
-      };
-
+      state.pagination = { ...initialPagination };
+      state.listIsLoading = false;
       state.listError = null;
     },
   },

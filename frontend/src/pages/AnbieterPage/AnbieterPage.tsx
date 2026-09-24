@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks.ts';
 
@@ -12,20 +12,34 @@ import {
 import { fetchFirm } from '../../store/firms/firmsOperations.ts';
 
 function AnbieterPage() {
-  const { firmId } = useParams<{ firmId: string }>();
-
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
+  // Получаем параметры из URL
+  const { cityId, categoryId, firmId } = useParams<{
+    cityId: string;
+    categoryId: string;
+    firmId: string;
+  }>();
+
+  // Данные выбранной фирмы из store
   const firm = useAppSelector(getFirm);
   const loading = useAppSelector(getFirmLoadingStatus);
   const error = useAppSelector(getFirmError);
 
+  // Загружаем детальную информацию фирмы по firmId из URL
   useEffect(() => {
     if (firmId) {
       dispatch(fetchFirm(firmId));
     }
   }, [dispatch, firmId]);
 
+  // Возврат к списку фирм выбранного города и категории
+  const handleBack = () => {
+    navigate(`/cities/${cityId}/categories/${categoryId}/firms`);
+  };
+
+  // Содержимое страницы в зависимости от состояния запроса
   let content: ReactNode;
 
   if (loading) {
@@ -86,7 +100,15 @@ function AnbieterPage() {
     );
   }
 
-  return <main>{content}</main>;
+  return (
+    <main>
+      <button type="button" onClick={handleBack}>
+        Zurück
+      </button>
+
+      {content}
+    </main>
+  );
 }
 
 export default AnbieterPage;

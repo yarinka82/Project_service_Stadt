@@ -26,7 +26,7 @@ import {
 
 import { fetchFirms } from '../../store/firms/firmsOperations';
 
-import { resetFirmsList } from '../../store/firms/firmsSlice';
+import { FIRMS_PAGE_LIMIT, resetFirmsList } from '../../store/firms/firmsSlice';
 
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
@@ -110,7 +110,7 @@ export default function FirmsPage() {
           categoryId: numericCategoryId,
         }),
         page: 1,
-        limit: 20,
+        limit: FIRMS_PAGE_LIMIT,
       })
     );
   }, [
@@ -129,6 +129,13 @@ export default function FirmsPage() {
   // Возврат к категориям выбранного города
   const handleBack = () => {
     navigate(`/cities/${numericCityId}/categories`);
+  };
+
+  // Переход на страницу выбранной фирмы
+  const handleFirmClick = (firmId: string) => {
+    navigate(
+      `/cities/${numericCityId}/categories/${categoryId}/firms/${firmId}`
+    );
   };
 
   // Загружаем следующую страницу и добавляем её к существующему списку
@@ -185,7 +192,11 @@ export default function FirmsPage() {
         {/* Временный список для проверки данных */}
         <ul>
           {firms.map((firm) => (
-            <li key={firm.id}>{firm.name}</li>
+            <li key={firm.id}>
+              <button type="button" onClick={() => handleFirmClick(firm.id)}>
+                {firm.name}
+              </button>
+            </li>
           ))}
         </ul>
 

@@ -34,7 +34,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cities" element={<AglomerationsPage />} />
         <Route path="/cities/:cityId/categories" element={<CategoriesPage />} />
-        <Route path="/cities/:cityId/categories/:categoryId/firms/:firmId" element={<AnbieterPage />} />
+        <Route
+          path="/cities/:cityId/categories/:categoryId/firms/:firmId"
+          element={<AnbieterPage />}
+        />
         {/* <Route path="/search" element={<SearchPage />} /> */}
 
         <Route path="/impressum" element={<ImpressumPage />} />

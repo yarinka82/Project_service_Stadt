@@ -14,7 +14,7 @@ export const fetchFirms = createAsyncThunk<
     pagination: FirmsPagination; // то, что операция вернёт
   },
   FirmsListRequestParams, // это передается операции
-  { rejectValue: string } // тип  ошибки
+  { rejectValue: string } // тип ошибки
 >('firms/fetchFirms', async (params, { rejectWithValue }) => {
   try {
     const response = await fetchFirmsApi(params);

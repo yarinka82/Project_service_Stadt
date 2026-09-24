@@ -12,7 +12,6 @@ import AglomerationsPage from '../../pages/AglomerationsPage/AglomerationsPage.t
 import CategoriesPage from '../../pages/CategoriesPage/CategoriesPage.tsx';
 import FirmsPage from '../../pages/FirmsPage/FirmsPage.tsx';
 import AnbieterPage from '../../pages/AnbieterPage/AnbieterPage.tsx';
-// import SearchPage from '../../pages/SearchPage/SearchPage.tsx';
 
 import ImpressumPage from '../../pages/ImpressumPage/ImpressumPage.tsx';
 import DatenschutzPage from '../../pages/DatenschutzPage/DatenschutzPage.tsx';
@@ -43,7 +42,6 @@ function App() {
           path="/cities/:cityId/categories/:categoryId/firms/:firmId"
           element={<AnbieterPage />}
         />
-        {/* <Route path="/search" element={<SearchPage />} /> */}
 
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/datenschutz" element={<DatenschutzPage />} />

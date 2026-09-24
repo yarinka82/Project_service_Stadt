@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
@@ -28,6 +28,17 @@ import { fetchFirms } from '../../store/firms/firmsOperations';
 
 import { FIRMS_PAGE_LIMIT, resetFirmsList } from '../../store/firms/firmsSlice';
 
+import {
+  CATEGORY_ICONS,
+  ALL_CATEGORIES_ICON,
+} from '../../constants/categoryIcons';
+
+import { FirmsGrid } from '../../components/FirmsGrid/FirmsGrid';
+import { FirmsPageHeader } from '../../components/FirmsPageHeader/FirmsPageHeader';
+import { MapPlaceholder } from '../../components/MapPlaceholder/MapPlaceholder';
+
+import type { FirmsViewMode } from '../../components/ViewToggle/ViewToggle';
+
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
 import css from './FirmsPage.module.css';
@@ -36,7 +47,9 @@ export default function FirmsPage() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  // Получаем город и категорию из URL. /cities/1/categories/5/firms
+  const [viewMode, setViewMode] = useState<FirmsViewMode>('list');
+
+  // Получаем город и категорию из URL. напр./cities/1/categories/5/firms
   const { cityId, categoryId } = useParams<{
     cityId: string;
     categoryId: string;
@@ -100,6 +113,7 @@ export default function FirmsPage() {
     ) {
       return;
     }
+
     // Удаляем список от предыдущего города/категории
     dispatch(resetFirmsList());
 
@@ -175,43 +189,63 @@ export default function FirmsPage() {
   let content: ReactNode;
 
   if (citiesError) {
-    content = <p>Die Stadt konnte nicht geladen werden.</p>;
+    content = (
+      <p className={css.message}>Die Stadt konnte nicht geladen werden.</p>
+    );
   } else if (categoriesError) {
-    content = <p>Die Kategorien konnten nicht geladen werden.</p>;
-  } else if (firmsLoading && firms.length === 0) {
+    content = (
+      <p className={css.message}>
+        Die Kategorien konnten nicht geladen werden.
+      </p>
+    );
+  } else if (
+    areCitiesNotReady ||
+    areCategoriesNotReady ||
+    (firmsLoading && firms.length === 0)
+  ) {
     // Первая загрузка списка
-    content = <p>Anbieter werden geladen...</p>;
+    content = (
+      <div className={css.loaderWrapper}>
+        <div
+          className={css.spinner}
+          role="status"
+          aria-label="Anbieter werden geladen"
+        />
+      </div>
+    );
   } else if (firmsError && firms.length === 0) {
     // Ошибка первой загрузки
-    content = <p>Die Anbieter konnten nicht geladen werden.</p>;
+    content = (
+      <p className={css.message}>Die Anbieter konnten nicht geladen werden.</p>
+    );
+  } else if (firms.length === 0) {
+    content = <p className={css.message}>Keine Anbieter gefunden.</p>;
+  } else if (viewMode === 'map') {
+    content = <MapPlaceholder />;
   } else {
     content = (
       <>
-        <p>{firmsTotal} Anbieter</p>
-
-        {/* Временный список для проверки данных */}
-        <ul>
-          {firms.map((firm) => (
-            <li key={firm.id}>
-              <button type="button" onClick={() => handleFirmClick(firm.id)}>
-                {firm.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+        <FirmsGrid firms={firms} onFirmClick={handleFirmClick} />
 
         {/* Ошибка при загрузке следующей страницы: уже загруженные фирмы остаются на экране */}
-        {firmsError && <p>Weitere Anbieter konnten nicht geladen werden.</p>}
+        {firmsError && (
+          <p className={css.loadMoreError}>
+            Weitere Anbieter konnten nicht geladen werden.
+          </p>
+        )}
 
         {/* Кнопка скрывается после последней страницы */}
         {hasMore && (
-          <button
-            type="button"
-            onClick={handleLoadMore}
-            disabled={firmsLoading}
-          >
-            {firmsLoading ? 'Wird geladen...' : 'Mehr laden'}
-          </button>
+          <div className={css.loadMoreWrapper}>
+            <button
+              type="button"
+              className={css.loadMoreButton}
+              onClick={handleLoadMore}
+              disabled={firmsLoading}
+            >
+              {firmsLoading ? 'Wird geladen...' : 'Mehr laden'}
+            </button>
+          </div>
         )}
       </>
     );
@@ -220,15 +254,29 @@ export default function FirmsPage() {
   // Для "all" показываем отдельное название, иначе название категории берём из backend
   const title = isAllCategories ? 'Alle Kategorien' : (category?.name ?? '');
 
+  const categoryIcon = isAllCategories
+    ? ALL_CATEGORIES_ICON
+    : category
+      ? CATEGORY_ICONS[category.id]
+      : undefined;
+
   return (
-    <main className={css.page}>
-      <button type="button" onClick={handleBack}>
-        Zurück
-      </button>
+    <main className={css.pageContainer}>
+      <div className={css.content}>
+        <div className={css.headerWrapper}>
+          <FirmsPageHeader
+            title={title}
+            cityName={city?.name ?? ''}
+            resultCount={firmsTotal}
+            categoryIcon={categoryIcon}
+            mode={viewMode}
+            onBack={handleBack}
+            onModeChange={setViewMode}
+          />
+        </div>
 
-      <h1>{title}</h1>
-
-      {content}
+        <div className={css.resultsWrapper}>{content}</div>
+      </div>
     </main>
   );
 }

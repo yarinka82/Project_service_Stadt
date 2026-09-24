@@ -12,7 +12,7 @@ export interface CitiesState {
   error: string | null;
 }
 
-// так как используется только внутри файла, то без export
+// используется только внутри файла, без export
 const initialState: CitiesState = {
   items: [],
   isLoading: false,

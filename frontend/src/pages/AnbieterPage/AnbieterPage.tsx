@@ -11,6 +11,8 @@ import {
 
 import { fetchFirm } from '../../store/firms/firmsOperations.ts';
 
+import css from './AnbieterPage.module.css';
+
 function AnbieterPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -43,7 +45,15 @@ function AnbieterPage() {
   let content: ReactNode;
 
   if (loading) {
-    content = <p>Anbieter wird geladen...</p>;
+    content = (
+      <div className={css.loaderWrapper}>
+        <div
+          className={css.spinner}
+          role="status"
+          aria-label="Anbieter wird geladen"
+        />
+      </div>
+    );
   } else if (error) {
     content = <p>Der Anbieter konnte nicht geladen werden.</p>;
   } else if (!firm) {

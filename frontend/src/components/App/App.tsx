@@ -10,8 +10,8 @@ import Footer from '../Footer/Footer.tsx';
 import HomePage from '../../pages/HomePage/HomePage.tsx';
 import AglomerationsPage from '../../pages/AglomerationsPage/AglomerationsPage.tsx';
 import CategoriesPage from '../../pages/CategoriesPage/CategoriesPage.tsx';
+import FirmsPage from '../../pages/FirmsPage/FirmsPage.tsx';
 import AnbieterPage from '../../pages/AnbieterPage/AnbieterPage.tsx';
-// import SearchPage from '../../pages/SearchPage/SearchPage.tsx';
 
 import ImpressumPage from '../../pages/ImpressumPage/ImpressumPage.tsx';
 import DatenschutzPage from '../../pages/DatenschutzPage/DatenschutzPage.tsx';
@@ -34,8 +34,14 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cities" element={<AglomerationsPage />} />
         <Route path="/cities/:cityId/categories" element={<CategoriesPage />} />
-        <Route path="/cities/:cityId/categories/:categoryId/firms/:firmId" element={<AnbieterPage />} />
-        {/* <Route path="/search" element={<SearchPage />} /> */}
+        <Route
+          path="/cities/:cityId/categories/:categoryId/firms"
+          element={<FirmsPage />}
+        />
+        <Route
+          path="/cities/:cityId/categories/:categoryId/firms/:firmId"
+          element={<AnbieterPage />}
+        />
 
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/datenschutz" element={<DatenschutzPage />} />

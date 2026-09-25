@@ -1,0 +1,49 @@
+.toggle {
+  display: flex;
+
+  height: 28px;
+
+  border: 1px solid var(--border-f);
+  border-radius: 2px;
+
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.button {
+  min-width: 76px;
+  height: 100%;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border: none;
+  border-right: 1px solid var(--border-f);
+
+  background-color: transparent;
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+.button:last-child {
+  border-right: none;
+}
+
+.button.active {
+  background-color: var(--border-f);
+  color: var(--bg);
+}
+
+.icon {
+  font-size: 12px;
+  line-height: 1;
+}

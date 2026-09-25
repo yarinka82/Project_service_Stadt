@@ -1,18 +1,132 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchFirm } from './firmsOperations';
-import type { Company } from '../../api/api';
+import { fetchFirms, fetchFirm } from './firmsOperations';
+
+// ---------- SHARED ----------
+
+export interface FirmCategory {
+  id: number;
+  name: string;
+  description: string;
+}
+
+// ---------- LIST ----------
+
+//для списка компаний
+export interface FirmListAddress {
+  street: string;
+  houseNr: string;
+  additionalAdrsInfo: string | null;
+  aglomerationId: number;
+  zip: string;
+  city: string;
+  state: string;
+  coordinates: {
+    latitude: number | null;
+    longitude: number | null;
+  };
+}
+
+//одна фирма в списке результатов
+export interface FirmListItem {
+  id: string;
+  name: string;
+  description: string;
+  logo: string | null;
+  categories: FirmCategory[];
+  addresses: FirmListAddress[];
+}
+
+export interface FirmsPagination {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+}
+
+// ---------- DETAIL ----------
+
+export interface FirmDetailAddress {
+  id: string;
+  street: string;
+  houseNr: string;
+  additionalAdrsInfo: string | null;
+  zip: string;
+  city: string;
+  state: string;
+  latitude: number | null;
+  longitude: number | null;
+  aglomerationId: number;
+  aglomerationName: string;
+}
+
+export interface FirmEmail {
+  id: string;
+  email: string;
+  description: string | null;
+}
+
+export interface FirmWebsite {
+  id: string;
+  url: string;
+  description: string | null;
+}
+
+export interface FirmPhoneNumber {
+  id: string;
+  number: string;
+  description: string | null;
+  type: string;
+}
+
+//одна фирма для AnbieterPage
+export interface FirmDetail {
+  id: string;
+  name: string;
+  description: string;
+  logo: string | null;
+  categories: FirmCategory[];
+  addresses: FirmDetailAddress[];
+  emails: FirmEmail[];
+  websites: FirmWebsite[];
+  phoneNumbers: FirmPhoneNumber[];
+}
+
+// ---------- STATE ----------
 
 export interface FirmsState {
-  item: Company | null;
+  item: FirmDetail | null;
+
+  items: FirmListItem[];
+  pagination: FirmsPagination;
+
   isLoading: boolean;
   error: string | null;
+
+  listIsLoading: boolean;
+  listError: string | null;
 }
+
+export const FIRMS_PAGE_LIMIT = 20;
+
+const initialPagination: FirmsPagination = {
+  page: 1,
+  limit: FIRMS_PAGE_LIMIT,
+  total: 0,
+  totalPages: 0,
+};
 
 const initialState: FirmsState = {
   item: null,
+
+  items: [],
+  pagination: { ...initialPagination },
+
   isLoading: false,
   error: null,
+
+  listIsLoading: false,
+  listError: null,
 };
 
 const firmsSlice = createSlice({
@@ -20,10 +134,43 @@ const firmsSlice = createSlice({
 
   initialState,
 
-  reducers: {},
+  reducers: {
+    resetFirmsList: (state) => {
+      state.items = [];
+      state.pagination = { ...initialPagination };
+      state.listIsLoading = false;
+      state.listError = null;
+    },
+  },
 
   extraReducers: (builder) => {
     builder
+      // ---------- FIRMS LIST ----------
+
+      .addCase(fetchFirms.pending, (state) => {
+        state.listIsLoading = true;
+        state.listError = null;
+      })
+
+      .addCase(fetchFirms.fulfilled, (state, action) => {
+        state.listIsLoading = false;
+
+        if (action.payload.pagination.page === 1) {
+          state.items = [...action.payload.data];
+        } else {
+          state.items.push(...action.payload.data);
+        }
+
+        state.pagination = action.payload.pagination;
+      })
+
+      .addCase(fetchFirms.rejected, (state, action) => {
+        state.listIsLoading = false;
+        state.listError = action.payload ?? 'Something went wrong';
+      })
+
+      // ---------- FIRM DETAIL ----------
+
       .addCase(fetchFirm.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -40,5 +187,7 @@ const firmsSlice = createSlice({
       });
   },
 });
+
+export const { resetFirmsList } = firmsSlice.actions;
 
 export default firmsSlice.reducer;

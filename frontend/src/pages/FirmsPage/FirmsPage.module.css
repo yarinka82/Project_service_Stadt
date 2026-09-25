@@ -1,0 +1,122 @@
+.pageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  padding: 0 24px;
+  padding-bottom: 32px;
+}
+
+/* Mobile */
+
+.headerWrapper {
+  margin-top: 16px;
+}
+
+.resultsWrapper {
+  margin-top: 25px;
+}
+
+/* Loader — тот же, что на CategoriesPage */
+
+.loaderWrapper {
+  width: 100%;
+  min-height: 250px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 52px;
+  height: 52px;
+
+  border: 4px solid var(--border-h);
+  border-top-color: var(--text);
+  border-radius: 50%;
+
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2.5s;
+  }
+}
+
+.message {
+  text-align: center;
+}
+
+.loadMoreWrapper {
+  margin-top: 32px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.loadMoreButton {
+  min-height: 44px;
+  padding: 8px 20px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  color: var(--text);
+  background: transparent;
+
+  border: 1px solid var(--border-h);
+  border-radius: 2px;
+
+  cursor: pointer;
+}
+
+.loadMoreButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.loadMoreError {
+  margin-top: 20px;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Tablet */
+
+@media (min-width: 768px) {
+  .content {
+    padding: 0 32px;
+    padding-bottom: 80px;
+  }
+
+  .resultsWrapper {
+    margin-top: 28px;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+  .resultsWrapper {
+    margin-top: 31px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}

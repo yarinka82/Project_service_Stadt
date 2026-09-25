@@ -3,66 +3,22 @@
 import axios from 'axios';
 import type { City } from '../store/cities/citiesSlice';
 import type { Category } from '../store/categories/categoriesSlice';
+import type {
+  FirmDetail,
+  FirmListItem,
+  FirmsPagination,
+} from '../store/firms/firmsSlice';
 
 const api = axios.create();
 
-export interface CompanyCategory {
-  id: number;
-  name: string;
-  description: string;
-}
-
-export interface CompanyAddress {
-  id: string;
-  street: string;
-  houseNr: string;
-  additionalAdrsInfo: string | null;
-  zip: string;
-  city: string;
-  state: string;
-  latitude: number | null;
-  longitude: number | null;
-  aglomerationId: number;
-  aglomerationName: string;
-}
-
-export interface CompanyEmail {
-  id: string;
-  email: string;
-  description: string | null;
-}
-
-export interface CompanyWebsite {
-  id: string;
-  url: string;
-  description: string | null;
-}
-
-export interface CompanyPhoneNumber {
-  id: string;
-  number: string;
-  description: string | null;
-  type: string;
-}
-
-export interface Company {
-  id: string;
-  name: string;
-  description: string;
-  logo: string | null;
-  categories: CompanyCategory[];
-  addresses: CompanyAddress[];
-  emails: CompanyEmail[];
-  websites: CompanyWebsite[];
-  phoneNumbers: CompanyPhoneNumber[];
-}
-
+// ---------- CITIES ----------
 export interface CitiesResponse {
   status: string;
   code: number;
   data: City[];
 }
 
+// ---------- CATEGORIES ----------
 export interface CategoriesResponse {
   status: string;
   code: number;
@@ -72,12 +28,29 @@ export interface CategoriesResponse {
   };
 }
 
-export interface CompanyResponse {
-  status: string;
-  code: number;
-  data: Company;
+// ---------- FIRMS LIST ----------
+export interface FirmsListRequestParams {
+  aglomerationId: number;
+  categoryId?: number;
+  page: number;
+  limit: number;
 }
 
+export interface FirmsListResponse {
+  status: string;
+  code: number;
+  data: FirmListItem[];
+  pagination: FirmsPagination;
+}
+
+// ---------- FIRM DETAIL ----------
+export interface FirmDetailResponse {
+  status: string;
+  code: number;
+  data: FirmDetail;
+}
+
+// ---------- API REQUESTS ----------
 export const fetchCitiesApi = async (): Promise<City[]> => {
   const response = await api.get<CitiesResponse>('/aglomerations');
 
@@ -90,13 +63,26 @@ export const fetchCategoriesApi = async (): Promise<Category[]> => {
   return response.data.data.categories;
 };
 
+export const fetchFirmsApi = async ({
+  aglomerationId,
+  categoryId,
+  page,
+  limit,
+}: FirmsListRequestParams): Promise<FirmsListResponse> => {
+  const response = await api.get<FirmsListResponse>('/companies', {
+    params: {
+      aglomerationId,
+      ...(categoryId !== undefined && { categoryId }),
+      page,
+      limit,
+    },
+  });
 
-export const fetchFirmApi = async (
-  companyId: string,
-): Promise<Company> => {
-  const response = await api.get<CompanyResponse>(
-    `/companies/${companyId}`,
-  );
+  return response.data;
+};
+
+export const fetchFirmApi = async (firmId: string): Promise<FirmDetail> => {
+  const response = await api.get<FirmDetailResponse>(`/companies/${firmId}`);
 
   return response.data.data;
 };

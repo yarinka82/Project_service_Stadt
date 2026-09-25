@@ -1,0 +1,33 @@
+.placeholder {
+  width: 100%;
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border-h);
+
+  text-align: center;
+}
+
+.placeholder p {
+  color: var(--text);
+
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .placeholder {
+    min-height: 600px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .placeholder {
+    min-height: 520px;
+  }
+}

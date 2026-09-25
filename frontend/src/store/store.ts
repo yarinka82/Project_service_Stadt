@@ -7,7 +7,6 @@ export const store = configureStore({
   reducer: {
     cities: citiesReducer,
     categories: categoriesReducer,
-    // burgerModal: burgerModalReducer,
     firms: firmsReducer,
   },
 });

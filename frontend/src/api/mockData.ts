@@ -11,6 +11,24 @@ import type {
   OpeningHours,
 } from '../store/firms/firmsSlice';
 
+// Сгенерированные фото демо-фирм: по 3 на категорию.
+// Внутри категории раздаются по кругу по номеру фирмы (D001 - фото 1, D002 - фото 2 ...)
+import autoWerkstattLogo1 from '../assets/img/img_demo/autowerkstatt1.jpg';
+import autoWerkstattLogo2 from '../assets/img/img_demo/autowerkstatt2.jpg';
+import autoWerkstattLogo3 from '../assets/img/img_demo/autowerkstatt3.jpg';
+import fahrradWerkstattLogo1 from '../assets/img/img_demo/fahrradwerkstatt1.jpg';
+import fahrradWerkstattLogo2 from '../assets/img/img_demo/fahrradwerkstatt2.jpg';
+import fahrradWerkstattLogo3 from '../assets/img/img_demo/fahrradwerkstatt3.jpg';
+import friseureLogo1 from '../assets/img/img_demo/friseure1.jpg';
+import friseureLogo2 from '../assets/img/img_demo/friseure2.jpg';
+import friseureLogo3 from '../assets/img/img_demo/friseure3.jpg';
+import laptopLogo1 from '../assets/img/img_demo/laptop1.jpg';
+import laptopLogo2 from '../assets/img/img_demo/laptop2.jpg';
+import laptopLogo3 from '../assets/img/img_demo/laptop3.jpg';
+import schneidereiLogo1 from '../assets/img/img_demo/schneiderei1.jpg';
+import schneidereiLogo2 from '../assets/img/img_demo/schneiderei2.jpg';
+import schneidereiLogo3 from '../assets/img/img_demo/schneiderei3.jpg';
+
 // Страница ферайна - стоит как сайт каждой фирмы, туда же ведёт кнопка «Kontakt»
 const DEMO_WEBSITE = 'https://www.instagram.com/digital_it_hub_wu/';
 
@@ -100,7 +118,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Motorblick München DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo1,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -145,7 +163,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Werkraum Auto München DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo2,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -190,7 +208,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kupplung & Co München DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo3,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -235,7 +253,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Werkstatt Nord München DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo1,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -280,7 +298,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Mobilwerk München DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo2,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -325,7 +343,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Autopunkt München DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo3,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -370,7 +388,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Radwelle München DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo1,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -415,7 +433,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Pedalpunkt München DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo2,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -460,7 +478,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Velowerk München DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo3,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -505,7 +523,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kettenkunst München DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo1,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -550,7 +568,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Speichenzeit München DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo2,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -595,7 +613,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Radlabor München DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo3,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -640,7 +658,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Haaratelier München DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo1,
     categories: [FRISEURE],
     addresses: [
       {
@@ -685,7 +703,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Schnittpunkt München DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo2,
     categories: [FRISEURE],
     addresses: [
       {
@@ -730,7 +748,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Stil & Strähne München DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo3,
     categories: [FRISEURE],
     addresses: [
       {
@@ -775,7 +793,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Salon Farbwind München DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo1,
     categories: [FRISEURE],
     addresses: [
       {
@@ -820,7 +838,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kammkunst München DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo2,
     categories: [FRISEURE],
     addresses: [
       {
@@ -865,7 +883,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Haarlinie München DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo3,
     categories: [FRISEURE],
     addresses: [
       {
@@ -910,7 +928,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Fadenwerk München DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo1,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -955,7 +973,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nahtatelier München DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo2,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -1000,7 +1018,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Stoffkontor München DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo3,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -1045,7 +1063,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nadel & Faden München DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo1,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -1090,7 +1108,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Textilpunkt München DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo2,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -1135,7 +1153,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nahtzeit München DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo3,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -1180,7 +1198,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Bytewerk München DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo1,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -1225,7 +1243,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Displaypunkt München DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo2,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -1270,7 +1288,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Techniknest München DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo3,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -1315,7 +1333,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'SmartFix Atelier München DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo1,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -1360,7 +1378,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Chip & Kabel München DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo2,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -1405,7 +1423,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Pixelwerk München DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo3,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -1450,7 +1468,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Motorblick Würzburg DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo1,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -1495,7 +1513,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Werkraum Auto Würzburg DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo2,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -1540,7 +1558,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kupplung & Co Würzburg DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo3,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -1585,7 +1603,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Werkstatt Nord Würzburg DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo1,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -1630,7 +1648,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Mobilwerk Würzburg DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo2,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -1675,7 +1693,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Autopunkt Würzburg DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo3,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -1720,7 +1738,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Radwelle Würzburg DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo1,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -1765,7 +1783,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Pedalpunkt Würzburg DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo2,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -1810,7 +1828,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Velowerk Würzburg DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo3,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -1855,7 +1873,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kettenkunst Würzburg DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo1,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -1900,7 +1918,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Speichenzeit Würzburg DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo2,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -1945,7 +1963,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Radlabor Würzburg DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo3,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -1990,7 +2008,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Haaratelier Würzburg DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo1,
     categories: [FRISEURE],
     addresses: [
       {
@@ -2035,7 +2053,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Schnittpunkt Würzburg DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo2,
     categories: [FRISEURE],
     addresses: [
       {
@@ -2080,7 +2098,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Stil & Strähne Würzburg DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo3,
     categories: [FRISEURE],
     addresses: [
       {
@@ -2125,7 +2143,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Salon Farbwind Würzburg DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo1,
     categories: [FRISEURE],
     addresses: [
       {
@@ -2170,7 +2188,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kammkunst Würzburg DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo2,
     categories: [FRISEURE],
     addresses: [
       {
@@ -2215,7 +2233,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Haarlinie Würzburg DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo3,
     categories: [FRISEURE],
     addresses: [
       {
@@ -2260,7 +2278,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Fadenwerk Würzburg DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo1,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -2305,7 +2323,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nahtatelier Würzburg DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo2,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -2350,7 +2368,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Stoffkontor Würzburg DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo3,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -2395,7 +2413,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nadel & Faden Würzburg DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo1,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -2440,7 +2458,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Textilpunkt Würzburg DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo2,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -2485,7 +2503,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nahtzeit Würzburg DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo3,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -2530,7 +2548,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Bytewerk Würzburg DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo1,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -2575,7 +2593,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Displaypunkt Würzburg DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo2,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -2620,7 +2638,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Techniknest Würzburg DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo3,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -2665,7 +2683,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'SmartFix Atelier Würzburg DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo1,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -2710,7 +2728,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Chip & Kabel Würzburg DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo2,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -2755,7 +2773,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Pixelwerk Würzburg DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo3,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -2800,7 +2818,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Motorblick Frankfurt DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo1,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -2845,7 +2863,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Werkraum Auto Frankfurt DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo2,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -2890,7 +2908,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kupplung & Co Frankfurt DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo3,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -2935,7 +2953,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Werkstatt Nord Frankfurt DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo1,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -2980,7 +2998,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Mobilwerk Frankfurt DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo2,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -3025,7 +3043,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Autopunkt Frankfurt DEMO',
     description:
       'DEMO: Kfz-Inspektion, Wartung, Diagnose und Reparatur. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: autoWerkstattLogo3,
     categories: [AUTOWERKSTATT],
     addresses: [
       {
@@ -3066,7 +3084,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Radwelle Frankfurt DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo1,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -3111,7 +3129,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Pedalpunkt Frankfurt DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo2,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -3156,7 +3174,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Velowerk Frankfurt DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo3,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -3201,7 +3219,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kettenkunst Frankfurt DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo1,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -3246,7 +3264,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Speichenzeit Frankfurt DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo2,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -3291,7 +3309,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Radlabor Frankfurt DEMO',
     description:
       'DEMO: Fahrradreparatur, Inspektion und Wartung. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: fahrradWerkstattLogo3,
     categories: [FAHRRADWERKSTATT],
     addresses: [
       {
@@ -3336,7 +3354,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Haaratelier Frankfurt DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo1,
     categories: [FRISEURE],
     addresses: [
       {
@@ -3381,7 +3399,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Schnittpunkt Frankfurt DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo2,
     categories: [FRISEURE],
     addresses: [
       {
@@ -3426,7 +3444,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Stil & Strähne Frankfurt DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo3,
     categories: [FRISEURE],
     addresses: [
       {
@@ -3471,7 +3489,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Salon Farbwind Frankfurt DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo1,
     categories: [FRISEURE],
     addresses: [
       {
@@ -3516,7 +3534,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Kammkunst Frankfurt DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo2,
     categories: [FRISEURE],
     addresses: [
       {
@@ -3561,7 +3579,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Haarlinie Frankfurt DEMO',
     description:
       'DEMO: Haarschnitt, Coloration und Styling. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: friseureLogo3,
     categories: [FRISEURE],
     addresses: [
       {
@@ -3602,7 +3620,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Fadenwerk Frankfurt DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo1,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -3647,7 +3665,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nahtatelier Frankfurt DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo2,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -3692,7 +3710,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Stoffkontor Frankfurt DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo3,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -3737,7 +3755,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nadel & Faden Frankfurt DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo1,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -3782,7 +3800,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Textilpunkt Frankfurt DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo2,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -3827,7 +3845,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Nahtzeit Frankfurt DEMO',
     description:
       'DEMO: Änderungsschneiderei, Kleidungsreparatur und Textilservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: schneidereiLogo3,
     categories: [SCHNEIDEREI_TEXTILSERVICE],
     addresses: [
       {
@@ -3872,7 +3890,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Bytewerk Frankfurt DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo1,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -3917,7 +3935,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Displaypunkt Frankfurt DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo2,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -3962,7 +3980,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Techniknest Frankfurt DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo3,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -4007,7 +4025,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'SmartFix Atelier Frankfurt DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo1,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -4052,7 +4070,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Chip & Kabel Frankfurt DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo2,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {
@@ -4097,7 +4115,7 @@ export const MOCK_FIRM_DETAILS: FirmDetail[] = [
     name: 'Pixelwerk Frankfurt DEMO',
     description:
       'DEMO: Smartphone-, Laptop- und Tablet-Reparatur, Diagnose und Datenservice. Fiktiver Anbieter für einen Prototyp.',
-    logo: null,
+    logo: laptopLogo3,
     categories: [LAPTOP_HANDY_REPARATUR],
     addresses: [
       {

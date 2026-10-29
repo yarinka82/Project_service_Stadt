@@ -1,3 +1,255 @@
+/* .loaderWrapper {
+  width: 100%;
+  min-height: 250px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 52px;
+  height: 52px;
+
+  border: 4px solid var(--border-h);
+  border-top-color: var(--text);
+  border-radius: 50%;
+
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2.5s;
+  }
+} */
+
+.page {
+  width: 100%;
+  min-width: 0;
+  font-family: var(--heading);
+}
+
+.card {
+  position: relative;
+
+  margin-top: -28px;
+  border-radius: 26px 26px 0 0;
+
+  background-color: #f1f5f8;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'badge'
+    'title'
+    'address'
+    'stats'
+    'payments';
+
+  padding: 20px 36px 25px;
+}
+
+.badge {
+  grid-area: badge;
+  justify-self: start;
+  line-height: 11px;
+}
+
+.title {
+  grid-area: title;
+  min-width: 0;
+
+  margin: 14px 0 0;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: var(--bg);
+
+  overflow-wrap: anywhere;
+}
+
+.address {
+  grid-area: address;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+
+  min-width: 0;
+  margin: 16px 0 0;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.6);
+
+  overflow-wrap: anywhere;
+}
+
+.address img {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stats {
+  grid-area: stats;
+
+  width: 100%;
+  max-width: 296px;
+  min-width: 0;
+
+  margin-top: 10px;
+}
+
+.payments {
+  grid-area: payments;
+  min-width: 0;
+  margin-top: 32px;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'profile'
+    'hours'
+    'location'
+    'contacts'
+    'features';
+}
+
+.state {
+  width: 100%;
+  padding: 24px;
+}
+
+.message {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+@media (min-width: 768px) {
+  .page {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+
+  .card {
+    margin-top: -41px;
+  }
+
+  .summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'badge payments'
+      'title title'
+      'address address'
+      'stats stats';
+
+    padding-inline: 34px;
+  }
+
+  .payments {
+    justify-self: end;
+    margin-top: 0;
+  }
+
+  .title,
+  .address,
+  .stats {
+    justify-self: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    max-width: 1286px;
+    margin: 50px auto 0;
+    padding: 56px;
+
+    background-color: #fff;
+  }
+
+  .card {
+    margin-top: 11px;
+    border-radius: 0;
+  }
+
+  .summary {
+    grid-template-columns:
+      minmax(0, 1fr)
+      max-content
+      296px;
+
+    grid-template-areas:
+      'title badge stats'
+      'address address stats'
+      'payments payments stats';
+
+    column-gap: 16px;
+    padding: 20px 0 25px;
+  }
+
+  .title {
+    justify-self: start;
+
+    margin: 0;
+
+    font-size: 32px;
+    text-align: left;
+  }
+
+  .badge {
+    align-self: start;
+    margin-top: 5px;
+  }
+
+  .address {
+    justify-self: start;
+
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .stats {
+    justify-self: end;
+    align-self: start;
+    margin: 0;
+  }
+
+  .payments {
+    justify-self: start;
+    margin-top: 16px;
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1fr) 290px;
+    grid-template-areas:
+      'profile hours'
+      'contacts location'
+      '. features';
+
+    gap: 24px 56px;
+    padding-bottom: 18px;
+  }
+}
+
 .loaderWrapper {
   width: 100%;
   min-height: 250px;

@@ -1,7 +1,7 @@
 import css from './Header.module.css';
 import { Link } from 'react-router-dom';
-import pinIcon from '../../assets/icons/pin.svg';
-import themeIcon from '../../assets/icons/moon.svg';
+import pinIcon from '../../assets/svg/pin.svg';
+import themeIcon from '../../assets/svg/moon.svg';
 
 function Header() {
   return (

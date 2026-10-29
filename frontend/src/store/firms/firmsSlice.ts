@@ -10,6 +10,43 @@ export interface FirmCategory {
   description: string;
 }
 
+// День недели - ключ в часах работы
+export type Weekday =
+  | 'monday'
+  | 'tuesday'
+  | 'wednesday'
+  | 'thursday'
+  | 'friday'
+  | 'saturday'
+  | 'sunday';
+
+// Интервал работы, время в формате "ЧЧ:ММ"
+export interface TimeInterval {
+  from: string;
+  to: string;
+}
+
+// Часы работы по дням. Пустой массив - в этот день закрыто.
+// Если поля openingHours у фирмы нет вообще - часы неизвестны
+export type OpeningHours = Record<Weekday, TimeInterval[]>;
+
+// Код способа оплаты. Надпись и значок выбирает страница
+export type PaymentMethod = 'cash' | 'card' | 'paypal';
+
+// Строка таблицы цен
+export interface FirmService {
+  name: string;
+  price: number;
+}
+
+// Besonderheiten: показываются только те, что равны true
+export interface FirmFeatures {
+  parking: boolean;
+  vouchers: boolean;
+  wheelchair: boolean;
+  petFriendly: boolean;
+}
+
 // ---------- LIST ----------
 
 //для списка компаний
@@ -35,6 +72,8 @@ export interface FirmListItem {
   logo: string | null;
   categories: FirmCategory[];
   addresses: FirmListAddress[];
+  rating?: number;
+  reviewCount?: number;
 }
 
 export interface FirmsPagination {
@@ -90,6 +129,14 @@ export interface FirmDetail {
   emails: FirmEmail[];
   websites: FirmWebsite[];
   phoneNumbers: FirmPhoneNumber[];
+  rating?: number;
+  reviewCount?: number;
+  priceFrom?: number;
+  services?: FirmService[];
+  paymentMethods?: PaymentMethod[];
+  languages?: string[];
+  features?: FirmFeatures;
+  openingHours?: OpeningHours;
 }
 
 // ---------- STATE ----------

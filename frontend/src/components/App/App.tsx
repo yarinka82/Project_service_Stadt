@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useAppDispatch } from '../../store/hooks.ts';
 import { fetchCities } from '../../store/cities/citiesOperations.ts';
@@ -6,6 +6,10 @@ import { fetchCategories } from '../../store/categories/categoriesOperations.ts'
 
 import Header from '../Header/Header.tsx';
 import Footer from '../Footer/Footer.tsx';
+
+// ДЕМО
+import DemoBanner from '../DemoBanner/DemoBanner.tsx';
+import { USE_MOCK } from '../../api/api.ts';
 
 import HomePage from '../../pages/HomePage/HomePage.tsx';
 import AglomerationsPage from '../../pages/AglomerationsPage/AglomerationsPage.tsx';
@@ -21,6 +25,9 @@ import css from './App.module.css';
 
 function App() {
   const dispatch = useAppDispatch();
+
+  // ДЕМО
+  const [isDemoBannerOpen, setIsDemoBannerOpen] = useState(true);
 
   useEffect(() => {
     dispatch(fetchCities());
@@ -50,6 +57,10 @@ function App() {
       </Routes>
 
       <Footer />
+      {/* ДЕМО */}
+      {USE_MOCK && isDemoBannerOpen && (
+        <DemoBanner onClose={() => setIsDemoBannerOpen(false)} />
+      )}
     </div>
   );
 }

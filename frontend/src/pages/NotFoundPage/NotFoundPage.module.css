@@ -2,8 +2,7 @@
   width: 100%;
   min-height: 100%;
 
-  background-image:
-    url("../../assets/png/404.png");
+  background-image: url('../../assets/png/404.png');
 
   background-size: cover;
   background-position: center;
@@ -16,8 +15,6 @@
   align-items: center;
   padding: 15px 30px;
 }
-
-
 
 .backButton {
   padding: 0;
@@ -56,7 +53,6 @@
   align-items: center;
   text-align: center;
 }
-  
 
 .errorCode {
   font-size: 64px;
@@ -64,8 +60,7 @@
   line-height: 1;
 }
 
-p {
+.errorContent p {
   margin-top: 24px;
-    font-weight: 700;
-
+  font-weight: 700;
 }

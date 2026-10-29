@@ -1,0 +1,24 @@
+.badge {
+  display: inline-block;
+  padding: 0 8px;
+
+  border-radius: 5px;
+
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 11px;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.open {
+  background-color: rgba(115, 221, 66, 0.29);
+}
+
+.closed {
+  background-color: rgba(236, 34, 31, 0.2);
+}
+
+.unknown {
+  background-color: rgba(179, 179, 179, 0.3);
+}

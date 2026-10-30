@@ -38,7 +38,16 @@ export default function DemoBanner({ onClose }: DemoBannerProps) {
           und enthalten keine echten Nutzerinformationen.
         </p>
 
-        <p className={css.feedback}>Feedback: info@thedigitalhub.com</p>
+        <p className={css.feedback}>
+          Feedback:{' '}
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=labtechnohub%40gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            labtechnohub@gmail.com
+          </a>
+        </p>
       </div>
 
       <button className={css.confirmButton} type="button" onClick={onClose}>

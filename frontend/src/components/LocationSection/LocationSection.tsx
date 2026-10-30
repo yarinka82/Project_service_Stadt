@@ -25,17 +25,6 @@ export default function LocationSection({
       {mapImage ? (
         <figure className={css.figure}>
           <img className={css.map} src={mapImage} alt={`Karte: ${city}`} />
-
-          {/* <figcaption className={css.caption}>
-            ©{' '}
-            <a
-              href="https://www.openstreetmap.org/copyright"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              OpenStreetMap contributors
-            </a>
-          </figcaption> */}
         </figure>
       ) : (
         <p className={css.unavailable}>Karte nicht verfügbar</p>

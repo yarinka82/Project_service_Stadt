@@ -102,6 +102,16 @@
 .feedback a {
   color: inherit;
   text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.feedback a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.feedback a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 .confirmButton {

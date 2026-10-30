@@ -14,6 +14,9 @@
   display: grid;
   grid-template-columns: repeat(3, 90px); /* Mobile + Tablet: 3 колонки */
   gap: 33px;
+  /* Промежуток между колонками 33px, но на узких экранах сжимается,
+     чтобы три плитки по 90px всегда помещались в ширину контейнера */
+  column-gap: min(33px, calc((100% - 270px) / 2));
   justify-content: start; /* Mobile + Tablet: сетка строится от левого края */
 }
 

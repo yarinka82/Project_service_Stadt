@@ -118,7 +118,6 @@
   font-weight: 300;
 }
 
-
 /* Tablet — 768px */
 
 @media (min-width: 768px) {
@@ -126,7 +125,6 @@
     padding: 20px 32px;
   }
 }
-
 
 /* Desktop — 1440px */
 

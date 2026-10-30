@@ -50,7 +50,7 @@
 
 @media (min-width: 1024px) {
   .section {
-    align-self: start;
+    /* align-self: start; */
 
     padding: 11px 12px 18px 33px;
     border: none;

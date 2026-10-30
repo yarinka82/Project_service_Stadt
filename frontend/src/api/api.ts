@@ -19,7 +19,7 @@ import {
 
 // ДЕМО: true - данные берутся из mockData.ts, запросы к бэкенду не отправляются.
 // Когда приложение будет подключено к бэкенду: удалить флаг, все ветки if (USE_MOCK) и mockData.ts
-// const USE_MOCK = true;
+
 export const USE_MOCK = true;
 
 const api = axios.create();

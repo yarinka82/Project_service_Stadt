@@ -1,27 +1,27 @@
 :root {
   --text: rgba(255, 255, 255, 1);
-  --text-lb: rgba(129, 164, 205, 1);  /* вторая строка заголовка имеет другой цвет light blue */
+  --text-lb: rgba(
+    129,
+    164,
+    205,
+    1
+  ); /* вторая строка заголовка имеет другой цвет light blue */
   --bg: rgba(2, 33, 60, 1);
   --border-h: rgba(129, 164, 205, 1);
   --border-f: rgba(219, 228, 238, 1);
 
-
-  --sans: "Inter", system-ui, "Segoe UI", sans-serif;
-  --heading: "Inter", system-ui, "Segoe UI", sans-serif;
-
+  --sans: 'Inter', system-ui, 'Segoe UI', sans-serif;
+  --heading: 'Inter', system-ui, 'Segoe UI', sans-serif;
 
   --h1-size: 38px;
   --h2-size: 16px;
-  
+
   /* --font-size-header-info: 11px;  для 12 GEPRÜFTE ANBIETER • 3 STÄDTE */
-  
+
   --font-size-header: 20px;
   --font-size-footer: 8px;
 
   --p-size: 18px;
-
-
-
 
   --font-size-modal-window: 12px;
   --bg-modal-window: rgba(129, 164, 205, 1);
@@ -29,8 +29,6 @@
 
   --color-btn-aglomeration: rgba(219, 228, 238, 1);
   --text-color-btn-aglomeration: rgba(2, 33, 60, 1);
-
-
 }
 
 * {
@@ -42,15 +40,13 @@ body {
   font-family: var(--sans);
   background-color: var(--bg);
   color: var(--text);
-  min-width: 393px;
   min-height: 100vh;
 }
 
 h1,
 h2,
 h3,
-p
- {
+p {
   font-family: var(--heading);
   color: var(--text);
   margin: 0;
@@ -67,11 +63,7 @@ h2 {
   font-weight: 700;
 }
 
-
 p {
   font-size: var(--p-size);
   font-weight: 300;
 }
-
-
-

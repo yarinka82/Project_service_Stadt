@@ -228,7 +228,17 @@ const firmsSlice = createSlice({
         state.item = action.payload;
       })
 
+      // .addCase(fetchFirm.rejected, (state, action) => {
+      //   state.isLoading = false;
+      //   state.error = action.payload ?? 'Something went wrong';
+      // });
       .addCase(fetchFirm.rejected, (state, action) => {
+        // Отменённый запрос - не ошибка: пользователь ушёл со страницы или открыл другую фирму.
+        // Загрузку не сбрасываем, её ведёт новый запрос
+        if (action.meta.aborted) {
+          return;
+        }
+
         state.isLoading = false;
         state.error = action.payload ?? 'Something went wrong';
       });

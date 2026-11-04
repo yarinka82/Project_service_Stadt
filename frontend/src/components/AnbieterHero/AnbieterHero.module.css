@@ -66,6 +66,7 @@
 @media (min-width: 1024px) {
   .hero {
     height: 300px;
+    margin: 34px 56px 0;
   }
 
   .backButton {

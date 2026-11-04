@@ -42,14 +42,12 @@
 
 .map {
   display: block;
-
   width: 281px;
   max-width: 100%;
   height: 115px;
-
   border-radius: 2px;
-  /* object-fit: cover; */
   object-fit: contain;
+  object-position: left center;
 }
 
 .caption {
@@ -81,7 +79,7 @@
   }
 
   .map {
-    width: 283px;
-    height: 188px;
+    width: 100%;
+    height: auto;
   }
 }

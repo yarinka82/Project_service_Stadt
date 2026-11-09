@@ -21,9 +21,9 @@ import gift from '../assets/svg/anbieter/gift.svg';
 import starFilled from '../assets/svg/anbieter/star-black.svg';
 import starEmpty from '../assets/svg/anbieter/star_kontur_black.svg';
 
-import mapFrankfurt from '../assets/img/img_demo/Frankfurt-2.jpg';
-import mapMuenchen from '../assets/img/img_demo/Muenchen2.jpg';
-import mapWuerzburg from '../assets/img/img_demo/Wuerzburg2.jpg';
+import mapFrankfurt from '../assets/img/img_demo/map_frankfurt.jpg';
+import mapMuenchen from '../assets/img/img_demo/map_muenchen.jpg';
+import mapWuerzburg from '../assets/img/img_demo/map_wuerzburg.jpg';
 
 export const WEEKDAYS: Weekday[] = [
   'monday',

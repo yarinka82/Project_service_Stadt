@@ -33,6 +33,9 @@ import {
   ALL_CATEGORIES_ICON,
 } from '../../constants/categoryIcons';
 
+import { USE_MOCK } from '../../api/api';
+import { CITY_MAPS } from '../../constants/anbieterLabels';
+
 import { FirmsGrid } from '../../components/FirmsGrid/FirmsGrid';
 import { FirmsPageHeader } from '../../components/FirmsPageHeader/FirmsPageHeader';
 import { MapPlaceholder } from '../../components/MapPlaceholder/MapPlaceholder';
@@ -185,6 +188,9 @@ export default function FirmsPage() {
     return <NotFoundPage />;
   }
 
+  // ДЕМО: скриншот центра города вместо интерактивной карты
+  const mapImage = USE_MOCK ? CITY_MAPS[numericCityId] : undefined;
+
   // Временное содержимое страницы до финальной вёрстки карточек
   let content: ReactNode;
 
@@ -221,7 +227,16 @@ export default function FirmsPage() {
   } else if (firms.length === 0) {
     content = <p className={css.message}>Keine Anbieter gefunden.</p>;
   } else if (viewMode === 'map') {
-    content = <MapPlaceholder />;
+    // ДЕМО: скриншот города, иначе прежняя заглушка
+    content = mapImage ? (
+      <img
+        className={css.map}
+        src={mapImage}
+        alt={`Karte: ${city?.name ?? ''}`}
+      />
+    ) : (
+      <MapPlaceholder />
+    );
   } else {
     content = (
       <>

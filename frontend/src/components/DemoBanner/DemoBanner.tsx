@@ -41,11 +41,11 @@ export default function DemoBanner({ onClose }: DemoBannerProps) {
         <p className={css.feedback}>
           Feedback:{' '}
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=labtechnohub%40gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=wurzburg-digitalithub%40web.de"
             target="_blank"
             rel="noopener noreferrer"
           >
-            labtechnohub@gmail.com
+            wurzburg-digitalithub@web.de
           </a>
         </p>
       </div>

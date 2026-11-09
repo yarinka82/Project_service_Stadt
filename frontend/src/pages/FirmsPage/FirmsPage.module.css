@@ -20,6 +20,11 @@
   margin-top: 25px;
 }
 
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 /* Loader — тот же, что на CategoriesPage */
 
 .loaderWrapper {

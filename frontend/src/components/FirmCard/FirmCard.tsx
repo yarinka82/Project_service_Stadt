@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import css from './FirmCard.module.css';
 
 interface FirmCardProps {
@@ -13,7 +14,8 @@ interface FirmCardProps {
   houseNr?: string;
   zip?: string;
 
-  onClick: () => void;
+  // Адрес страницы фирмы
+  to: string;
 }
 
 export function FirmCard({
@@ -26,7 +28,7 @@ export function FirmCard({
   street,
   houseNr,
   zip,
-  onClick,
+  to,
 }: FirmCardProps) {
   const descriptionText = description.trim();
 
@@ -35,51 +37,54 @@ export function FirmCard({
   const addressText = [streetAddress, zip].filter(Boolean).join(', ');
 
   return (
-    <article className={css.card} onClick={onClick}>
-      <div className={css.imageWrapper}>
-        {logo ? (
-          <img src={logo} alt="" className={css.image} />
-        ) : (
-          <div className={css.imagePlaceholder}>Kein Bild verfügbar</div>
-        )}
+    <article className={css.card}>
+      {/* Вся карточка - одна ссылка: работает с клавиатуры, в новой вкладке и т. д. */}
+      <Link to={to} className={css.link}>
+        <div className={css.imageWrapper}>
+          {logo ? (
+            <img src={logo} alt="" className={css.image} />
+          ) : (
+            <div className={css.imagePlaceholder}>Kein Bild verfügbar</div>
+          )}
 
-        {categoryName && (
-          <div className={css.categoryBadge}>
-            {categoryIcon && (
-              <img src={categoryIcon} alt="" className={css.categoryIcon} />
-            )}
+          {categoryName && (
+            <div className={css.categoryBadge}>
+              {categoryIcon && (
+                <img src={categoryIcon} alt="" className={css.categoryIcon} />
+              )}
 
-            <span>{categoryName}</span>
-          </div>
-        )}
-      </div>
+              <span>{categoryName}</span>
+            </div>
+          )}
+        </div>
 
-      <div className={css.content}>
-        <h2 className={css.name}>{name}</h2>
+        <div className={css.content}>
+          <h2 className={css.name}>{name}</h2>
 
-        {city && (
-          <p className={css.address}>
-            <span className={css.locationMarker}>●</span>
+          {city && (
+            <p className={css.address}>
+              <span className={css.locationMarker}>●</span>
 
-            <strong>{city}</strong>
+              <strong>{city}</strong>
 
-            {addressText && (
-              <>
-                <span>•</span>
-                <span>{addressText}</span>
-              </>
-            )}
-          </p>
-        )}
+              {addressText && (
+                <>
+                  <span>•</span>
+                  <span>{addressText}</span>
+                </>
+              )}
+            </p>
+          )}
 
-        {descriptionText && (
-          <p className={css.description}>{descriptionText}</p>
-        )}
+          {descriptionText && (
+            <p className={css.description}>{descriptionText}</p>
+          )}
 
-        {/*
-          Рейтинг и количество отзывов должны быть частью карточки фирмы
-        */}
-      </div>
+          {/*
+            Рейтинг и количество отзывов должны быть частью карточки фирмы
+          */}
+        </div>
+      </Link>
     </article>
   );
 }

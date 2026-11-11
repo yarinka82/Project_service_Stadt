@@ -1,17 +1,15 @@
 import type { FirmListItem } from '../../store/firms/firmsSlice';
-
 import { CATEGORY_ICONS } from '../../constants/categoryIcons';
-
 import { FirmCard } from '../FirmCard/FirmCard';
-
 import css from './FirmsGrid.module.css';
 
 interface FirmsGridProps {
   firms: FirmListItem[];
-  onFirmClick: (firmId: string) => void;
+  // Возвращает адрес страницы фирмы для ссылки на карточке
+  getFirmHref: (firmId: string) => string;
 }
 
-export function FirmsGrid({ firms, onFirmClick }: FirmsGridProps) {
+export function FirmsGrid({ firms, getFirmHref }: FirmsGridProps) {
   return (
     <div className={css.grid}>
       {firms.map((firm) => {
@@ -33,7 +31,7 @@ export function FirmsGrid({ firms, onFirmClick }: FirmsGridProps) {
             street={address?.street}
             houseNr={address?.houseNr}
             zip={address?.zip}
-            onClick={() => onFirmClick(firm.id)}
+            to={getFirmHref(firm.id)}
           />
         );
       })}

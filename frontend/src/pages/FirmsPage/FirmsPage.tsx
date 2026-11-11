@@ -148,12 +148,9 @@ export default function FirmsPage() {
     navigate(`/cities/${numericCityId}/categories`);
   };
 
-  // Переход на страницу выбранной фирмы
-  const handleFirmClick = (firmId: string) => {
-    navigate(
-      `/cities/${numericCityId}/categories/${categoryId}/firms/${firmId}`
-    );
-  };
+  // Адрес страницы выбранной фирмы - для ссылки на карточке
+  const getFirmHref = (firmId: string) =>
+    `/cities/${numericCityId}/categories/${categoryId}/firms/${firmId}`;
 
   // Загружаем следующую страницу и добавляем её к существующему списку
   const handleLoadMore = () => {
@@ -240,7 +237,7 @@ export default function FirmsPage() {
   } else {
     content = (
       <>
-        <FirmsGrid firms={firms} onFirmClick={handleFirmClick} />
+        <FirmsGrid firms={firms} getFirmHref={getFirmHref} />
 
         {/* Ошибка при загрузке следующей страницы: уже загруженные фирмы остаются на экране */}
         {firmsError && (
@@ -248,7 +245,7 @@ export default function FirmsPage() {
             Weitere Anbieter konnten nicht geladen werden.
           </p>
         )}
-
+        
         {/* Кнопка скрывается после последней страницы */}
         {hasMore && (
           <div className={css.loadMoreWrapper}>

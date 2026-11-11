@@ -1,8 +1,6 @@
 import { ContextRow } from '../ContextRow/ContextRow';
 import { ViewToggle, type FirmsViewMode } from '../ViewToggle/ViewToggle';
-
 import iconBackArrow from '../../assets/svg/page3/left.svg';
-
 import css from './FirmsPageHeader.module.css';
 
 interface FirmsPageHeaderProps {
@@ -10,9 +8,7 @@ interface FirmsPageHeaderProps {
   cityName: string;
   resultCount: number;
   categoryIcon?: string;
-
   mode: FirmsViewMode;
-
   onBack: () => void;
   onModeChange: (mode: FirmsViewMode) => void;
 }
@@ -38,7 +34,12 @@ export function FirmsPageHeader({
           <ViewToggle mode={mode} onChange={onModeChange} />
         </div>
 
-        <p className={css.mobileResultCount}>{resultCount} Treffer gefunden</p>
+        {/* Пока список грузится или при ошибке total равен 0 - счётчик не показываем */}
+        {resultCount > 0 && (
+          <p className={css.mobileResultCount}>
+            {resultCount} Treffer gefunden
+          </p>
+        )}
       </div>
 
       {/* Desktop */}
@@ -69,9 +70,11 @@ export function FirmsPageHeader({
             </div>
           )}
 
-          <p className={css.desktopResultCount}>
-            {resultCount} Treffer in {cityName} gefunden
-          </p>
+          {resultCount > 0 && (
+            <p className={css.desktopResultCount}>
+              {resultCount} Treffer in {cityName} gefunden
+            </p>
+          )}
         </div>
 
         <ViewToggle mode={mode} onChange={onModeChange} />

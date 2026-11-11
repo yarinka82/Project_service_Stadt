@@ -1,5 +1,5 @@
-// Общие стили с Impressum: обе страницы оформлены одинаково
-import css from '../ImpressumPage/ImpressumPage.module.css';
+import { Link } from 'react-router-dom';
+import css from '../ImpressumPage/ImpressumPage.module.css'; // Общие стили с Impressum: обе страницы оформлены одинаково
 
 function DatenschutzPage() {
   return (
@@ -26,7 +26,8 @@ function DatenschutzPage() {
           <p>
             Die Datenverarbeitung auf dieser Website erfolgt durch den
             Websitebetreiber. Dessen Kontaktdaten finden Sie unter
-            „Verantwortliche Stelle“ sowie im Impressum.
+            „Verantwortliche Stelle“ sowie im{' '}
+            <Link to="/impressum">Impressum</Link>.
           </p>
         </section>
 
@@ -88,14 +89,18 @@ function DatenschutzPage() {
             Verantwortlich für die Datenverarbeitung auf dieser Website ist:
           </p>
           <address>
-            Digital IT Hub in Würzburg e.V.
+            Digital IT Hub Würzburg e.V.
             <br />
             Den Haager Straße 18
             <br />
             97084 Würzburg
             <br />
             E-Mail:{' '}
-            <a href="mailto:wurzburg-digitalithub@web.de">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=wurzburg-digitalithub%40web.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               wurzburg-digitalithub@web.de
             </a>
           </address>

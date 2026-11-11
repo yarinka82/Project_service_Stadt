@@ -1,6 +1,8 @@
 import { ContextRow } from '../ContextRow/ContextRow';
 import { ViewToggle, type FirmsViewMode } from '../ViewToggle/ViewToggle';
+
 import iconBackArrow from '../../assets/svg/page3/left.svg';
+
 import css from './FirmsPageHeader.module.css';
 
 interface FirmsPageHeaderProps {
@@ -44,6 +46,9 @@ export function FirmsPageHeader({
 
       {/* Desktop */}
       <div className={css.desktopHeader}>
+        {/* h1 для скринридеров; визуально скрыт, потому что в десктопном макете заголовка нет */}
+        <h1 className={css.visuallyHidden}>{title}</h1>
+
         <div className={css.desktopContext}>
           <button
             type="button"

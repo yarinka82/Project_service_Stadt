@@ -9,7 +9,7 @@ function ImpressumPage() {
         <h2>Angaben gemäß § 5 DDG</h2>
 
         <address>
-          Digital IT Hub in Würzburg e.V.
+          Digital IT Hub Würzburg e.V.
           <br />
           Den Haager Straße 18
           <br />
@@ -32,7 +32,11 @@ function ImpressumPage() {
 
         <p>
           E-Mail:{' '}
-          <a href="mailto:wurzburg-digitalithub@web.de">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=wurzburg-digitalithub%40web.de"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             wurzburg-digitalithub@web.de
           </a>
         </p>

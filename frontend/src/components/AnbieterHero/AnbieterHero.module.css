@@ -11,6 +11,12 @@
   object-fit: cover;
 }
 
+/* ДЕМО: на этих двух фото люди в верхней части кадра - поднимаем обрезку только для них */
+.photo[src*='autowerkstatt2'],
+.photo[src*='autowerkstatt3'] {
+  object-position: 50% 2%;
+}
+
 .placeholder {
   display: flex;
   align-items: center;
@@ -67,9 +73,5 @@
   .hero {
     height: 300px;
     margin: 34px 56px 0;
-  }
-
-  .backButton {
-    display: none;
   }
 }

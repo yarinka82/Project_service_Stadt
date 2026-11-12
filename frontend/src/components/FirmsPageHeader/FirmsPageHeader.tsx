@@ -9,10 +9,7 @@ interface FirmsPageHeaderProps {
   title: string;
   cityName: string;
   resultCount: number;
-  categoryIcon?: string;
-
   mode: FirmsViewMode;
-
   onBack: () => void;
   onModeChange: (mode: FirmsViewMode) => void;
 }
@@ -21,7 +18,6 @@ export function FirmsPageHeader({
   title,
   cityName,
   resultCount,
-  categoryIcon,
   mode,
   onBack,
   onModeChange,
@@ -38,11 +34,19 @@ export function FirmsPageHeader({
           <ViewToggle mode={mode} onChange={onModeChange} />
         </div>
 
-        <p className={css.mobileResultCount}>{resultCount} Treffer gefunden</p>
+        {/* Пока список грузится или при ошибке total равен 0 - счётчик не показываем */}
+        {resultCount > 0 && (
+          <p className={css.mobileResultCount}>
+            {resultCount} Treffer gefunden
+          </p>
+        )}
       </div>
 
       {/* Desktop */}
       <div className={css.desktopHeader}>
+        {/* h1 для скринридеров; визуально скрыт, потому что в десктопном макете заголовка нет */}
+        <h1 className={css.visuallyHidden}>{title}</h1>
+
         <div className={css.desktopContext}>
           <button
             type="button"
@@ -58,20 +62,11 @@ export function FirmsPageHeader({
             />
           </button>
 
-          {categoryIcon && (
-            <div className={css.categoryIconBox}>
-              <img
-                src={categoryIcon}
-                alt=""
-                aria-hidden="true"
-                className={css.categoryIcon}
-              />
-            </div>
+          {resultCount > 0 && (
+            <p className={css.desktopResultCount}>
+              {resultCount} Treffer in {cityName} gefunden
+            </p>
           )}
-
-          <p className={css.desktopResultCount}>
-            {resultCount} Treffer in {cityName} gefunden
-          </p>
         </div>
 
         <ViewToggle mode={mode} onChange={onModeChange} />

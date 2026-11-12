@@ -28,11 +28,6 @@ import { fetchFirms } from '../../store/firms/firmsOperations';
 
 import { FIRMS_PAGE_LIMIT, resetFirmsList } from '../../store/firms/firmsSlice';
 
-import {
-  CATEGORY_ICONS,
-  ALL_CATEGORIES_ICON,
-} from '../../constants/categoryIcons';
-
 import { USE_MOCK } from '../../api/api';
 import { CITY_MAPS } from '../../constants/anbieterLabels';
 
@@ -148,12 +143,9 @@ export default function FirmsPage() {
     navigate(`/cities/${numericCityId}/categories`);
   };
 
-  // Переход на страницу выбранной фирмы
-  const handleFirmClick = (firmId: string) => {
-    navigate(
-      `/cities/${numericCityId}/categories/${categoryId}/firms/${firmId}`
-    );
-  };
+  // Адрес страницы выбранной фирмы - для ссылки на карточке
+  const getFirmHref = (firmId: string) =>
+    `/cities/${numericCityId}/categories/${categoryId}/firms/${firmId}`;
 
   // Загружаем следующую страницу и добавляем её к существующему списку
   const handleLoadMore = () => {
@@ -240,7 +232,7 @@ export default function FirmsPage() {
   } else {
     content = (
       <>
-        <FirmsGrid firms={firms} onFirmClick={handleFirmClick} />
+        <FirmsGrid firms={firms} getFirmHref={getFirmHref} />
 
         {/* Ошибка при загрузке следующей страницы: уже загруженные фирмы остаются на экране */}
         {firmsError && (
@@ -269,12 +261,6 @@ export default function FirmsPage() {
   // Для "all" показываем отдельное название, иначе название категории берём из backend
   const title = isAllCategories ? 'Alle Kategorien' : (category?.name ?? '');
 
-  const categoryIcon = isAllCategories
-    ? ALL_CATEGORIES_ICON
-    : category
-      ? CATEGORY_ICONS[category.id]
-      : undefined;
-
   return (
     <main className={css.pageContainer}>
       <div className={css.content}>
@@ -283,7 +269,6 @@ export default function FirmsPage() {
             title={title}
             cityName={city?.name ?? ''}
             resultCount={firmsTotal}
-            categoryIcon={categoryIcon}
             mode={viewMode}
             onBack={handleBack}
             onModeChange={setViewMode}

@@ -9,6 +9,7 @@ import mapPin from '../assets/svg/anbieter/map-pin.svg';
 
 import cash from '../assets/svg/anbieter/cash.svg';
 import creditcard from '../assets/svg/anbieter/creditcard.svg';
+import paypal from '../assets/svg/anbieter/paypal.svg';
 
 import email from '../assets/svg/anbieter/email.svg';
 import site from '../assets/svg/anbieter/site.svg';
@@ -17,6 +18,8 @@ import phone from '../assets/svg/anbieter/phone.svg';
 import language from '../assets/svg/anbieter/language.svg';
 import parking from '../assets/svg/anbieter/parking.svg';
 import gift from '../assets/svg/anbieter/gift.svg';
+import petFriendly from '../assets/svg/anbieter/pets_friendly.svg';
+import wheelchair from '../assets/svg/anbieter/wheelchair_icon.svg';
 
 import starFilled from '../assets/svg/anbieter/star-black.svg';
 import starEmpty from '../assets/svg/anbieter/star_kontur_black.svg';
@@ -61,6 +64,7 @@ export const PAYMENT_LABELS: Record<PaymentMethod, string> = {
 export const PAYMENT_ICONS: Partial<Record<PaymentMethod, string>> = {
   cash,
   card: creditcard,
+  paypal,
 };
 
 export const FEATURE_KEYS: (keyof FirmFeatures)[] = [
@@ -80,6 +84,8 @@ export const FEATURE_LABELS: Record<keyof FirmFeatures, string> = {
 export const FEATURE_ICONS: Partial<Record<keyof FirmFeatures, string>> = {
   parking,
   vouchers: gift,
+  wheelchair,
+  petFriendly,
 };
 
 export const ANBIETER_ICONS = {

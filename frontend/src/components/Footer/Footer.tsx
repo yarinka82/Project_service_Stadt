@@ -10,33 +10,39 @@ export default function Footer() {
       <div className={css.whiteLine}></div>
 
       <div className={css.container}>
-        {/* Слева: логотип и юридические ссылки */}
+        {/* Слева: логотип, рядом соцсети и копирайт (по просьбе Ярины) */}
         <div className={css.leftSide}>
           <div className={css.logoBox}>
             <img src={logoITHub} alt="Logo IT Hub" />
           </div>
 
-          <div className={css.legalLinks}>
-            <Link to="/impressum">Impressum</Link>
-            <Link to="/datenschutz">Datenschutzerklärung</Link>
+          <div className={css.meta}>
+            <div className={css.socials}>
+              <a
+                href="https://www.instagram.com/digital_it_hub_wu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={iconInsta} alt="Instagram Icon" />
+              </a>
+              <a
+                href="https://www.linkedin.com/groups/10076160/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={iconLinkedin} alt="LinkedIn Icon" />
+              </a>
+            </div>
+
+            <p className={css.copy}>© 2026 Digital IT Hub Würzburg e.V.</p>
           </div>
         </div>
 
-        {/* Справа: соцсети */}
-        <div className={css.rightSide}>
-          <p className={css.follow}>Follow us</p>
-          <div className={css.socials}>
-            <a href="#">
-              <img src={iconInsta} alt="Instagram Icon" />
-            </a>
-            <a href="#">
-              <img src={iconLinkedin} alt="LinkedIn Icon" />
-            </a>
-          </div>
+        {/* Справа: юридические ссылки */}
+        <div className={css.legalLinks}>
+          <Link to="/impressum">Impressum</Link>
+          <Link to="/datenschutz">Datenschutzerklärung</Link>
         </div>
-
-        {/* Копирайт: на мобильном справа под иконками, с 768px по центру внизу */}
-        <p className={css.copy}>© 2026 HUB IT. All rights reserved</p>
       </div>
     </footer>
   );

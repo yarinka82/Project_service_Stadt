@@ -39,7 +39,7 @@
 /* ДЕМО: на этих двух фото люди в верхней части кадра - поднимаем обрезку только для них */
 .image[src*='autowerkstatt2'],
 .image[src*='autowerkstatt3'] {
-  object-position: 50% 10%;
+  object-position: 50% 2%;
 }
 
 .imagePlaceholder {

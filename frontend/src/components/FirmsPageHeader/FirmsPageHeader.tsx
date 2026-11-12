@@ -9,7 +9,6 @@ interface FirmsPageHeaderProps {
   title: string;
   cityName: string;
   resultCount: number;
-  categoryIcon?: string;
   mode: FirmsViewMode;
   onBack: () => void;
   onModeChange: (mode: FirmsViewMode) => void;
@@ -19,7 +18,6 @@ export function FirmsPageHeader({
   title,
   cityName,
   resultCount,
-  categoryIcon,
   mode,
   onBack,
   onModeChange,
@@ -63,17 +61,6 @@ export function FirmsPageHeader({
               className={css.backIcon}
             />
           </button>
-
-          {categoryIcon && (
-            <div className={css.categoryIconBox}>
-              <img
-                src={categoryIcon}
-                alt=""
-                aria-hidden="true"
-                className={css.categoryIcon}
-              />
-            </div>
-          )}
 
           {resultCount > 0 && (
             <p className={css.desktopResultCount}>

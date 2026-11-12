@@ -28,11 +28,6 @@ import { fetchFirms } from '../../store/firms/firmsOperations';
 
 import { FIRMS_PAGE_LIMIT, resetFirmsList } from '../../store/firms/firmsSlice';
 
-import {
-  CATEGORY_ICONS,
-  ALL_CATEGORIES_ICON,
-} from '../../constants/categoryIcons';
-
 import { USE_MOCK } from '../../api/api';
 import { CITY_MAPS } from '../../constants/anbieterLabels';
 
@@ -245,7 +240,7 @@ export default function FirmsPage() {
             Weitere Anbieter konnten nicht geladen werden.
           </p>
         )}
-        
+
         {/* Кнопка скрывается после последней страницы */}
         {hasMore && (
           <div className={css.loadMoreWrapper}>
@@ -266,12 +261,6 @@ export default function FirmsPage() {
   // Для "all" показываем отдельное название, иначе название категории берём из backend
   const title = isAllCategories ? 'Alle Kategorien' : (category?.name ?? '');
 
-  const categoryIcon = isAllCategories
-    ? ALL_CATEGORIES_ICON
-    : category
-      ? CATEGORY_ICONS[category.id]
-      : undefined;
-
   return (
     <main className={css.pageContainer}>
       <div className={css.content}>
@@ -280,7 +269,6 @@ export default function FirmsPage() {
             title={title}
             cityName={city?.name ?? ''}
             resultCount={firmsTotal}
-            categoryIcon={categoryIcon}
             mode={viewMode}
             onBack={handleBack}
             onModeChange={setViewMode}

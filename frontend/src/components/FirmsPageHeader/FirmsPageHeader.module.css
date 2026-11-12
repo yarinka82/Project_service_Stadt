@@ -83,24 +83,6 @@
     flex-shrink: 0;
   }
 
-  .categoryIconBox {
-    width: 44px;
-    height: 44px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-
-    border: 1px solid var(--border-f);
-    border-radius: 2px;
-  }
-
-  .categoryIcon {
-    width: 24px;
-    height: 24px;
-  }
-
   .desktopResultCount {
     color: var(--text);
     font-size: 16px;

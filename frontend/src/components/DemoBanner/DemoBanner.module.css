@@ -109,9 +109,9 @@
   text-decoration-thickness: 2px;
 }
 
-.feedback a:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 3px;
+/* QR-код на форму обратной связи: скрыт на телефоне (свой экран не отсканировать), показывается с планшета */
+.qr {
+  display: none;
 }
 
 .confirmButton {
@@ -141,4 +141,13 @@
 .feedback a:focus-visible {
   outline: 2px solid var(--bg);
   outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .qr {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 12px auto 0;
+  }
 }

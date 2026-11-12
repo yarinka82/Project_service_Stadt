@@ -17,28 +17,32 @@
   padding: 15px 30px;
 }
 
+/* Кнопка 44x44 как в ContextRow: иконка 20px, отрицательный отступ выравнивает иконку по краю отступа строки */
 .backButton {
+  width: 44px;
+  height: 44px;
+  margin: 0 0 0 -12px;
   padding: 0;
-  margin: 0;
+
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  flex-shrink: 0;
+
   background: none;
   border: none;
-  color: var(--text);
-  font-family: var(--heading);
-  font-size: var(--p-size);
-  font-weight: 700;
-  line-height: 1;
   cursor: pointer;
 }
 
-.arrow {
-  font-family: var(--heading);
-  font-size: var(--p-size);
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1;
+.backButton:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+
+.backIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* Cities */

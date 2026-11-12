@@ -11,6 +11,7 @@ import {
 import flagFrankfurt from '../../assets/png/flagge_frankfurt.png';
 import flagMunchen from '../../assets/png/flagge_Munchen.png';
 import flagWurzburg from '../../assets/png/flagge_wurzburg.png';
+import iconBackArrow from '../../assets/svg/page3/left.svg';
 import css from './AglomerationsPage.module.css';
 
 const CITY_FLAGS: Record<number, string> = {
@@ -56,9 +57,19 @@ function AglomerationsPage() {
     <main className={css.page}>
       <div>
         <div className={css.titleRow}>
-          <button className={css.backButton} onClick={handleBack}>
-            <span className={css.arrow}>&lt;</span>
-            <span>Zurück zur Startseite</span>
+          {/* Только стрелка, как на стр. 3 и 4; текст "Zurück zur Startseite" - только на 404 */}
+          <button
+            type="button"
+            className={css.backButton}
+            onClick={handleBack}
+            aria-label="Zurück zur Startseite"
+          >
+            <img
+              src={iconBackArrow}
+              alt=""
+              aria-hidden="true"
+              className={css.backIcon}
+            />
           </button>
         </div>
 

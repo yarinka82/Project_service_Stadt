@@ -8,10 +8,9 @@ import {
   getCitiesError,
 } from '../../store/cities/citiesSelectors.ts';
 
-import flagFrankfurt from '../../assets/png/flagge_Frankfurt.png';
+import flagFrankfurt from '../../assets/png/flagge_frankfurt.png';
 import flagMunchen from '../../assets/png/flagge_Munchen.png';
-import flagWurzburg from '../../assets/png/flagge_Wurzburg.png';
-
+import flagWurzburg from '../../assets/png/flagge_wurzburg.png';
 import css from './AglomerationsPage.module.css';
 
 const CITY_FLAGS: Record<number, string> = {

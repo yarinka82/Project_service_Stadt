@@ -9,9 +9,6 @@
   border: none;
   cursor: pointer;
 
-  min-width: 44px;
-  min-height: 44px;
-  
   /* чтобы выровнять на одной линии с иконкой в хедере */
   min-width: 44px;
   min-height: 44px;

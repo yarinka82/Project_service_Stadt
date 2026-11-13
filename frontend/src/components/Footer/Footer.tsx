@@ -2,6 +2,7 @@ import css from './Footer.module.css';
 import logoITHub from '../../assets/svg/logo_itHub.svg';
 import iconInsta from '../../assets/svg/insta_icon.svg';
 import iconLinkedin from '../../assets/svg/linkedin_icon.svg';
+import iconEmail from '../../assets/svg/email_icon.svg';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -31,6 +32,16 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <img src={iconLinkedin} alt="LinkedIn Icon" />
+              </a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=wurzburg-digitalithub%40web.de"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={iconEmail}
+                  alt="E-Mail an wurzburg-digitalithub@web.de"
+                />
               </a>
             </div>
 

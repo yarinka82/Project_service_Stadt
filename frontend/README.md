@@ -1,75 +1,67 @@
-# React + TypeScript + Vite
+# StadtService - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend of StadtService.de: a catalog of local service providers in Frankfurt am Main, München and Würzburg.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19, TypeScript
+- Vite 8 (with React Compiler)
+- Redux Toolkit, React Router 7
+- CSS Modules
+- axios
 
-## React Compiler
+## Requirements
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Node.js 20.19+ or 22.13+
+- npm
 
-Note: This will impact Vite dev & build performances.
+## Getting started
 
-## Expanding the ESLint configuration
+    cd frontend
+    npm install
+    npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The app runs at the address shown in the terminal (by default http://localhost:5173).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Scripts
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Command           | Description                                     |
+| ----------------- | ----------------------------------------------- |
+| `npm run dev`     | Start the development server                    |
+| `npm run build`   | Type-check and build for production into `dist` |
+| `npm run preview` | Serve the production build locally              |
+| `npm run lint`    | Run ESLint                                      |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Data source: mock data or backend
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app supports two modes, switched by the `USE_MOCK` flag in `src/api/api.ts`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Mock data (current stage, demo version)**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `USE_MOCK = true`
+- Cities, categories and providers come from `src/api/mockData.ts`; no backend is needed.
+- All providers, addresses, phone numbers and photos are fictional (demo photos are in `src/assets/img/img_demo`).
+
+**Backend**
+
+- `USE_MOCK = false`
+- Start the backend first (see the root README).
+- In development, requests to `/aglomerations`, `/categories` and `/companies` are proxied to `http://localhost:3001` (see `vite.config.ts`).
+
+When the app is connected to the backend for good, the `USE_MOCK` flag, all `if (USE_MOCK)` branches and `mockData.ts` are to be removed.
+
+## Project structure
+
+    src/
+      api/          API requests and mock data
+      assets/       Images, icons, fonts
+      components/   Reusable UI components
+      constants/    Labels, icon maps
+      pages/        Pages (one folder per route)
+      store/        Redux slices, selectors and async operations
+      utils/        Helper functions
+
+## Deployment (demo)
+
+The demo is deployed on Netlify from the `dist` folder (`npm run build`).
+`public/_redirects` sends all routes to `index.html`, so that reloading any page works.

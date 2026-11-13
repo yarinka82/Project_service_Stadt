@@ -1,5 +1,6 @@
 import logoItHub from '../../assets/svg/logo_itHub.svg';
 import closeIcon from '../../assets/svg/close_demo.svg';
+import qrFeedback from '../../assets/png/qr_feedback.png';
 
 import css from './DemoBanner.module.css';
 
@@ -39,15 +40,24 @@ export default function DemoBanner({ onClose }: DemoBannerProps) {
         </p>
 
         <p className={css.feedback}>
-          Feedback:{' '}
+          Feedback über unser{' '}
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=wurzburg-digitalithub%40web.de"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScoa89qGK_lXjKTcq_wvHTJNFRrnTVUIHKtAX5NBbC_k5jq9w/viewform"
             target="_blank"
             rel="noopener noreferrer"
           >
-            wurzburg-digitalithub@web.de
+            Feedback-Formular
           </a>
         </p>
+
+        {/* QR-код на ту же форму: только для больших экранов, с телефона свой экран не отсканировать */}
+        <img
+          className={css.qr}
+          src={qrFeedback}
+          alt="QR-Code zum Feedback-Formular"
+          width={96}
+          height={96}
+        />
       </div>
 
       <button className={css.confirmButton} type="button" onClick={onClose}>

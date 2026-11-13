@@ -50,19 +50,6 @@
   object-position: left center;
 }
 
-.caption {
-  margin-top: 4px;
-
-  font-size: 8px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.caption a {
-  color: inherit;
-}
-
 .unavailable {
   margin: 0;
 

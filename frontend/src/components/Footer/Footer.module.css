@@ -112,6 +112,26 @@
   text-decoration: underline;
 }
 
+/* На узких телефонах (до 392px) уменьшаем разрядку, чтобы иконки не поднимались выше логотипа */
+/* @media (max-width: 392px) {
+  .footer {
+    letter-spacing: 0.02em;
+  }
+} */
+
+@media (max-width: 392px) {
+  .footer {
+    letter-spacing: 0.04em;
+  }
+}
+
+/* уменьшаем отступ под иконками, чтобы колонка с иконками и копирайтом не стала выше логотипа */
+@media (max-width: 359px) {
+  .copy {
+    margin-top: 2px;
+  }
+}
+
 @media (min-width: 376px) {
   .copy {
     margin-top: 8px;

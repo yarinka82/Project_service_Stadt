@@ -1,7 +1,7 @@
 import css from './Header.module.css';
 import { Link } from 'react-router-dom';
 import pinIcon from '../../assets/svg/pin.svg';
-import themeIcon from '../../assets/svg/moon.svg';
+// import themeIcon from '../../assets/svg/moon.svg';
 
 function Header() {
   return (
@@ -19,6 +19,7 @@ function Header() {
         </div>
       </Link>
 
+      {/* ВРЕМЕННО: переключение темы не реализовано, кнопка скрыта
       <button
         className={css.buttonTheme}
         type="button"
@@ -26,6 +27,7 @@ function Header() {
       >
         <img src={themeIcon} alt="" />
       </button>
+      */}
     </header>
   );
 }

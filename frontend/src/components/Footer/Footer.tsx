@@ -11,7 +11,15 @@ export default function Footer() {
       <div className={css.whiteLine}></div>
 
       <div className={css.container}>
-        {/* Слева: логотип, рядом соцсети и копирайт (по просьбе Ярины) */}
+        {/* ДЕМО (Netlify): внизу справа поверх страницы стоит значок "Powered by Netlify */}
+
+        {/* Сверху cлева: юридические ссылки */}
+        <div className={css.legalLinks}>
+          <Link to="/impressum">Impressum</Link>
+          <Link to="/datenschutz">Datenschutzerklärung</Link>
+        </div>
+
+        {/* Снизу cлева: логотип, рядом соцсети и копирайт */}
         <div className={css.leftSide}>
           <div className={css.logoBox}>
             <img src={logoITHub} alt="Logo IT Hub" />
@@ -47,12 +55,6 @@ export default function Footer() {
 
             <p className={css.copy}>© 2026 Digital IT Hub Würzburg e.V.</p>
           </div>
-        </div>
-
-        {/* Справа: юридические ссылки */}
-        <div className={css.legalLinks}>
-          <Link to="/impressum">Impressum</Link>
-          <Link to="/datenschutz">Datenschutzerklärung</Link>
         </div>
       </div>
     </footer>

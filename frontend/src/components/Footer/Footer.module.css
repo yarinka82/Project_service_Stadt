@@ -29,8 +29,9 @@
   background: var(--border-f);
 }
 
-/* Слева логотип с соцсетями и копирайтом, справа ссылки; низ на одной линии */
-.container {
+/* до ДЕМО:
+LEFT SIDE: логотип и колонка с соцсетями и копирайтом, RIGHT SIDE: юридические ссылки */
+/* .container {
   width: 100%;
   min-height: 80px;
 
@@ -41,9 +42,26 @@
 
   padding: 20px 24px;
   box-sizing: border-box;
+} */
+
+/* для ДЕМО (Netlify): 
+т.к. внизу cправа поверх страницы стоит значок "Powered by Netlify", поэтому при тестировании
+всё в одну колонку: ссылки, логотип с иконками и копирайтом */
+.container {
+  width: 100%;
+  min-height: 80px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  row-gap: 12px;
+
+  padding: 20px 24px;
+  box-sizing: border-box;
 }
 
-/* 1. LEFT SIDE: логотип и колонка с соцсетями и копирайтом */
+/* 1. для ДЕМО:
+LEFT SIDE: ссылки, а зетем логотип и колонка с соцсетями и копирайтом */
 
 .leftSide {
   display: flex;
@@ -92,12 +110,21 @@
   font-weight: 300;
 }
 
-/* 2. RIGHT SIDE: юридические ссылки, прижаты вправо */
+/* 2. До ДЕМО:
+RIGHT SIDE: юридические ссылки, прижаты вправо */
 
-.legalLinks {
+/* .legalLinks {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  gap: 0;
+} */
+
+/* 2. для ДЕМО */
+.legalLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0;
 }
 

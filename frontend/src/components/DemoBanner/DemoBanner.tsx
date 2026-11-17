@@ -40,13 +40,13 @@ export default function DemoBanner({ onClose }: DemoBannerProps) {
         </p>
 
         <p className={css.feedback}>
-          Feedback über unser{' '}
+          Ihr Feedback gerne über unser{' '}
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLScoa89qGK_lXjKTcq_wvHTJNFRrnTVUIHKtAX5NBbC_k5jq9w/viewform"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Feedback-Formular
+            Formular
           </a>
         </p>
 

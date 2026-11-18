@@ -139,6 +139,10 @@ RIGHT SIDE: юридические ссылки, прижаты вправо */
   text-decoration: underline;
 }
 
+/* .feedbackLink {
+  margin-top: 0.5lh;
+} */
+
 /* На узких телефонах (до 392px) уменьшаем разрядку, чтобы иконки не поднимались выше логотипа */
 /* @media (max-width: 392px) {
   .footer {

@@ -17,6 +17,14 @@ export default function Footer() {
         <div className={css.legalLinks}>
           <Link to="/impressum">Impressum</Link>
           <Link to="/datenschutz">Datenschutzerklärung</Link>
+          <a
+            className={css.feedbackLink} 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScoa89qGK_lXjKTcq_wvHTJNFRrnTVUIHKtAX5NBbC_k5jq9w/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Feedback-Formular
+          </a>
         </div>
 
         {/* Снизу cлева: логотип, рядом соцсети и копирайт */}

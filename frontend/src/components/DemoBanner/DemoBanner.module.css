@@ -70,6 +70,7 @@
 
 .description {
   width: 100%;
+  margin-top: 8px;
 }
 
 .intro,
@@ -86,23 +87,26 @@
 
 .intro {
   margin-bottom: 1lh;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .notice {
   margin-bottom: 1lh;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .feedback {
-  font-size: 9px;
+  font-size: 16px;
+  color: var(--bg);
   overflow-wrap: anywhere;
 }
 
 .feedback a {
   color: inherit;
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 2px;
+  white-space: nowrap; /* Не разрывать "Feedback-Formular" по дефису: если не помещается, переносится целиком */
 }
 
 .feedback a:hover {
@@ -144,10 +148,20 @@
 }
 
 @media (min-width: 768px) {
+  .feedback {
+    margin-bottom: 1lh;
+  }
+
   .qr {
     display: block;
     width: 96px;
     height: 96px;
-    margin: 12px auto 0;
+    /* margin: 12px auto 0; */
+    margin: 0 auto;
+  }
+
+  /* Отступ от QR-кода до кнопки такой же, как от логотипа до заголовка */
+  .confirmButton {
+    margin-top: 25px;
   }
 }
